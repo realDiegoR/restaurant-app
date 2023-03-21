@@ -1,0 +1,17 @@
+.LinkButton {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 1rem 2rem;
+	background-color: var(--black);
+	color: var(--white);
+	font-size: 1.125rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	border-radius: 0.25rem;
+
+	&-icon {
+		// display: block;
+		// width: 1.5rem;
+	}
+}

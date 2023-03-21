@@ -1,0 +1,51 @@
+@use "components/index" as components;
+@use "containers/index" as containers;
+@use "pages/index" as pages;
+@use "./utilities/reset/_reset";
+
+:root {
+	/* Colors */
+	--brand-yellow: #ffc212;
+	--brand-red: #ca0020; //#e8054a;
+
+	--black: #060606;
+	--white: #f5f5f5;
+	--gray-01: #121212;
+	--gray-02: #2b2b2b;
+
+	/* Typography */
+	--main-font: "Quicksand", Helvetica, Arial, sans-serif;
+	--strong-font: "Sintony", Verdana, sans-serif;
+
+	--heading-01: clamp(1.5em, 9.5vw, 2.25em);
+	--heading-02: 1.75em;
+	--paragraph: 1.125em;
+	--sub: 1em;
+
+	/* Layout */
+	--sectionPadding: 2.5em 0;
+}
+
+// @media (prefers-color-scheme: dark) {
+// 	:root {
+// 		--black: #ececec;
+// 	}
+// }
+
+@media (prefers-contrast: high) {
+	:root {
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none !important;
+		transition: none !important;
+	}
+}
+
+.Wrapper {
+	width: 90%;
+	max-width: 70rem;
+	margin: 0 auto;
+}
