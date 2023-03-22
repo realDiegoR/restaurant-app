@@ -1,0 +1,19 @@
+.Schedule {
+	padding: var(--sectionPadding);
+	text-align: center;
+
+	&-title {
+		color: var(--white);
+		font-family: var(--strong-font);
+		font-size: var(--heading-01);
+		font-weight: 700;
+		text-transform: capitalize;
+	}
+	&-ul {
+		display: flex;
+		flex-flow: column nowrap;
+		// align-items: center;
+		gap: 1.5rem;
+		margin-top: 1.5625rem;
+	}
+}

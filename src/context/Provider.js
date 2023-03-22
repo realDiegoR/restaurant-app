@@ -1,5 +1,6 @@
 import { createContext, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
+import pataconImg from "@assets/ui/patacon.jpg";
 
 const appData = {
 	es: {
@@ -35,6 +36,7 @@ const appData = {
 		},
 		mostPopular: {
 			title: "Lo más popular",
+			promotionText: "¡Promoción!",
 			items: [
 				{
 					id: uuidv4(),
@@ -44,9 +46,10 @@ const appData = {
 					description:
 						"Platano frito, carne mechada, queso blanco, aguacate, ajo, salsa.",
 					img: {
-						src: "",
-						alt: "",
+						src: pataconImg,
+						alt: "Patacón de Veranalia",
 					},
+					callToAction: "añadir a la compra",
 				},
 			],
 		},
@@ -57,7 +60,7 @@ const appData = {
 					id: uuidv4(),
 					name: "Duluth",
 					place: "3099 Breckinridge Blvd, Duluth, GA 30096",
-					phoneNumber: "xxxxx",
+					phoneNumber: "(XXX) XXX XXXX",
 					coordinates: {
 						alt: "",
 						lat: "",
@@ -65,43 +68,47 @@ const appData = {
 				},
 			],
 		},
-		schedule: [
-			{
-				id: uuidv4(),
-				day: "lunes",
-				openingHours: "8:00 AM - 9:00 PM",
-			},
-			{
-				id: uuidv4(),
-				day: "martes",
-				openingHours: "8:00 AM - 9:00 PM",
-			},
-			{
-				id: uuidv4(),
-				day: "miércoles",
-				openingHours: "8:00 AM - 9:00 PM",
-			},
-			{
-				id: uuidv4(),
-				day: "jueves",
-				openingHours: "8:00 AM - 9:00 PM",
-			},
-			{
-				id: uuidv4(),
-				day: "viernes",
-				openingHours: "8:00 AM - 9:00 PM",
-			},
-			{
-				id: uuidv4(),
-				day: "sábado",
-				openingHours: "8:00 AM - 11:30 PM",
-			},
-			{
-				id: uuidv4(),
-				day: "domingo",
-				openingHours: "8:00 AM - 11:30 PM",
-			},
-		],
+		schedule: {
+			title: "Nuestro Horario",
+			days: [
+				{
+					id: uuidv4(),
+					name: "lunes",
+					openingHours: "8:00 AM - 9:00 PM",
+					dayId: 1,
+				},
+				{
+					id: uuidv4(),
+					name: "martes",
+					openingHours: "8:00 AM - 9:00 PM",
+					dayId: 2,
+				},
+				{
+					id: uuidv4(),
+					name: "miércoles",
+					openingHours: "8:00 AM - 9:00 PM",
+					dayId: 3,
+				},
+				{
+					id: uuidv4(),
+					name: "jueves",
+					openingHours: "8:00 AM - 9:00 PM",
+					dayId: 4,
+				},
+				{
+					id: uuidv4(),
+					name: "viernes",
+					openingHours: "8:00 AM - 9:00 PM",
+					dayId: 5,
+				},
+				{
+					id: uuidv4(),
+					name: "sábado",
+					openingHours: "8:00 AM - 11:30 PM",
+					dayId: 6,
+				},
+			],
+		},
 		footer: {
 			followUs: {
 				title: "Síguenos",

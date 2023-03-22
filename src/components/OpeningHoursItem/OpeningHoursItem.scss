@@ -1,0 +1,19 @@
+.OpeningHoursItem {
+	display: flex;
+	justify-content: center;
+	gap: 2.5rem;
+	font: 500 var(--paragraph) var(--main-font);
+
+	&--today {
+		color: var(--brand-red);
+		font-weight: 700;
+	}
+
+	&-day {
+		width: 5.25rem;
+		text-align: end;
+		text-transform: capitalize;
+	}
+	&-openingHours {
+	}
+}

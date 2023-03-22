@@ -1,5 +1,6 @@
-import { DropdownMenu } from "@containers/DropdownMenu";
+import { DropdownMenu } from "@containers/DropdownMenu/DropdownMenu";
 import logotype from "@assets/brand/veranalia_logotype.png";
+import "./Header.scss";
 
 export const Header = ({ dropdownMenuIsOpen, setDropdownMenuIsOpen }) => {
 	const isMobile = innerWidth < 1024;

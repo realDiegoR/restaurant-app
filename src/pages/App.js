@@ -1,7 +1,7 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
-import { Header } from "@containers/Header";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./home/Home";
+import { Header } from "@containers/Header/Header";
 
 export const App = () => {
 	const [dropdownMenuIsOpen, setDropdownMenuIsOpen] = useState(false);

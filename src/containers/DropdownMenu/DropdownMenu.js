@@ -1,6 +1,7 @@
-import { useGlobalContext } from "../context/Provider";
 import { NavLink } from "react-router-dom";
-import { Icon } from "../components/Icon";
+import { useGlobalContext } from "@context/Provider";
+import { Icon } from "@components/Icon/Icon";
+import "./DropdownMenu.scss";
 
 export const DropdownMenu = ({ setDropdownMenuIsOpen, dropdownMenuIsOpen }) => {
 	const {

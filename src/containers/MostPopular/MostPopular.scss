@@ -1,0 +1,23 @@
+.MostPopular {
+	position: relative;
+
+	padding: var(--sectionPadding);
+	background-color: var(--black);
+
+	.Wrapper {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: flex-start;
+		gap: 2.5rem;
+	}
+
+	&-title {
+		font-family: var(--strong-font);
+		font-size: var(--heading-01);
+		font-weight: 700;
+		text-transform: capitalize;
+		color: var(--brand-yellow);
+	}
+	&-ul {
+	}
+}

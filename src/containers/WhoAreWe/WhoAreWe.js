@@ -1,6 +1,7 @@
-import { useGlobalContext } from "../context/Provider";
-import { LinkButton } from "../components/LinkButton";
-import { Icon } from "../components/Icon";
+import { useGlobalContext } from "@context/Provider";
+import { LinkButton } from "@components/LinkButton/LinkButton";
+import { Icon } from "@components/Icon/Icon";
+import "./WhoAreWe.scss";
 
 export const WhoAreWe = () => {
 	const {

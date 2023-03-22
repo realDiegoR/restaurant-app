@@ -1,6 +1,7 @@
-import { Icon } from "../components/Icon";
+import { Icon } from "@components/Icon/Icon";
 import background from "@assets/ui/Hero2.png";
 import imagotype from "@assets/brand/veranalia_imagotype.png";
+import "./Hero.scss";
 
 export const Hero = () => {
 	return (
