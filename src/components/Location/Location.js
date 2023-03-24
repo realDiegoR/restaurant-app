@@ -1,6 +1,8 @@
 import { Icon } from "@components/Icon/Icon";
 import "./Location.scss";
 
+const MAPS_API_KEY = process.env.MAPS_API_KEY;
+
 export const Location = (props) => {
 	return (
 		<section className="Location">
@@ -20,7 +22,7 @@ export const Location = (props) => {
 				loading="lazy"
 				allowFullScreen
 				referrerPolicy="no-referrer-when-downgrade"
-				src={`https://www.google.com/maps/embed/v1/place?key=${process.env.MAPS_API_KEY}&q=McDonalds,Marietta+Georgia&zoom=14`}
+				src={`https://www.google.com/maps/embed/v1/place?key=${MAPS_API_KEY}&q=McDonalds,Marietta+Georgia&zoom=14`}
 			/>
 		</section>
 	);
