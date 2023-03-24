@@ -1,9 +1,8 @@
 import { Icon } from "@components/Icon/Icon";
 import "./Location.scss";
 
-const MAPS_API_KEY = process.env.MAPS_API_KEY;
-
 export const Location = (props) => {
+	const MAPS_API_KEY = process.env.MAPS_API_KEY;
 	return (
 		<section className="Location">
 			<h3 className="Location-name">{props.name}</h3>
