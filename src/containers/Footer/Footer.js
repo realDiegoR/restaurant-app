@@ -1,5 +1,7 @@
 import { Icon } from "@components/Icon/Icon";
 import { useLocaleContext } from "@context/Locale";
+import logotypeAvif from "@assets/brand/veranalia_logotype.avif";
+import logotypeWebp from "@assets/brand/veranalia_logotype.webp";
 import "./Footer.scss";
 
 export const Footer = () => {
@@ -31,6 +33,10 @@ export const Footer = () => {
 					</ul>
 				</section>
 			</div>
+			{/* <picture className="Footer-logotype">
+				<source srcSet={logotypeAvif} type="image/avif" alt="Veranalia" />
+				<img src={logotypeWebp} type="image/webp" alt="Veranalia" />
+			</picture> */}
 			<p className="Footer-signature">{footer.lovelyNote}</p>
 		</footer>
 	);

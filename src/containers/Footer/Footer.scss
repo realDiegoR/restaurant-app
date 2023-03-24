@@ -28,8 +28,16 @@
 		margin-top: 1rem;
 		color: var(--white);
 	}
+
+	// &-logotype {
+	// 	width: 50%;
+	// 	max-width: 15rem;
+	// 	margin: 0 auto;
+	// 	margin-top: clamp(3.5rem, 11vw, 6rem);
+	// }
+
 	&-signature {
-		margin-top: clamp(3.5rem, 11vw, 6rem);
+		margin-top: 3rem;
 		font: 300 var(--sub) var(--main-font);
 		text-align: center;
 	}

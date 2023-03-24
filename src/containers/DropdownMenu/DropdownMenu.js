@@ -26,7 +26,11 @@ export const DropdownMenu = ({ setDropdownMenuIsOpen, dropdownMenuIsOpen }) => {
 			<ul className="DropdownMenu-ul">
 				{navLinks.map(({ id, text, path }) => (
 					<li key={id}>
-						<NavLink to={path} className="DropdownMenu-li">
+						<NavLink
+							to={path}
+							className="DropdownMenu-li"
+							onClick={closeDropdownMenu}
+						>
 							{text}
 						</NavLink>
 					</li>

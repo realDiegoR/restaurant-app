@@ -9,9 +9,9 @@ const localesData = {
 			navLinks: [
 				{ id: uuidv4(), text: "home", path: "/" },
 				{ id: uuidv4(), text: "ver menú", onlyMobile: true, path: "/xd" },
-				{ id: uuidv4(), text: "quienes somos", path: "/xd" },
+				{ id: uuidv4(), text: "quienes somos", path: "/who-are-we" },
 				{ id: uuidv4(), text: "lo más popular", path: "/xd" },
-				{ id: uuidv4(), text: "ubicación", path: "/xd" },
+				{ id: uuidv4(), text: "ubicación", path: "/location" },
 				{ id: uuidv4(), text: "horario", path: "/xd" },
 				{ id: uuidv4(), text: "testimonios", path: "/xd" },
 			],

@@ -18,6 +18,7 @@ export const Location = (props) => {
 			</div>
 			<iframe
 				className="Location-map"
+				title="Google Maps Location"
 				loading="lazy"
 				allowFullScreen
 				referrerPolicy="no-referrer-when-downgrade"
