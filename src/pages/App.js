@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { Header } from "@containers/Header/Header";
 import { Home } from "./HomePage/Home";
 
 export const App = () => {
 	const [dropdownMenuIsOpen, setDropdownMenuIsOpen] = useState(false);
 	return (
-		<BrowserRouter>
+		<HashRouter>
 			<Header
 				dropdownMenuIsOpen={dropdownMenuIsOpen}
 				setDropdownMenuIsOpen={setDropdownMenuIsOpen}
@@ -15,6 +15,6 @@ export const App = () => {
 			<Routes>
 				<Route path="/" element={<Home />} />
 			</Routes>
-		</BrowserRouter>
+		</HashRouter>
 	);
 };

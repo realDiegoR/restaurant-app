@@ -40,7 +40,7 @@ module.exports = {
 			},
 			{
 				test: /\.(jpg|jpeg|png|gif|webp|avif)$/,
-				use: ["asset/resource"],
+				type: "asset/resource",
 				generator: {
 					filename: "assets/images/[name].[hash][ext]",
 				},
@@ -57,7 +57,7 @@ module.exports = {
 			filename: "[name].[contenthash].css",
 		}),
 	],
-	optimizations: {
+	optimization: {
 		minimize: true,
 		minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
 	},

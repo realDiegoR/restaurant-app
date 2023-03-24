@@ -3,6 +3,8 @@ import backgroundMobileAvif from "@assets/ui/hero_mobile.avif";
 import backgroundMobileWebp from "@assets/ui/hero_mobile.webp";
 import backgroundTabletAvif from "@assets/ui/hero_tablet.avif";
 import backgroundTabletWebp from "@assets/ui/hero_tablet.webp";
+import backgroundDesktopAvif from "@assets/ui/hero_desktop.avif";
+import backgroundDesktopWebp from "@assets/ui/hero_desktop.webp";
 import imagotypeAvif from "@assets/brand/veranalia_imagotype.avif";
 import imagotypeWebp from "@assets/brand/veranalia_imagotype.webp";
 import "./Hero.scss";
@@ -13,30 +15,44 @@ export const Hero = () => {
 			<div className="Hero-content">
 				<picture>
 					<source
-						className="Hero-backgroundImage"
 						srcSet={backgroundMobileAvif}
+						className="Hero-backgroundImage"
 						media="(max-width: 600px)"
 						type="image/avif"
 						alt="background"
 					/>
 					<source
+						srcSet={backgroundMobileWebp}
 						className="Hero-backgroundImage"
 						media="(max-width: 600px)"
-						srcSet={backgroundMobileWebp}
 						type="image/webp"
 						alt="background"
 					/>
 					<source
-						className="Hero-backgroundImage"
 						srcSet={backgroundTabletAvif}
-						media="(min-width: 600px)"
+						className="Hero-backgroundImage"
+						media="(max-width: 1024px)"
+						type="image/avif"
+						alt="background"
+					/>
+					<source
+						srcSet={backgroundTabletWebp}
+						className="Hero-backgroundImage"
+						media="(max-width: 1024px)"
+						type="image/webp"
+						alt="background"
+					/>
+					<source
+						srcSet={backgroundDesktopAvif}
+						className="Hero-backgroundImage Hero-backgroundImage--desktop"
+						media="(min-width: 1024px)"
 						type="image/avif"
 						alt="background"
 					/>
 					<img
-						className="Hero-backgroundImage"
-						src={backgroundTabletWebp}
-						media="(min-width: 600px)"
+						srcSet={backgroundDesktopWebp}
+						className="Hero-backgroundImage Hero-backgroundImage--desktop"
+						media="(min-width: 1024px)"
 						type="image/webp"
 						alt="background"
 					/>
