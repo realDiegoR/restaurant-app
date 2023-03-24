@@ -10,10 +10,12 @@
 	}
 
 	&-day {
-		width: 5.25rem;
+		width: 9ch;
 		text-align: end;
 		text-transform: capitalize;
 	}
 	&-openingHours {
+		width: 16ch;
+		text-align: start;
 	}
 }

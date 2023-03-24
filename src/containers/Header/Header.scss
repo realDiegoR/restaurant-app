@@ -9,26 +9,113 @@
 
 	.Wrapper {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
 	}
 
 	&-logo {
 		width: 9em;
+		@media screen and (min-width: 37.5rem) {
+			width: 12em;
+		}
+	}
+
+	&-content {
+		display: flex;
+		align-items: center;
+		gap: 2.5rem;
+	}
+
+	&-nav {
+		display: none;
+		width: 100%;
+		order: 3;
+
+		@media screen and (min-width: 64rem) {
+			display: block;
+			margin-top: 0.75rem;
+			padding-top: 0.75rem;
+			border-top: 2px solid var(--black);
+		}
+
+		@media screen and (min-width: 81.25rem) {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			width: auto;
+			order: unset;
+		}
+	}
+
+	&-ul {
+		display: flex;
+		justify-content: center;
+		gap: 1.5rem;
+	}
+
+	&-li {
+		position: relative;
+		font: 500 var(--sub) var(--main-font);
+		text-transform: capitalize;
+
+		.active {
+			font-weight: 700;
+		}
+
+		::after {
+			position: absolute;
+			content: "";
+			width: 90%;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			height: 3px;
+			bottom: -6px;
+			background-color: var(--black);
+			border-radius: 10px;
+			transform: scale(0);
+			transition: transform 300ms;
+		}
+
+		:hover::after {
+			transform: scale(1);
+		}
+	}
+
+	&-seeMenu {
+		display: none;
+
+		@media screen and (min-width: 37.5rem) {
+			display: block;
+		}
 	}
 
 	&-menu {
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: space-between;
-		width: 1.75em;
-		height: 1.15em;
+		width: 1.875rem;
+		height: 1.2rem;
 		cursor: pointer;
 
+		@media screen and (min-width: 37.5rem) {
+			width: 2.5rem;
+			height: 1.7rem;
+		}
+
+		@media screen and (min-width: 64rem) {
+			display: none;
+		}
+
 		& div {
-			height: 2.5px;
-			background-color: black;
+			height: 3px;
+			background-color: var(--black);
 			border-radius: 1em;
+
+			@media screen and (min-width: 37.5rem) {
+				height: 4px;
+			}
 		}
 	}
 }

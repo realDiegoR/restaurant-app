@@ -1,0 +1,10 @@
+.Pastelito {
+	position: absolute;
+	display: none;
+	max-width: 39.375rem;
+	border-radius: 9999px;
+
+	@media screen and (min-width: 37.5rem) {
+		display: inline;
+	}
+}

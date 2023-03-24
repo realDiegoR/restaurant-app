@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useGlobalContext } from "@context/Provider";
+import { useLocaleContext } from "@context/Locale";
 import { Icon } from "@components/Icon/Icon";
 import "./DropdownMenu.scss";
 
@@ -8,7 +8,7 @@ export const DropdownMenu = ({ setDropdownMenuIsOpen, dropdownMenuIsOpen }) => {
 		es: {
 			navBar: { navLinks },
 		},
-	} = useGlobalContext();
+	} = useLocaleContext();
 
 	const closeDropdownMenu = () => {
 		setDropdownMenuIsOpen((prevState) => !prevState);

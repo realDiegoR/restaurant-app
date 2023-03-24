@@ -1,8 +1,9 @@
 import { createContext, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
-import pataconImg from "@assets/ui/patacon.jpg";
+import pataconAvif from "@assets/ui/patacon.avif";
+import pataconWebp from "@assets/ui/patacon.webp";
 
-const appData = {
+const localesData = {
 	es: {
 		navBar: {
 			navLinks: [
@@ -46,7 +47,10 @@ const appData = {
 					description:
 						"Platano frito, carne mechada, queso blanco, aguacate, ajo, salsa.",
 					img: {
-						src: pataconImg,
+						src: {
+							avif: pataconAvif,
+							webp: pataconWebp,
+						},
 						alt: "Patacón de Veranalia",
 					},
 					callToAction: "añadir a la compra",
@@ -106,6 +110,12 @@ const appData = {
 					name: "sábado",
 					openingHours: "8:00 AM - 11:30 PM",
 					dayId: 6,
+				},
+				{
+					id: uuidv4(),
+					name: "domingo",
+					openingHours: "8:00 AM - 11:30 PM",
+					dayId: 0,
 				},
 			],
 		},
@@ -313,14 +323,16 @@ const appData = {
 	},
 };
 
-export const GlobalContext = createContext();
+export const LocaleContext = createContext();
 
-export const Provider = ({ children }) => {
+export const Locale = ({ children }) => {
 	return (
-		<GlobalContext.Provider value={appData}>{children}</GlobalContext.Provider>
+		<LocaleContext.Provider value={localesData}>
+			{children}
+		</LocaleContext.Provider>
 	);
 };
 
-export const useGlobalContext = () => {
-	return useContext(GlobalContext);
+export const useLocaleContext = () => {
+	return useContext(LocaleContext);
 };

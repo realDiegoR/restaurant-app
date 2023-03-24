@@ -1,10 +1,16 @@
 .WhoAreWe {
 	position: relative;
-	display: flex;
-	flex-flow: column nowrap;
-	align-items: flex-start;
-	gap: 1em;
 	padding: var(--sectionPadding);
+	overflow: hidden;
+
+	.Wrapper {
+		position: relative;
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: flex-start;
+		gap: 1em;
+		z-index: 1;
+	}
 
 	&-title {
 		font-family: var(--strong-font);
@@ -15,6 +21,7 @@
 	}
 
 	&-pitch {
+		max-width: 65ch;
 	}
 
 	&-text {
@@ -23,24 +30,5 @@
 		font-size: var(--paragraph);
 		font-weight: 400;
 		z-index: 1;
-	}
-
-	&-decorationBall {
-		position: absolute;
-		color: var(--white);
-		width: 0.85rem;
-		height: 0.85rem;
-
-		&:nth-of-type(1) {
-			bottom: 50vw;
-			right: 10vw;
-		}
-
-		&:nth-of-type(2) {
-			width: 0.55rem;
-			height: 0.55rem;
-			bottom: 5.5vw;
-			left: 4vw;
-		}
 	}
 }

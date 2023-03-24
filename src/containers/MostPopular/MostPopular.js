@@ -1,11 +1,11 @@
-import { useGlobalContext } from "@context/Provider";
+import { useLocaleContext } from "@context/Locale";
 import { PopularMealItem } from "@components/PopularMealItem/PopularMealItem";
 import "./MostPopular.scss";
 
 export const MostPopular = () => {
 	const {
 		es: { mostPopular },
-	} = useGlobalContext();
+	} = useLocaleContext();
 
 	return (
 		<section className="MostPopular">

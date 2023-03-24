@@ -1,0 +1,8 @@
+@mixin hover {
+	transform: scale(1);
+	transition: 300ms;
+
+	&:hover {
+		transform: scale(0.95);
+	}
+}

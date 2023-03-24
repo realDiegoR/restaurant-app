@@ -1,22 +1,57 @@
+@import "/src/styles/main.scss";
+
 .PopularMealItem {
-	display: flex;
-	flex-flow: column nowrap;
-	gap: 1.25rem;
-	padding: 1.25rem;
+	width: 100%;
 	background-color: var(--white);
 	border-radius: 0.25rem;
+	overflow: hidden;
+
+	@media screen and (min-width: 37.5rem) {
+		display: flex;
+	}
+
+	&-picture {
+		&--mobile {
+			@media screen and (min-width: 37.5rem) {
+				display: none;
+			}
+		}
+
+		&--desktop {
+			display: none;
+			width: 80%;
+			max-width: 22.375rem;
+			@media screen and (min-width: 37.5rem) {
+				display: block;
+			}
+		}
+	}
+
+	&-image {
+		&--desktop {
+			height: 100%;
+		}
+
+		&--mobile {
+			aspect-ratio: 16 / 9;
+			border-radius: 2px;
+		}
+	}
+
+	&-itemInfo {
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 1.25rem;
+		flex-grow: 1;
+		padding: 1.25rem;
+	}
 
 	&-promotion {
 		padding-bottom: 0.25rem;
 		font-size: var(--paragraph);
 		font-weight: 700;
 		color: var(--brand-red);
-		// text-align: center;
 		transform: rotate(358deg);
-	}
-	&-image {
-		aspect-ratio: 16 / 9;
-		border-radius: 2px;
 	}
 
 	&-importantInfo {
@@ -41,5 +76,7 @@
 		text-align: center;
 		text-transform: uppercase;
 		border-radius: 0.25rem;
+
+		@include hover;
 	}
 }

@@ -1,11 +1,11 @@
-import { useGlobalContext } from "@context/Provider";
+import { useLocaleContext } from "@context/Locale";
 import { Location } from "@components/Location/Location";
 import "./WhereAreWe.scss";
 
 export const WhereAreWe = () => {
 	const {
 		es: { whereAreWe },
-	} = useGlobalContext();
+	} = useLocaleContext();
 	return (
 		<section className="WhereAreWe">
 			<div className="Wrapper">
