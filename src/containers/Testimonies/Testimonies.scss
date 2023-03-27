@@ -1,0 +1,17 @@
+.Testimonies {
+	padding: var(--sectionPadding);
+
+	.Wrapper {
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 2.5rem;
+	}
+
+	&-title {
+		font-family: var(--strong-font);
+		font-size: var(--heading-01);
+		font-weight: 700;
+		text-transform: capitalize;
+		color: var(--white);
+	}
+}

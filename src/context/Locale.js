@@ -8,12 +8,12 @@ const localesData = {
 		navBar: {
 			navLinks: [
 				{ id: uuidv4(), text: "home", path: "/" },
-				{ id: uuidv4(), text: "ver menú", onlyMobile: true, path: "/xd" },
+				{ id: uuidv4(), text: "ver menú", onlyMobile: true, path: "/menu" },
 				{ id: uuidv4(), text: "quienes somos", path: "/who-are-we" },
-				{ id: uuidv4(), text: "lo más popular", path: "/xd" },
+				{ id: uuidv4(), text: "lo más popular", path: "/most-popular" },
 				{ id: uuidv4(), text: "ubicación", path: "/location" },
-				{ id: uuidv4(), text: "horario", path: "/xd" },
-				{ id: uuidv4(), text: "testimonios", path: "/xd" },
+				{ id: uuidv4(), text: "horario", path: "/schedule" },
+				{ id: uuidv4(), text: "testimonios", path: "/testimonies" },
 			],
 			callToAction: "Ver Menú",
 		},
@@ -143,6 +143,9 @@ const localesData = {
 				],
 			},
 			lovelyNote: "Desarrolado por realdiegor",
+		},
+		testimonies: {
+			title: "Testimonios de nuestros clientes",
 		},
 		foodMenu: {
 			mobileSectionButtons: [
