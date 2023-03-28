@@ -271,63 +271,96 @@ const localesData = {
 			breakfast: [
 				{
 					id: uuidv4(),
-					title: "Desayuno",
-					seeImageText: "Ver Imagen",
+					title: "Empanadas",
 					meals: [
 						{
 							id: uuidv4(),
-							title: "Empanadas",
 							text: "Elaboradas con harina de maíz rellenos: carne, molida, jamón y queso, solo queso o pollo",
 							price: 2.99,
 						},
+					],
+				},
+				{
+					id: uuidv4(),
+					title: "tequeños",
+					orientation: "left",
+					meals: [
 						{
 							id: uuidv4(),
-							title: "tequeños",
 							text: "Elaborados con harina de trigo, rellenos de queso",
 							price: 2.5,
-							orientation: "left",
 						},
+					],
+				},
+				{
+					id: uuidv4(),
+					title: "Pastelitos",
+					meals: [
 						{
 							id: uuidv4(),
-							title: "Pastelitos",
 							text: "Elaborados con harina de trigo. Rellenos: carne molida, jamón y queso, solo queso, pollo o pizza",
 							price: 2.99,
 						},
+					],
+				},
+				{
+					id: uuidv4(),
+					title: "mandocas",
+					color: "yellow",
+					orientation: "left",
+					meals: [
 						{
 							id: uuidv4(),
-							title: "mandocas",
 							text: "Elaboradas con harina de maíz, plátano, queso y panela",
 							price: 2.5,
-							color: "yellow",
-							orientation: "left",
 						},
+					],
+				},
+				{
+					id: uuidv4(),
+					title: "tequeyoyo",
+					orientation: "left",
+					meals: [
 						{
 							id: uuidv4(),
-							title: "tequeyoyo",
 							text: "Hecho con harina de trigo, relleno de plátano, queso y jamón",
 							price: 3.5,
-							orientation: "left",
 						},
+					],
+				},
+				{
+					id: uuidv4(),
+					title: "papitas de yuca",
+					meals: [
 						{
 							id: uuidv4(),
-							title: "papitas de yuca",
 							text: "Una bola hecha de yuca rellena con queso",
 							price: 2.5,
 						},
+					],
+				},
+				{
+					id: uuidv4(),
+					title: "Arepa",
+					color: "red",
+					meals: [
 						{
 							id: uuidv4(),
-							title: "Arepa",
 							text: "Hecha con harina de maíz. Rellenos: Carne mechada, pollo esmechado, jamón y queso, solo queso, pollo o huevos",
 							price: 9.99,
-							color: "red",
 						},
+					],
+				},
+				{
+					id: uuidv4(),
+					title: "desayuno criollo",
+					color: "red",
+					orientation: "left",
+					meals: [
 						{
 							id: uuidv4(),
-							title: "desayuno criollo",
 							text: "Hecha con harina de maíz. Rellenos: Carne mechada, pollo esmechado, jamón y queso, solo queso, pollo o huevos",
 							price: 2.99,
-							color: "red",
-							orientation: "left",
 						},
 					],
 				},

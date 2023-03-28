@@ -24,6 +24,11 @@
 		color: var(--black);
 	}
 
+	&--red {
+		background-color: var(--brand-red);
+		color: var(--white);
+	}
+
 	&--left {
 		.MealCategory-title {
 			text-align: start;

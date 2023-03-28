@@ -1,9 +1,12 @@
 .MenuPage {
-	position: relative;
 	padding-top: 3.85rem;
 	margin: 0 auto;
 	background-color: var(--black);
 	color: var(--white);
+
+	.Wrapper {
+		position: relative;
+	}
 
 	&-imagotype {
 		width: 70%;

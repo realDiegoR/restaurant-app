@@ -1,46 +1,40 @@
-import "./MealItem.scss";
 import { Icon } from "@components/Icon/Icon";
+import "./MealItem.scss";
 
 export const MealItem = ({ title, text, price, color, orientation }) => {
-	const getBgColor = () => {
-		if (color === "yellow") return "MealItem--yellow";
-		if (color === "red") return "MealItem--red";
-		return "";
+	const getModifiers = () => {
+		let modifiers = "";
+
+		if (color === "yellow") modifiers += " MealItem--yellow";
+		if (color === "red") modifiers += " MealItem--red";
+		if (orientation === "left") modifiers += " MealItem--left";
+
+		return modifiers;
 	};
 
-	const getOrientation = () => {
-		if (orientation === "left") return "MealItem--left";
-		return "";
-	};
+	if (title)
+		return (
+			<li className={`MealItem MealItem--big ${getModifiers()}`}>
+				<div className="MealItem-heavyInfo">
+					<p className="MealItem-title">{title}</p>
+					<p className="MealItem-price">${price.toFixed(2)}</p>
+					<button className="MealItem-button">
+						<Icon name="plus" />
+					</button>
+				</div>
+				<p className="MealItem-text">{text}</p>
+			</li>
+		);
 
 	return (
-		<li
-			className={`MealItem ${getOrientation()} ${getBgColor()} ${
-				title ? "MealItem--big" : ""
-			}`}
-		>
-			{title ? (
-				<>
-					<div className="MealItem-heavyInfo">
-						<p className="MealItem-title">{title}</p>
-						<p className="MealItem-price">${price.toFixed(2)}</p>
-						<button className="MealItem-button">
-							<Icon name="plus" />
-						</button>
-					</div>
-					<p className="MealItem-text">{text}</p>
-				</>
-			) : (
-				<>
-					<p className="MealItem-text">{text}</p>
-					<div className="MealItem-heavyInfo">
-						<p className="MealItem-price">${price.toFixed(2)}</p>
-						<button className="MealItem-button">
-							<Icon name="plus" />
-						</button>
-					</div>
-				</>
-			)}
+		<li className={`MealItem ${getModifiers()}`}>
+			<p className="MealItem-text">{text}</p>
+			<div className="MealItem-heavyInfo">
+				<p className="MealItem-price">${price.toFixed(2)}</p>
+				<button className="MealItem-button">
+					<Icon name="plus" />
+				</button>
+			</div>
 		</li>
 	);
 };
