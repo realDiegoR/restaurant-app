@@ -148,18 +148,22 @@ const localesData = {
 			title: "Testimonios de nuestros clientes",
 		},
 		foodMenu: {
+			breakfastTitle: "Desayuno",
 			mobileSectionButtons: [
 				{
 					id: uuidv4(),
 					name: "Principal",
+					keyname: "main",
 				},
 				{
 					id: uuidv4(),
 					name: "Desayuno",
+					keyname: "breakfast",
 				},
 			],
-			categories: {
-				appetizers: {
+			main: [
+				{
+					id: uuidv4(),
 					title: "Entradas",
 					seeImageText: "Ver Imagen",
 					meals: [
@@ -185,9 +189,11 @@ const localesData = {
 						},
 					],
 				},
-				children: {
+				{
+					id: uuidv4(),
 					title: "menú infantil",
 					seeImageText: "Ver Imagen",
+					color: "yellow",
 					meals: [
 						{
 							id: uuidv4(),
@@ -201,7 +207,8 @@ const localesData = {
 						},
 					],
 				},
-				extras: {
+				{
+					id: uuidv4(),
 					title: "Extras",
 					seeImageText: "Ver Imagen",
 					meals: [
@@ -237,9 +244,11 @@ const localesData = {
 						},
 					],
 				},
-				drinks: {
+				{
+					id: uuidv4(),
 					title: "Bebidas",
 					seeImageText: "Ver Imagen",
+					orientation: "left",
 					meals: [
 						{
 							id: uuidv4(),
@@ -258,7 +267,10 @@ const localesData = {
 						},
 					],
 				},
-				breakfast: {
+			],
+			breakfast: [
+				{
+					id: uuidv4(),
 					title: "Desayuno",
 					seeImageText: "Ver Imagen",
 					meals: [
@@ -273,6 +285,7 @@ const localesData = {
 							title: "tequeños",
 							text: "Elaborados con harina de trigo, rellenos de queso",
 							price: 2.5,
+							orientation: "left",
 						},
 						{
 							id: uuidv4(),
@@ -285,13 +298,15 @@ const localesData = {
 							title: "mandocas",
 							text: "Elaboradas con harina de maíz, plátano, queso y panela",
 							price: 2.5,
-							backgroundColor: "yellow",
+							color: "yellow",
+							orientation: "left",
 						},
 						{
 							id: uuidv4(),
 							title: "tequeyoyo",
 							text: "Hecho con harina de trigo, relleno de plátano, queso y jamón",
 							price: 3.5,
+							orientation: "left",
 						},
 						{
 							id: uuidv4(),
@@ -304,18 +319,19 @@ const localesData = {
 							title: "Arepa",
 							text: "Hecha con harina de maíz. Rellenos: Carne mechada, pollo esmechado, jamón y queso, solo queso, pollo o huevos",
 							price: 9.99,
-							backgroundColor: "red",
+							color: "red",
 						},
 						{
 							id: uuidv4(),
 							title: "desayuno criollo",
 							text: "Hecha con harina de maíz. Rellenos: Carne mechada, pollo esmechado, jamón y queso, solo queso, pollo o huevos",
 							price: 2.99,
-							backgroundColor: "red",
+							color: "red",
+							orientation: "left",
 						},
 					],
 				},
-			},
+			],
 			cartButtonText: "Ver Carrito",
 		},
 		cart: {

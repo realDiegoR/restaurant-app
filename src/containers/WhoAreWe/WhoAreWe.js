@@ -21,7 +21,11 @@ export const WhoAreWe = () => {
 						</p>
 					))}
 				</div>
-				<LinkButton icon={<Icon name="menu" />} text={whoAreWe.callToAction} />
+				<LinkButton
+					icon={<Icon name="menu" />}
+					text={whoAreWe.callToAction}
+					to="/menu"
+				/>
 			</div>
 
 			<DecorationDot bottom="55vw" right="7vw" size=".85rem" />

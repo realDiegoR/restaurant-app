@@ -1,0 +1,123 @@
+.MealItem {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 0.9375rem;
+	border-radius: 4px;
+
+	&-title {
+		font: 700 var(--heading-02) var(--strong-font);
+		text-transform: uppercase;
+	}
+
+	&-text {
+		font: 500 var(--paragraph) var(--main-font);
+		text-align: end;
+	}
+
+	&-heavyInfo {
+		display: flex;
+		align-items: center;
+		gap: 0.3125rem;
+		font: 600 var(--paragraph) var(--main-font);
+	}
+
+	&-price {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-width: 4.375rem;
+		max-width: 4.6875rem;
+		padding: 0.3125rem 0.625rem;
+		background-color: var(--brand-red);
+		border-radius: 4px;
+	}
+
+	&-button {
+		height: 2.0625rem;
+		padding: 4px;
+		aspect-ratio: 1 / 1;
+		border: 2px solid var(--black);
+		background-color: var(--brand-yellow);
+		color: var(--black);
+		font: 700 var(--heading-02) var(--main-font);
+		border-radius: 4px;
+	}
+
+	&--yellow,
+	&--red {
+		.MealItem-text {
+			font-weight: 600;
+		}
+
+		&.MealItem--big {
+			padding: 1.5625rem 0.9375rem;
+		}
+	}
+
+	&--yellow {
+		.MealItem-price {
+			background-color: var(--black);
+			color: var(--white);
+		}
+
+		.MealItem-button {
+			border-color: var(--black);
+			background-color: var(--brand-red);
+			color: var(--white);
+		}
+
+		&.MealItem--big {
+			background-color: var(--brand-yellow);
+			color: var(--black);
+		}
+	}
+
+	&--red {
+		.MealItem-price {
+			background-color: var(--black);
+			color: var(--white);
+		}
+
+		.MealItem-button {
+			border-color: var(--black);
+			background-color: var(--white);
+			color: var(--black);
+		}
+
+		&.MealItem--big {
+			background-color: var(--brand-red);
+			color: var(--white);
+		}
+	}
+
+	&--left {
+		flex-flow: row-reverse nowrap;
+
+		.MealItem-text {
+			text-align: start;
+		}
+
+		.MealItem-boxes {
+			flex-flow: row-reverse nowrap;
+		}
+
+		&.MealItem--big {
+			justify-content: flex-start;
+			text-align: start;
+		}
+	}
+
+	&--big {
+		flex-flow: row wrap;
+
+		.MealItem-heavyInfo {
+			gap: 0.625rem;
+		}
+
+		&.MealItem--yelow {
+			background-color: var(--brand-yellow);
+			color: red;
+		}
+	}
+}

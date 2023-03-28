@@ -47,7 +47,7 @@ export const Header = ({ dropdownMenuIsOpen, setDropdownMenuIsOpen }) => {
 				</nav>
 				<div className="Header-content">
 					<span className="Header-seeMenu">
-						<LinkButton text="Ver Menú" />
+						<LinkButton text="Ver Menú" to="/menu" />
 					</span>
 					<div className="Header-menu" onClick={openDropdownMenu}>
 						<div></div>
