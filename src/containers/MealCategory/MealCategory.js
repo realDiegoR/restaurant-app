@@ -1,4 +1,3 @@
-import { MealItem } from "@components/MealItem/MealItem";
 import "./MealCategory.scss";
 
 export const MealCategory = ({
@@ -6,6 +5,7 @@ export const MealCategory = ({
 	meals,
 	color,
 	orientation,
+	renderMealItem,
 	type = "normal",
 }) => {
 	const getModifiers = () => {
@@ -24,14 +24,9 @@ export const MealCategory = ({
 				<div className="Wrapper">
 					<h2 className="MealCategory-title">{title}</h2>
 					<ul className="MealCategory-ul">
-						{meals.map((meal) => (
-							<MealItem
-								key={meal.id}
-								{...meal}
-								color={color}
-								orientation={orientation}
-							/>
-						))}
+						{meals.map((meal) =>
+							renderMealItem({ key: meal.id, itemInfo: { ...meal } })
+						)}
 					</ul>
 				</div>
 			</section>
@@ -42,15 +37,9 @@ export const MealCategory = ({
 			<section className={`MealCategory ${getModifiers()}`}>
 				<div className="Wrapper">
 					<ul className="MealCategory-ul MealCategory-ul--big">
-						{meals.map((meal) => (
-							<MealItem
-								key={meal.id}
-								{...meal}
-								title={title}
-								color={color}
-								orientation={orientation}
-							/>
-						))}
+						{meals.map((meal) =>
+							renderMealItem({ key: meal.id, itemInfo: { ...meal, title } })
+						)}
 					</ul>
 				</div>
 			</section>

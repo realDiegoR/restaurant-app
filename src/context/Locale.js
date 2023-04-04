@@ -372,6 +372,11 @@ const localesData = {
 			callToAction: "Hacer Pedido",
 			goBack: "Seguir Comprando",
 		},
+		addItemPreview: {
+			title: "Cuantos quieres agregar al carrito?",
+			callToAction: "Agregar",
+			cancel: "Cancelar",
+		},
 	},
 };
 

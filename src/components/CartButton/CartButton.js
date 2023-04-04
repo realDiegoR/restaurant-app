@@ -1,16 +1,12 @@
-import { useLocaleContext } from "@context/Locale";
 import { Icon } from "@components/Icon/Icon";
 import "./CartButton.scss";
 
-export const CartButton = () => {
-	const {
-		es: { foodMenu },
-	} = useLocaleContext();
+export const CartButton = ({ text, openModal, itemCount }) => {
 	return (
-		<button type="button" className="CartButton">
+		<button type="button" className="CartButton" onClick={openModal}>
 			<Icon name="cart" />
-			<span className="CartButton-text">{foodMenu.cartButtonText}</span>
-			<span className="CartButton-counter">0</span>
+			<span className="CartButton-text">{text}</span>
+			<span className="CartButton-counter">{itemCount}</span>
 		</button>
 	);
 };

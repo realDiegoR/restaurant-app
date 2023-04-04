@@ -62,11 +62,12 @@
 	&-sectionDivider {
 		display: flex;
 		flex-flow: column nowrap;
+		padding: 0 0 6rem;
 
 		@media screen and (min-width: 43.75rem) {
 			flex-flow: row nowrap;
 			justify-content: center;
-			padding: 5rem 0;
+			padding: 6rem 0 9rem;
 		}
 	}
 

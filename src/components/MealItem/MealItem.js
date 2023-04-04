@@ -1,7 +1,9 @@
 import { Icon } from "@components/Icon/Icon";
 import "./MealItem.scss";
 
-export const MealItem = ({ title, text, price, color, orientation }) => {
+export const MealItem = ({ color, orientation, openModal, itemInfo }) => {
+	const { title, text, price } = itemInfo;
+
 	const getModifiers = () => {
 		let modifiers = "";
 
@@ -12,13 +14,17 @@ export const MealItem = ({ title, text, price, color, orientation }) => {
 		return modifiers;
 	};
 
+	const openPreviewModal = () => {
+		openModal({ ...itemInfo, title: title ?? text });
+	};
+
 	if (title)
 		return (
 			<li className={`MealItem MealItem--big ${getModifiers()}`}>
 				<div className="MealItem-heavyInfo">
 					<p className="MealItem-title">{title}</p>
 					<p className="MealItem-price">${price.toFixed(2)}</p>
-					<button className="MealItem-button">
+					<button onClick={openPreviewModal} className="MealItem-button">
 						<Icon name="plus" />
 					</button>
 				</div>
@@ -31,7 +37,7 @@ export const MealItem = ({ title, text, price, color, orientation }) => {
 			<p className="MealItem-text">{text}</p>
 			<div className="MealItem-heavyInfo">
 				<p className="MealItem-price">${price.toFixed(2)}</p>
-				<button className="MealItem-button">
+				<button onClick={openPreviewModal} className="MealItem-button">
 					<Icon name="plus" />
 				</button>
 			</div>

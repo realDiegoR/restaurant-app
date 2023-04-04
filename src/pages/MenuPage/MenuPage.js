@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useLocaleContext } from "@context/Locale";
+import { useCart } from "../../hooks/useCart";
 import { MealCategory } from "@containers/MealCategory/MealCategory";
+import { MealItem } from "@components/MealItem/MealItem";
+import { Cart } from "@containers/Cart/Cart";
 import { CartButton } from "@components/CartButton/CartButton";
+import { AddItemPreview } from "../../containers/AddItemPreview/AddItemPreview";
 import imagotypeAvif from "@assets/brand/veranalia_imagotype.avif";
 import imagotypeWebp from "@assets/brand/veranalia_imagotype.webp";
 import "./MenuPage.scss";
@@ -10,9 +14,35 @@ export const MenuPage = () => {
 	const {
 		es: { foodMenu },
 	} = useLocaleContext();
+	const {
+		cartItems,
+		itemCount,
+		totalPrice,
+		addItem,
+		deleteItem,
+		itemPreview,
+		previewAddItem,
+	} = useCart();
 	const [currentSection, setCurrentSection] = useState("main");
+	const [showCartModal, setShowCartModal] = useState(false);
+	const [showItemPreviewModal, setShowItemPreviewModal] = useState(false);
+
 	const changeSection = (section) => {
 		setCurrentSection(section);
+	};
+
+	const openItemPreviewModal = (item) => {
+		previewAddItem(item);
+		setShowItemPreviewModal(true);
+	};
+
+	const closeModal = (modal) => {
+		if (modal === "cart") return setShowCartModal(false);
+		if (modal === "addItemPreview") {
+			setShowItemPreviewModal(false);
+			previewAddItem(null);
+			return;
+		}
 	};
 
 	return (
@@ -65,7 +95,19 @@ export const MenuPage = () => {
 							/>
 						</picture>
 						{foodMenu.main.map((foodCategory) => (
-							<MealCategory key={foodCategory.id} {...foodCategory} />
+							<MealCategory
+								key={foodCategory.id}
+								{...foodCategory}
+								renderMealItem={({ key, itemInfo }) => (
+									<MealItem
+										key={key}
+										itemInfo={itemInfo}
+										color={foodCategory.color}
+										orientation={foodCategory.orientation}
+										openModal={(item) => openItemPreviewModal(item)}
+									/>
+								)}
+							/>
 						))}
 					</section>
 					<section
@@ -83,11 +125,40 @@ export const MenuPage = () => {
 								key={foodCategory.id}
 								{...foodCategory}
 								type="expanded"
+								renderMealItem={({ key, itemInfo }) => (
+									<MealItem
+										key={key}
+										itemInfo={itemInfo}
+										color={foodCategory.color}
+										orientation={foodCategory.orientation}
+										openModal={(item) => openItemPreviewModal(item)}
+									/>
+								)}
 							/>
 						))}
 					</section>
 				</div>
-				<CartButton />
+				<CartButton
+					itemCount={itemCount}
+					openModal={() => setShowCartModal(true)}
+					text={foodMenu.cartButtonText}
+				/>
+				{showCartModal && (
+					<Cart
+						itemCount={itemCount}
+						cartItems={cartItems}
+						totalPrice={totalPrice}
+						deleteItem={deleteItem}
+						onClose={() => closeModal("cart")}
+					/>
+				)}
+				{showItemPreviewModal && (
+					<AddItemPreview
+						itemPreview={itemPreview}
+						addItem={addItem}
+						onClose={() => closeModal("addItemPreview")}
+					/>
+				)}
 			</div>
 		</main>
 	);

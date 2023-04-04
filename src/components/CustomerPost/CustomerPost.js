@@ -1,12 +1,11 @@
-import { useState } from "react";
 import { LoadingContent } from "@components/LoadingContent/LoadingContent";
 import "./CustomerPost.scss";
 
 export const CustomerPost = ({ userData = null, contentData = null }) => {
 	const post = contentData?.data[1];
 
-	const showData = () => {
-		return userData ? true : <LoadingContent />;
+	const hasLoaded = () => {
+		return <LoadingContent />;
 	};
 
 	return (
