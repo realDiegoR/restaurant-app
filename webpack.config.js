@@ -4,11 +4,14 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require("dotenv-webpack");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
 	mode: "production",
 	output: {
 		path: path.resolve(__dirname, "dist"),
+		filename: "[name].[contenthash].js",
+		chunkFilename: "[name].js",
 		assetModuleFilename: "assets/[name].[hash][ext]",
 		clean: true,
 	},
@@ -20,6 +23,7 @@ module.exports = {
 			"@containers": path.resolve(__dirname, "./src/containers/"),
 			"@context": path.resolve(__dirname, "./src/context/"),
 			"@styles": path.resolve(__dirname, "./src/styles/"),
+			"@hooks": path.resolve(__dirname, "./src/hooks/"),
 		},
 	},
 	module: {
@@ -60,9 +64,11 @@ module.exports = {
 		new Dotenv({
 			systemvars: true,
 		}),
+		new BundleAnalyzerPlugin(),
 	],
 	optimization: {
 		minimize: true,
 		minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
+		// chunkIds: "named",
 	},
 };

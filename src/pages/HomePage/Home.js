@@ -6,7 +6,7 @@ import { Schedule } from "@containers/Schedule/Schedule";
 import { Footer } from "@containers/Footer/Footer";
 import "./Home.scss";
 
-export const Home = () => {
+const Home = () => {
 	return (
 		<section className="Home">
 			<Hero />
@@ -18,3 +18,5 @@ export const Home = () => {
 		</section>
 	);
 };
+
+export default Home;

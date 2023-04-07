@@ -2,7 +2,7 @@ import { WhoAreWe } from "@containers/WhoAreWe/WhoAreWe";
 import { Footer } from "@containers/Footer/Footer";
 import "./WhoAreWePage.scss";
 
-export const WhoAreWePage = () => {
+const WhoAreWePage = () => {
 	return (
 		<main className="WhoAreWePage">
 			<WhoAreWe />
@@ -10,3 +10,5 @@ export const WhoAreWePage = () => {
 		</main>
 	);
 };
+
+export default WhoAreWePage;

@@ -1,13 +1,13 @@
-import { HashRouter, Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
+import { Suspense, lazy, useState } from "react";
 import { Header } from "@containers/Header/Header";
-import { Home } from "./HomePage/Home";
-import { MenuPage } from "./MenuPage/MenuPage";
-import { WhoAreWePage } from "./WhoAreWePage/WhoAreWePage";
-import { MostPopularPage } from "./MostPopularPage/MostPopularPage";
-import { LocationPage } from "./LocationPage/LocationPage";
-import { SchedulePage } from "./SchedulePage/SchedulePage";
-import { TestimoniesPage } from "./TestimoniesPage/TestimoniesPage";
+const Home = lazy(() => import("./HomePage/Home"));
+const MenuPage = lazy(() => import("./MenuPage/MenuPage"));
+const WhoAreWePage = lazy(() => import("./WhoAreWePage/WhoAreWePage"));
+const MostPopularPage = lazy(() => import("./MostPopularPage/MostPopularPage"));
+const LocationPage = lazy(() => import("./LocationPage/LocationPage"));
+const SchedulePage = lazy(() => import("./SchedulePage/SchedulePage"));
+const TestimoniesPage = lazy(() => import("./TestimoniesPage/TestimoniesPage"));
 
 export const App = () => {
 	const [dropdownMenuIsOpen, setDropdownMenuIsOpen] = useState(false);
@@ -17,16 +17,18 @@ export const App = () => {
 				dropdownMenuIsOpen={dropdownMenuIsOpen}
 				setDropdownMenuIsOpen={setDropdownMenuIsOpen}
 			/>
-
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/menu" element={<MenuPage />} />
-				<Route path="/who-are-we" element={<WhoAreWePage />} />
-				<Route path="/most-popular" element={<MostPopularPage />} />
-				<Route path="/location" element={<LocationPage />} />
-				<Route path="/schedule" element={<SchedulePage />} />
-				<Route path="/testimonies" element={<TestimoniesPage />} />
-			</Routes>
+			<Suspense fallback={<p>holis</p>}>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/menu" element={<MenuPage />} />
+					<Route path="/who-are-we" element={<WhoAreWePage />} />
+					<Route path="/most-popular" element={<MostPopularPage />} />
+					<Route path="/location" element={<LocationPage />} />
+					<Route path="/schedule" element={<SchedulePage />} />
+					<Route path="/testimonies" element={<TestimoniesPage />} />
+					<Route path="*" element={<Navigate to="/" />} />
+				</Routes>
+			</Suspense>
 		</HashRouter>
 	);
 };

@@ -2,7 +2,7 @@ import { WhereAreWe } from "@containers/WhereAreWe/WhereAreWe";
 import "./LocationPage.scss";
 import { Footer } from "@containers/Footer/Footer";
 
-export const LocationPage = () => {
+const LocationPage = () => {
 	return (
 		<main className="LocationPage">
 			<WhereAreWe />
@@ -10,3 +10,5 @@ export const LocationPage = () => {
 		</main>
 	);
 };
+
+export default LocationPage;

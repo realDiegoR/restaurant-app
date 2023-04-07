@@ -36,7 +36,7 @@ export const useCart = () => {
 		.reduce((acc, current) => acc + current.totalPrice, 0)
 		.toFixed(2);
 
-	const previewAddItem = (newItem) => {
+	const addPreviewItem = (newItem) => {
 		setItemPreview(newItem);
 	};
 
@@ -80,6 +80,6 @@ export const useCart = () => {
 		addItem,
 		deleteItem,
 		itemPreview,
-		previewAddItem,
+		addPreviewItem,
 	};
 };

@@ -70,11 +70,29 @@
 	}
 
 	&-buttons {
+		position: relative;
 		display: flex;
-		// flex-flow: column nowrap;
 		justify-content: center;
 		align-items: center;
 		gap: 1.5rem;
+	}
+
+	&-thanks {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		font: 600 var(--paragraph) var(--main-font);
+		color: var(--brand-red);
+		opacity: 0;
+		transform: translateY(-1rem);
+		transition: 600ms transform, 600ms opacity;
+
+		&--fade-in {
+			opacity: 1;
+			transform: translateY(-3.25rem);
+		}
 	}
 
 	&-add {

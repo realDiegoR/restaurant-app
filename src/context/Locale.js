@@ -63,7 +63,7 @@ const localesData = {
 				{
 					id: uuidv4(),
 					name: "Duluth",
-					place: "3099 Breckinridge Blvd, Duluth, GA 30096",
+					place: "645 S Cobb Pkway SE, Duluth, GA 30096",
 					phoneNumber: "(XXX) XXX XXXX",
 					coordinates: {
 						alt: "",
@@ -374,6 +374,7 @@ const localesData = {
 		},
 		addItemPreview: {
 			title: "Cuantos quieres agregar al carrito?",
+			success: "Agregado con éxito",
 			callToAction: "Agregar",
 			cancel: "Cancelar",
 		},

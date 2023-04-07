@@ -3,7 +3,7 @@ import { Schedule } from "@containers/Schedule/Schedule";
 import { Footer } from "@containers/Footer/Footer";
 import "./SchedulePage.scss";
 
-export const SchedulePage = () => {
+const SchedulePage = () => {
 	return (
 		<main className="SchedulePage">
 			<Schedule />
@@ -11,3 +11,5 @@ export const SchedulePage = () => {
 		</main>
 	);
 };
+
+export default SchedulePage;

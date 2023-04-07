@@ -9,6 +9,7 @@ export const AddItemPreview = ({ itemPreview, addItem, onClose }) => {
 	} = useLocaleContext();
 	const [itemCount, setItemCount] = useState(1);
 	const [isMounting, setIsMounting] = useState(false);
+	const [hasAdded, setHasAdded] = useState(false);
 
 	const sumItem = () => {
 		if (itemCount === 30) return;
@@ -22,7 +23,8 @@ export const AddItemPreview = ({ itemPreview, addItem, onClose }) => {
 
 	const addToCart = () => {
 		addItem(itemPreview, itemCount);
-		onClose();
+		setHasAdded(true);
+		setTimeout(() => onClose(), 2000);
 	};
 
 	useEffect(() => {
@@ -56,11 +58,18 @@ export const AddItemPreview = ({ itemPreview, addItem, onClose }) => {
 					</div>
 				</div>
 				<div className="AddItemPreview-buttons">
-					<button className="AddItemPreview-add" onClick={addToCart}>
-						{addItemPreview.callToAction}
-					</button>
+					<span
+						className={`AddItemPreview-thanks ${
+							hasAdded ? "AddItemPreview-thanks--fade-in" : ""
+						}`}
+					>
+						{addItemPreview.success}
+					</span>
 					<button className="AddItemPreview-cancel" onClick={onClose}>
 						{addItemPreview.cancel}
+					</button>
+					<button className="AddItemPreview-add" onClick={addToCart}>
+						{addItemPreview.callToAction}
 					</button>
 				</div>
 			</div>

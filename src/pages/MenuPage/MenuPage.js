@@ -10,7 +10,7 @@ import imagotypeAvif from "@assets/brand/veranalia_imagotype.avif";
 import imagotypeWebp from "@assets/brand/veranalia_imagotype.webp";
 import "./MenuPage.scss";
 
-export const MenuPage = () => {
+const MenuPage = () => {
 	const {
 		es: { foodMenu },
 	} = useLocaleContext();
@@ -21,7 +21,7 @@ export const MenuPage = () => {
 		addItem,
 		deleteItem,
 		itemPreview,
-		previewAddItem,
+		addPreviewItem,
 	} = useCart();
 	const [currentSection, setCurrentSection] = useState("main");
 	const [showCartModal, setShowCartModal] = useState(false);
@@ -32,7 +32,7 @@ export const MenuPage = () => {
 	};
 
 	const openItemPreviewModal = (item) => {
-		previewAddItem(item);
+		addPreviewItem(item);
 		setShowItemPreviewModal(true);
 	};
 
@@ -40,7 +40,7 @@ export const MenuPage = () => {
 		if (modal === "cart") return setShowCartModal(false);
 		if (modal === "addItemPreview") {
 			setShowItemPreviewModal(false);
-			previewAddItem(null);
+			addPreviewItem(null);
 			return;
 		}
 	};
@@ -163,3 +163,5 @@ export const MenuPage = () => {
 		</main>
 	);
 };
+
+export default MenuPage;
