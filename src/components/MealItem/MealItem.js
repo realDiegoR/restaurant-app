@@ -37,7 +37,12 @@ export const MealItem = ({ color, orientation, openModal, itemInfo }) => {
 			<p className="MealItem-text">{text}</p>
 			<div className="MealItem-heavyInfo">
 				<p className="MealItem-price">${price.toFixed(2)}</p>
-				<button onClick={openPreviewModal} className="MealItem-button">
+				<button
+					onClick={openPreviewModal}
+					className="MealItem-button"
+					name="Add Item"
+					title="Add Item"
+				>
 					<Icon name="plus" />
 				</button>
 			</div>
