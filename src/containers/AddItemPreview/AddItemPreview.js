@@ -49,10 +49,18 @@ export const AddItemPreview = ({ itemPreview, addItem, onClose }) => {
 				<div className="AddItemPreview-countInfo">
 					<span className="AddItemPreview-itemCount">{itemCount}</span>
 					<div className="AddItemPreview-itemOperators">
-						<button className="AddItemPreview-button" onClick={sumItem}>
+						<button
+							className="AddItemPreview-button"
+							onClick={sumItem}
+							disabled={hasAdded}
+						>
 							+
 						</button>
-						<button className="AddItemPreview-button" onClick={substractItem}>
+						<button
+							className="AddItemPreview-button"
+							onClick={substractItem}
+							disabled={hasAdded}
+						>
 							-
 						</button>
 					</div>
@@ -68,7 +76,11 @@ export const AddItemPreview = ({ itemPreview, addItem, onClose }) => {
 					<button className="AddItemPreview-cancel" onClick={onClose}>
 						{addItemPreview.cancel}
 					</button>
-					<button className="AddItemPreview-add" onClick={addToCart}>
+					<button
+						className="AddItemPreview-add"
+						onClick={addToCart}
+						disabled={hasAdded}
+					>
 						{addItemPreview.callToAction}
 					</button>
 				</div>
