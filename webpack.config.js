@@ -4,7 +4,6 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require("dotenv-webpack");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
 	mode: "production",
@@ -64,11 +63,9 @@ module.exports = {
 		new Dotenv({
 			systemvars: true,
 		}),
-		new BundleAnalyzerPlugin(),
 	],
 	optimization: {
 		minimize: true,
 		minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
-		// chunkIds: "named",
 	},
 };
