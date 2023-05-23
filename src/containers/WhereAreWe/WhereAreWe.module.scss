@@ -1,0 +1,20 @@
+@import '@styles/utilities/mixins/wrapper';
+
+.WhereAreWe {
+	padding: var(--sectionPadding);
+	background-color: var(--black);
+	color: var(--white);
+
+	.Wrapper {
+		@include wrapper;
+	}
+
+	&-title {
+		color: var(--brand-yellow);
+		font: 700 var(--heading-01) var(--strong-font);
+		text-transform: capitalize;
+	}
+	&-locations {
+		margin-top: 2.5rem;
+	}
+}

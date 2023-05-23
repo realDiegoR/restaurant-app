@@ -1,0 +1,52 @@
+@import '@styles/utilities/mixins/wrapper';
+
+.Footer {
+	padding: var(--sectionPadding) 1.5rem;
+	background-color: var(--black);
+	color: var(--white);
+
+	.Wrapper {
+		@include wrapper;
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		gap: 3rem;
+
+		@media screen and (min-width: 37.5rem) {
+			flex-flow: row nowrap;
+			justify-content: center;
+			gap: 5rem;
+		}
+	}
+
+	&-section {
+		color: var(--brand-yellow);
+		font: 700 var(--heading-02) var(--strong-font);
+		text-align: center;
+	}
+	&-links {
+		display: flex;
+		justify-content: center;
+		gap: 1.75rem;
+		margin-top: 1rem;
+		color: var(--white);
+
+		li {
+			width: 2rem;
+			aspect-ratio: 1 / 1;
+		}
+	}
+
+	// &-logotype {
+	// 	width: 50%;
+	// 	max-width: 15rem;
+	// 	margin: 0 auto;
+	// 	margin-top: clamp(3.5rem, 11vw, 6rem);
+	// }
+
+	&-signature {
+		margin-top: 3rem;
+		font: 300 var(--sub) var(--main-font);
+		text-align: center;
+	}
+}

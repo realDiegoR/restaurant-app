@@ -1,5 +1,6 @@
-@use "./utilities/reset/_reset";
-@import "./utilities/mixins/_hover";
+@use "./utilities/reset/reset";
+@import "./utilities/mixins/hover";
+@import "./utilities/mixins/wrapper";
 
 :root {
 	/* Colors */
@@ -12,9 +13,6 @@
 	--gray-02: #2b2b2b;
 
 	/* Typography */
-	--main-font: "Quicksand", Helvetica, Arial, sans-serif;
-	--strong-font: "Sintony", Verdana, sans-serif;
-
 	--heading-01: clamp(1.75rem, 9.5vw, 2.875rem);
 	--heading-02: 1.75rem;
 	--paragraph: 1.125rem;
@@ -49,12 +47,6 @@
 		animation: none !important;
 		transition: none !important;
 	}
-}
-
-.Wrapper {
-	width: 90%;
-	max-width: 80rem;
-	margin: 0 auto;
 }
 
 .Overlay {
