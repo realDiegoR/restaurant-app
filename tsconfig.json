@@ -1,20 +1,20 @@
 {
 	"compilerOptions": {
-		"module": "commonjs" ,
-		"baseUrl": "./src/" ,
+		"module": "commonjs",
+		"baseUrl": "./",
 		"paths": {
-			"@assets/*": ["assets/*"],
-			"@components/*": ["components/*"],
-			"@common/*": ["common/*"],
-			"@layouts/*": ["layouts/*"],
-			"@context/*": ["context/*"],
-			"@hooks/*": ["hooks/*"],
-			"@styles/*": ["styles/*"],
+			"@assets/*": ["./src/assets/*"],
+			"@components/*": ["./src/components/*"],
+			"@common/*": ["./src/common/*"],
+			"@layouts/*": ["./src/layouts/*"],
+			"@context/*": ["./src/context/*"],
+			"@hooks/*": ["./src/hooks/*"],
+			"@styles/*": ["./src/styles/*"]
 		},
-		"esModuleInterop": true ,
-		"forceConsistentCasingInFileNames": true ,
-		"strict": true ,
-		"skipLibCheck": true ,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"skipLibCheck": true,
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
 		"noEmit": true,
@@ -23,7 +23,7 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"jsx": "preserve",
-    "allowUnreachableCode": true
+		"allowUnreachableCode": true
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
 	"exclude": ["node_modules"]
