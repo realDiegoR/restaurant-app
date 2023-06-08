@@ -1,16 +1,10 @@
-import { useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
-import { useLocaleContext } from "../../context/Locale";
-import { Icon } from "../../components/Icon/Icon";
-import "./Cart.scss";
+import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { useLocaleContext } from '@context/Locale';
+import { Icon } from '@common/Icon/Icon';
+import styles from './Cart.module.scss';
 
-export const Cart = ({
-	cartItems,
-	deleteItem,
-	itemCount,
-	totalPrice,
-	onClose,
-}) => {
+export const Cart = ({ cartItems, deleteItem, itemCount, totalPrice, onClose }) => {
 	const {
 		es: { cart },
 	} = useLocaleContext();
@@ -25,30 +19,30 @@ export const Cart = ({
 	return createPortal(
 		<>
 			<div
-				className={`Overlay ${isMounting ? "Overlay--fade-in" : ""}`}
+				className={`${styles['Overlay']} ${isMounting ? styles['Overlay--fade-in'] : ''}`}
 				onClick={onClose}
 			/>
 			<div
 				ref={cartRef}
-				className={`Cart ${isMounting ? "Cart--fade-in" : ""}`}
+				className={`${styles['Cart']} ${isMounting ? styles['Cart--fade-in'] : ''}`}
 			>
-				<div className="Cart-title">
+				<div className={styles['Cart-title']}>
 					<span>
 						<Icon name="cart" />
 					</span>
 					<h2>{cart.title}</h2>
 				</div>
-				<ul className="Cart-ul">
+				<ul className={styles['Cart-ul']}>
 					{itemCount ? (
 						cartItems.map((item) => (
-							<li className="Cart-item" key={item.title}>
-								<span className="Cart-count">{item.count}</span>
-								<p className="Cart-itemText">
+							<li className={styles['Cart-item']} key={item.title}>
+								<span className={styles['Cart-count']}>{item.count}</span>
+								<p className={styles['Cart-itemText']}>
 									{item.title}
 									<span>${item.totalPrice.toFixed(2)}</span>
 								</p>
 								<button
-									className="Cart-deleteItem"
+									className={styles['Cart-deleteItem']}
 									onClick={() => deleteItem(item.title)}
 								>
 									-
@@ -56,22 +50,22 @@ export const Cart = ({
 							</li>
 						))
 					) : (
-						<p className="Cart-emptyMessage">
+						<p className={styles['Cart-emptyMessage']}>
 							El carrito está vacío. <span>¿Te apetece algo?</span>
 						</p>
 					)}
 				</ul>
-				<p className="Cart-priceTotal">
+				<p className={styles['Cart-priceTotal']}>
 					Total de la cuenta: <span>${totalPrice}</span>
 				</p>
-				<div className="Cart-buttons">
-					<button className="Cart-goback" onClick={onClose}>
+				<div className={styles['Cart-buttons']}>
+					<button className={styles['Cart-goback']} onClick={onClose}>
 						{cart.goBack}
 					</button>
-					<button className="Cart-cta">{cart.callToAction}</button>
+					<button className={styles['Cart-cta']}>{cart.callToAction}</button>
 				</div>
 			</div>
 		</>,
-		document.getElementById("modal")
+		document.getElementById('modal')
 	);
 };

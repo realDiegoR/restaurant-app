@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from 'react';
 
 class CartItem {
 	constructor(title, price, quantity) {
@@ -24,17 +24,19 @@ class CartItem {
 }
 
 export const useCart = () => {
-	const storage = localStorage.getItem("cart")
-		? JSON.parse(localStorage.getItem("cart"))
-		: [];
+	const [cartItems, setCartItems] = useState([]);
+	console.log(cartItems);
+	useEffect(() => {
+		const cachedItems = localStorage.getItem('cart')
+			? JSON.parse(localStorage.getItem('cart'))
+			: [];
+		setCartItems(cachedItems);
+	}, []);
 
-	const [cartItems, setCartItems] = useState(storage);
 	const [itemPreview, setItemPreview] = useState(null);
 
 	const itemCount = cartItems.reduce((acc, current) => acc + current.count, 0);
-	const totalPrice = cartItems
-		.reduce((acc, current) => acc + current.totalPrice, 0)
-		.toFixed(2);
+	const totalPrice = cartItems.reduce((acc, current) => acc + current.totalPrice, 0).toFixed(2);
 
 	const addPreviewItem = (newItem) => {
 		setItemPreview(newItem);
@@ -43,9 +45,7 @@ export const useCart = () => {
 	const addItem = (newItem, quantity) => {
 		const itemsFromStorage = [...cartItems];
 		const newCart = assignPrototype(itemsFromStorage);
-		const itemAlreadyInCart = newCart.find(
-			(item) => item.title === newItem.title
-		);
+		const itemAlreadyInCart = newCart.find((item) => item.title === newItem.title);
 		console.log(cartItems);
 		if (itemAlreadyInCart) itemAlreadyInCart.add(quantity);
 		else newCart.push(new CartItem(newItem.title, newItem.price, quantity));
@@ -65,7 +65,7 @@ export const useCart = () => {
 
 	const saveCart = (newCart) => {
 		const storage = JSON.stringify(newCart);
-		localStorage.setItem("cart", storage);
+		localStorage.setItem('cart', storage);
 		setCartItems(newCart);
 	};
 

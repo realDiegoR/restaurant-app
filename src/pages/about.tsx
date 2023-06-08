@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { LandingLayout } from 'layouts/landing/LandingLayout';
-import { WhoAreWe } from '@containers/WhoAreWe/WhoAreWe';
+import { WhoAreWe } from '@components/WhoAreWe/WhoAreWe';
+import { WhereAreWe } from '@components/WhereAreWe/WhereAreWe';
+import { Schedule } from '@components/Schedule/Schedule';
 
 const About = () => {
 	return (
@@ -9,6 +11,8 @@ const About = () => {
 				<title>About | Veranalia</title>
 			</Head>
 			<WhoAreWe />
+			<WhereAreWe />
+			<Schedule />
 		</LandingLayout>
 	);
 };

@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Quicksand, Sintony } from 'next/font/google';
-import { Header } from '@containers/Header/Header';
+import { Header } from '@components/Header/Header';
 import { Locale } from '@context/Locale';
 import '@styles/main.scss';
 
@@ -27,7 +27,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 			</Head>
 			<Locale>
 				<Header />
-				<Component {...pageProps} />;
+				<Component {...pageProps} />
+				<div id="modal"></div>
 			</Locale>
 		</div>
 	);

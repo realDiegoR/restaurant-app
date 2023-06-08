@@ -48,18 +48,3 @@
 		transition: none !important;
 	}
 }
-
-.Overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.5);
-	transition: 300ms opacity;
-	opacity: 0;
-
-	&--fade-in {
-		opacity: 1;
-	}
-}

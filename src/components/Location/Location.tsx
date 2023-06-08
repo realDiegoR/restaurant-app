@@ -1,4 +1,4 @@
-import { Icon } from '@components/shared/Icon/Icon';
+import { Icon } from '@common/Icon/Icon';
 import styles from './Location.module.scss';
 
 type IProps = {

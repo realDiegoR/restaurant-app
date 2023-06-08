@@ -8,12 +8,11 @@ const localesData = {
 		navBar: {
 			navLinks: [
 				{ id: uuidv4(), text: 'home', path: '/' },
-				{ id: uuidv4(), text: 'ver menú', onlyMobile: true, path: '/menu' },
-				{ id: uuidv4(), text: 'quienes somos', path: '/about' },
-				{ id: uuidv4(), text: 'lo más popular', path: '/most-popular' },
-				{ id: uuidv4(), text: 'ubicación', path: '/location' },
-				{ id: uuidv4(), text: 'horario', path: '/schedule' },
-				{ id: uuidv4(), text: 'testimonios', path: '/testimonies' },
+				{ id: uuidv4(), text: 'ver menú', path: '/menu' },
+				{ id: uuidv4(), text: 'sobre nosotros', path: '/about' },
+				{ id: uuidv4(), text: 'promociones', path: '/promo' },
+				{ id: uuidv4(), text: 'reseñas', path: '/reviews' },
+				{ id: uuidv4(), text: 'contacto', path: '/contact' },
 			],
 			callToAction: 'Ver Menú',
 		},
@@ -36,7 +35,7 @@ const localesData = {
 			callToAction: 'Ver Menú',
 		},
 		mostPopular: {
-			title: 'Lo más popular',
+			title: 'Promociones',
 			promotionText: '¡Promoción!',
 			items: [
 				{
@@ -164,7 +163,6 @@ const localesData = {
 				{
 					id: uuidv4(),
 					title: 'Entradas',
-					seeImageText: 'Ver Imagen',
 					meals: [
 						{
 							id: uuidv4(),
@@ -191,7 +189,6 @@ const localesData = {
 				{
 					id: uuidv4(),
 					title: 'menú infantil',
-					seeImageText: 'Ver Imagen',
 					color: 'yellow',
 					meals: [
 						{
@@ -209,7 +206,6 @@ const localesData = {
 				{
 					id: uuidv4(),
 					title: 'Extras',
-					seeImageText: 'Ver Imagen',
 					meals: [
 						{
 							id: uuidv4(),
@@ -246,8 +242,7 @@ const localesData = {
 				{
 					id: uuidv4(),
 					title: 'Bebidas',
-					seeImageText: 'Ver Imagen',
-					orientation: 'left',
+					orientation: 'left' as const,
 					meals: [
 						{
 							id: uuidv4(),
@@ -270,10 +265,10 @@ const localesData = {
 			breakfast: [
 				{
 					id: uuidv4(),
-					title: 'Empanadas',
 					meals: [
-						{
-							id: uuidv4(),
+            {
+              id: uuidv4(),
+              title: 'Empanadas',
 							text: 'Elaboradas con harina de maíz rellenos: carne, molida, jamón y queso, solo queso o pollo',
 							price: 2.99,
 						},
@@ -281,11 +276,11 @@ const localesData = {
 				},
 				{
 					id: uuidv4(),
-					title: 'tequeños',
-					orientation: 'left',
+					orientation: 'left' as const,
 					meals: [
-						{
-							id: uuidv4(),
+            {
+              id: uuidv4(),
+              title: 'tequeños',
 							text: 'Elaborados con harina de trigo, rellenos de queso',
 							price: 2.5,
 						},
@@ -293,10 +288,10 @@ const localesData = {
 				},
 				{
 					id: uuidv4(),
-					title: 'Pastelitos',
 					meals: [
-						{
-							id: uuidv4(),
+            {
+              id: uuidv4(),
+              title: 'Pastelitos',
 							text: 'Elaborados con harina de trigo. Rellenos: carne molida, jamón y queso, solo queso, pollo o pizza',
 							price: 2.99,
 						},
@@ -304,11 +299,11 @@ const localesData = {
 				},
 				{
 					id: uuidv4(),
-					title: 'mandocas',
 					color: 'yellow',
-					orientation: 'left',
+					orientation: 'left' as const,
 					meals: [
-						{
+            {
+              title: 'mandocas',
 							id: uuidv4(),
 							text: 'Elaboradas con harina de maíz, plátano, queso y panela',
 							price: 2.5,
@@ -317,10 +312,10 @@ const localesData = {
 				},
 				{
 					id: uuidv4(),
-					title: 'tequeyoyo',
-					orientation: 'left',
+					orientation: 'left' as const,
 					meals: [
-						{
+            {
+              title: 'tequeyoyo',
 							id: uuidv4(),
 							text: 'Hecho con harina de trigo, relleno de plátano, queso y jamón',
 							price: 3.5,
@@ -329,10 +324,10 @@ const localesData = {
 				},
 				{
 					id: uuidv4(),
-					title: 'papitas de yuca',
 					meals: [
-						{
-							id: uuidv4(),
+            {
+              id: uuidv4(),
+              title: 'papitas de yuca',
 							text: 'Una bola hecha de yuca rellena con queso',
 							price: 2.5,
 						},
@@ -340,11 +335,11 @@ const localesData = {
 				},
 				{
 					id: uuidv4(),
-					title: 'Arepa',
 					color: 'red',
 					meals: [
-						{
-							id: uuidv4(),
+            {
+              title: 'Arepa',
+              id: uuidv4(),
 							text: 'Hecha con harina de maíz. Rellenos: Carne mechada, pollo esmechado, jamón y queso, solo queso, pollo o huevos',
 							price: 9.99,
 						},
@@ -352,12 +347,12 @@ const localesData = {
 				},
 				{
 					id: uuidv4(),
-					title: 'desayuno criollo',
 					color: 'red',
-					orientation: 'left',
+					orientation: 'left' as const,
 					meals: [
-						{
-							id: uuidv4(),
+            {
+              id: uuidv4(),
+              title: 'desayuno criollo',
 							text: 'Hecha con harina de maíz. Rellenos: Carne mechada, pollo esmechado, jamón y queso, solo queso, pollo o huevos',
 							price: 2.99,
 						},

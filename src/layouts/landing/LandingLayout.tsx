@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Footer } from '@containers/Footer/Footer';
+import { Footer } from '@components/Footer/Footer';
 import styles from './LandingLayout.module.scss';
 
 interface IProps {

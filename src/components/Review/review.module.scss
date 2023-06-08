@@ -1,0 +1,46 @@
+.Review {
+    padding: 1.25rem;
+    background-color: var(--white);
+    border-radius: .5rem;
+
+    &-head {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &-pic {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 5rem;
+    }
+
+    &-userinfo {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+    }
+
+    &-username {
+        font: 500 var(--paragraph) var(--main-font);   
+    }
+
+    &-date {
+    }
+    
+
+    &-rating {
+        display: flex;
+        gap: .5rem;
+        margin: 1rem 0;
+        
+        svg {
+            width: min-content;
+        }
+
+    }
+
+    &-content {
+
+    }
+    
+}

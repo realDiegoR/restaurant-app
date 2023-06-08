@@ -1,0 +1,43 @@
+@import '@styles/utilities/mixins/wrapper';
+
+.MealCategory {
+	padding: 0.9375rem 0;
+	border-radius: 4px;
+
+	.Wrapper {
+		@include wrapper;
+	}
+
+	&-title {
+		margin-bottom: 0.875rem;
+		font: 700 var(--heading-01) var(--strong-font);
+		text-align: end;
+		text-transform: uppercase;
+	}
+
+	&-ul {
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 1.5625rem;
+
+		&--big {
+			gap: 4.6875rem;
+		}
+	}
+
+	&--yellow {
+		background-color: var(--brand-yellow);
+		color: var(--black);
+	}
+
+	&--red {
+		background-color: var(--brand-red);
+		color: var(--white);
+	}
+
+	&--left {
+		.MealCategory-title {
+			text-align: start;
+		}
+	}
+}

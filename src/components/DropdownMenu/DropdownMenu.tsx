@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useLocaleContext } from '@context/Locale';
-import { Icon } from '@components/shared/Icon/Icon';
+import { Icon } from '@common/Icon/Icon';
 import { DropdownButton } from '@components/DropdownMenu/DropdownButton/DropdownButton';
 import styles from './DropdownMenu.module.scss';
 

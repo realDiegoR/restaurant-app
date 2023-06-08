@@ -1,8 +1,7 @@
 .LandingLayout {
-    position: relative;
 	display: grid;
 	grid-template-rows: 1fr max-content;
-	top: 3.85rem;
 	min-height: 100vh;
+	padding-top: min(15vw, 4.5rem);
 	background-color: var(--brand-yellow);
 }

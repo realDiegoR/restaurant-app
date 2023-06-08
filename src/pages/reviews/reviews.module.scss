@@ -1,0 +1,21 @@
+@import '@styles/utilities/mixins/wrapper';
+
+
+.main {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.75rem;
+    @include wrapper;
+}
+
+.text {
+    font: 400 var(--paragraph) var(--main-font);
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 2rem;
+    border-top: solid 1px var(--white);
+    padding: 1.75rem 0;
+}

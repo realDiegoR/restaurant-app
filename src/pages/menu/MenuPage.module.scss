@@ -1,0 +1,107 @@
+@import '@styles/utilities/mixins/wrapper';
+
+.MenuPage {
+	padding-top: 3.85rem;
+	margin: 0 auto;
+	background-color: var(--black);
+	color: var(--white);
+
+	.Wrapper {
+		position: relative;
+		@include wrapper;
+	}
+
+	&-title {
+		margin-bottom: 0.875rem;
+		font: 700 var(--heading-01) var(--strong-font);
+		text-align: end;
+		text-transform: uppercase;
+	}
+	
+	&-imagotype {
+		width: 70%;
+		max-width: 40rem;
+		aspect-ratio: 16 / 9;
+		margin: 2rem auto;
+
+		&--desktop {
+			display: none;
+		}
+		&--mobile {
+		}
+		@media screen and (min-width: 45rem) {
+			&--desktop {
+				display: block;
+			}
+			&--mobile {
+				display: none;
+			}
+		}
+	}
+
+	&-nav {
+		// background-color: red;
+	}
+
+	&-navList {
+		display: flex;
+		justify-content: center;
+		gap: 1.25rem;
+		margin-bottom: 2.125rem;
+
+		@media screen and (min-width: 45rem) {
+			display: none;
+		}
+	}
+
+	&-navItem {
+		display: inline-block;
+		padding: 0.5rem 1rem;
+		background-color: var(--gray-02);
+		font-size: var(--paragraph);
+		border-radius: 4px;
+
+		&--active {
+			background-color: var(--brand-red);
+
+			button {
+				font-weight: 600;
+			}
+		}
+	}
+
+	&-sectionDivider {
+		display: flex;
+		flex-flow: column nowrap;
+		padding: 0 0 6rem;
+
+		@media screen and (min-width: 43.75rem) {
+			flex-flow: row nowrap;
+			justify-content: center;
+			padding: 6rem 0 9rem;
+		}
+	}
+
+	&-foodSection {
+		display: none;
+		flex-flow: column nowrap;
+		gap: 1.25rem;
+		max-width: 42.5rem;
+		flex: 1;
+
+		&--visible {
+			display: flex;
+		}
+
+		@media screen and (min-width: 43.75rem) {
+			display: flex;
+			&:nth-of-type(1) {
+				padding-right: 0.625rem;
+			}
+			&:nth-of-type(2) {
+				border-left: 1px solid var(--white);
+				padding-left: 0.625rem;
+			}
+		}
+	}
+}

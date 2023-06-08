@@ -1,0 +1,136 @@
+@import "@styles/utilities/mixins/hover";
+
+.AddItemPreview {
+	position: fixed;
+	top: 3rem;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	gap: min(10vw, 6rem);
+	width: min(90vw, 50rem);
+	max-height: max-content;
+	margin: auto;
+	padding: 1.875rem 2.5rem;
+	background-color: var(--white);
+	font: 400 var(--paragraph) var(--main-font);
+	text-align: center;
+	opacity: 0;
+	transform: translateY(3.25rem);
+	transition: 400ms opacity, 400ms transform;
+	border-radius: 4px;
+
+	&-text {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		gap: 1rem;
+	}
+	&-title {
+		font: 700 var(--paragraph) var(--main-font);
+	}
+	&-itemName {
+	}
+
+	&-countInfo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1.25rem;
+		color: var(--white);
+		font: 700 var(--heading-02) var(--main-font);
+	}
+	&-itemCount {
+		display: grid;
+		place-items: center;
+		width: 5rem;
+		aspect-ratio: 1 / 1;
+		background-color: var(--brand-red);
+		border-radius: 50%;
+	}
+	&-itemOperators {
+		// display: flexc;
+	}
+	&-button {
+		width: 2.8125rem;
+		aspect-ratio: 1 / 1;
+		background-color: var(--black);
+		cursor: pointer;
+
+		&:nth-of-type(1) {
+			border-radius: 4px 4px 0 0;
+		}
+
+		&:nth-of-type(2) {
+			border-top: 1px solid var(--white);
+			border-radius: 0 0 4px 4px;
+		}
+	}
+
+	&-buttons {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1.5rem;
+	}
+
+	&-thanks {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		font: 600 var(--paragraph) var(--main-font);
+		color: var(--brand-red);
+		opacity: 0;
+		transform: translateY(-1rem);
+		transition: 600ms transform, 600ms opacity;
+
+		&--fade-in {
+			opacity: 1;
+			transform: translateY(-3.25rem);
+		}
+	}
+
+	&-add {
+		padding: 0.625rem 1.25rem;
+		background-color: var(--brand-yellow);
+		font: 600 var(--paragraph) var(--main-font);
+		border-radius: 4px;
+		cursor: pointer;
+		@include hover;
+	}
+	&-cancel {
+		font: 400 var(--sub) var(--main-font);
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&--fade-in {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.Overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	transition: 300ms opacity;
+	opacity: 0;
+
+	&--fade-in {
+		opacity: 1;
+	}
+}
