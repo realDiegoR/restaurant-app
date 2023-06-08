@@ -1,6 +1,6 @@
-import { LandingLayout } from 'layouts/landing/LandingLayout';
-import { Contact } from '../components/Contact/Contact';
 import Head from 'next/head';
+import { LandingLayout } from '@layouts/landing/LandingLayout';
+import { Contact } from '@components/Contact/Contact';
 
 const contact = () => {
 	return (

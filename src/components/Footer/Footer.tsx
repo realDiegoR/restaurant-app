@@ -1,7 +1,5 @@
 import { Icon } from '@common/Icon/Icon';
 import { useLocaleContext } from '@context/Locale';
-// import logotypeAvif from '@assets/brand/veranalia_logotype.avif';
-// import logotypeWebp from '@assets/brand/veranalia_logotype.webp';
 import styles from './Footer.module.scss';
 
 export const Footer = () => {
