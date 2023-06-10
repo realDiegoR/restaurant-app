@@ -3,16 +3,23 @@ declare interface IMealItem {
 	price: number;
 	text: string;
 	title?: string;
-  color?: string;
+	color?: string;
 	orientation?: 'left' | 'right';
-  openModal?: (item: IMealItem) => void;
+	openModal?: (item: ICartItem) => void;
 }
 
 declare interface IMealCategory {
 	title?: string;
 	meals: IMealItem[];
-  children: (key: string, mealData: IMealItem) => import('react').ReactNode
+	children: (key: string, mealData: IMealItem) => import('react').ReactNode;
 	type: 'normal' | 'expanded';
 	color?: string;
 	orientation?: 'left' | 'right';
+}
+
+declare interface ICartItem {
+	readonly title: string;
+	price: number;
+	units: number;
+	totalUnitsPrice: number;
 }

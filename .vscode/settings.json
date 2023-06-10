@@ -1,6 +1,6 @@
 {
     "editor.codeActionsOnSave": { "source.fixAll": true },
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "cSpell.language": "en,es-ES",
     "cSpell.words": [
       "Arepa",

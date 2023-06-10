@@ -1,5 +1,3 @@
-'use client';
-
 import { useState } from 'react';
 import { useLocaleContext } from '@context/Locale';
 import { useCart } from '@hooks/useCart';
@@ -13,6 +11,8 @@ import imagotypeWebp from '@assets/brand/veranalia_imagotype.webp';
 import styles from './MenuPage.module.scss';
 import Head from 'next/head';
 
+type Modal = 'itemPreview' | 'cart' | null;
+
 const MenuPage = () => {
 	const {
 		es: { foodMenu },
@@ -20,27 +20,21 @@ const MenuPage = () => {
 	const { cartItems, itemCount, totalPrice, addItem, deleteItem, itemPreview, addPreviewItem } =
 		useCart();
 	const [currentSection, setCurrentSection] = useState('main');
-	const [showCartModal, setShowCartModal] = useState(false);
-	const [showItemPreviewModal, setShowItemPreviewModal] = useState(false);
+	const [modal, setModal] = useState<Modal>(null);
 
 	const changeSection = (section: string) => {
 		setCurrentSection(section);
 	};
 
-	const openItemPreviewModal = (item: IMealItem) => {
-		console.log(item);
+	const openItemPreviewModal = (item: ICartItem) => {
 		addPreviewItem(item);
-		setShowItemPreviewModal(true);
+		setModal('itemPreview');
 	};
 
-	const closeModal = (modal: 'cart' | 'addItemPreview') => {
-		if (modal === 'cart') return setShowCartModal(false);
-		if (modal === 'addItemPreview') {
-			setShowItemPreviewModal(false);
-			addPreviewItem(null);
-			return;
-		}
+	const closeModal = () => {
+		setModal(null);
 	};
+
 	return (
 		<>
 			<Head>
@@ -83,21 +77,17 @@ const MenuPage = () => {
 								<img src={imagotypeWebp.src} alt="Veranalia Imagotype" />
 							</picture>
 							{foodMenu.main.map((foodCategory) => (
-								<MealCategory
-									key={foodCategory.id}
-                  type='normal'
-									{...foodCategory}
-								>
-                  {(key, mealData: IMealItem) => (
-                    <MealItem
+								<MealCategory key={foodCategory.id} type="normal" {...foodCategory}>
+									{(key, mealData: IMealItem) => (
+										<MealItem
 											key={key}
 											{...mealData}
 											color={foodCategory.color}
 											orientation={foodCategory.orientation}
-											openModal={(item: IMealItem) => openItemPreviewModal(item)}
+											openModal={(item: ICartItem) => openItemPreviewModal(item)}
 										/>
-                  )}
-                </MealCategory>
+									)}
+								</MealCategory>
 							))}
 						</section>
 						<section
@@ -109,44 +99,36 @@ const MenuPage = () => {
 								{foodMenu.breakfastTitle}
 							</h2>
 							{foodMenu.breakfast.map((foodCategory) => (
-								<MealCategory
-                    key={foodCategory.id}
-                    {...foodCategory}
-                    type="expanded"
-								>
-                  {(key, mealData) => (
-                    <MealItem
-                        key={key}
-                        {...mealData}
-                        color={foodCategory.color}
-                        orientation={foodCategory.orientation}
-                        openModal={(item: IMealItem) => openItemPreviewModal(item)}
-                  />
-                  )}
-                </MealCategory>
+								<MealCategory key={foodCategory.id} {...foodCategory} type="expanded">
+									{(key, mealData) => (
+										<MealItem
+											key={key}
+											{...mealData}
+											color={foodCategory.color}
+											orientation={foodCategory.orientation}
+											openModal={(item: ICartItem) => openItemPreviewModal(item)}
+										/>
+									)}
+								</MealCategory>
 							))}
 						</section>
 					</div>
 					<CartButton
 						itemCount={itemCount}
-						openModal={() => setShowCartModal(true)}
+						openModal={() => setModal('cart')}
 						text={foodMenu.cartButtonText}
 					/>
-					{showCartModal && (
+					{modal === 'cart' && (
 						<Cart
 							itemCount={itemCount}
 							cartItems={cartItems}
 							totalPrice={totalPrice}
 							deleteItem={deleteItem}
-							onClose={() => closeModal('cart')}
+							onClose={() => closeModal()}
 						/>
 					)}
-					{showItemPreviewModal && (
-						<AddItemPreview
-							itemPreview={itemPreview}
-							addItem={addItem}
-							onClose={() => closeModal('addItemPreview')}
-						/>
+					{modal === 'itemPreview' && itemPreview && (
+						<AddItemPreview item={itemPreview} addItem={addItem} onClose={() => closeModal()} />
 					)}
 				</div>
 			</main>

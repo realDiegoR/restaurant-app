@@ -2,7 +2,7 @@ import { Icon } from '@common/Icon/Icon';
 import classNames from 'classnames';
 import styles from './MealItem.module.scss';
 
-export const MealItem = ({ id, price, title, text, color, orientation, openModal }: IMealItem) => {
+export const MealItem = ({ price, title, text, color, orientation, openModal }: IMealItem) => {
 
 	const getModifiers = () => {
 		const modifiers = [];
@@ -15,7 +15,7 @@ export const MealItem = ({ id, price, title, text, color, orientation, openModal
 	};
 
 	const openPreviewModal = () => {
-		openModal && openModal({ id, text, price, title: title ?? text });
+		openModal && openModal({ price, title: title ?? text, units: 0 });
 	};
 
 	if (title)
