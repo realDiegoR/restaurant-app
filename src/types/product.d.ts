@@ -21,5 +21,5 @@ declare interface ICartItem {
 	readonly title: string;
 	price: number;
 	units: number;
-	totalUnitsPrice: number;
+	totalUnitsPrice?: number;
 }

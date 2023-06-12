@@ -31,7 +31,7 @@ export const Cart = ({ cartItems, deleteItem, itemCount, totalPrice, onClose }: 
 							<span className={styles['Cart-count']}>{item.units}</span>
 							<p className={styles['Cart-itemText']}>
 								{item.title}
-								<span>${item.totalUnitsPrice.toFixed(2)}</span>
+								<span>${item.totalUnitsPrice?.toFixed(2)}</span>
 							</p>
 							<button className={styles['Cart-deleteItem']} onClick={() => deleteItem(item)}>
 								-
