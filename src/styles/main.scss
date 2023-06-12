@@ -1,6 +1,6 @@
-@use "./utilities/reset/reset";
-@import "./utilities/mixins/hover";
-@import "./utilities/mixins/wrapper";
+@use './utilities/reset/reset';
+@import './utilities/mixins/hover';
+@import './utilities/mixins/wrapper';
 
 :root {
 	/* Colors */
@@ -28,17 +28,6 @@
 		--sub: 1.25rem;
 
 		--sectionPadding: 4rem 0;
-	}
-}
-
-// @media (prefers-color-scheme: dark) {
-// 	:root {
-// 		--black: #ececec;
-// 	}
-// }
-
-@media (prefers-contrast: high) {
-	:root {
 	}
 }
 
