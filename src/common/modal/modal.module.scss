@@ -7,16 +7,20 @@
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: space-between;
-	gap: min(10vw, 6rem);
+	gap: 1.5rem;
 	width: min(90vw, 50rem);
 	max-height: max-content;
 	margin: auto;
-	padding: 1.875rem 2.5rem;
+	padding: 1.5rem 0.5rem;
 	background-color: var(--white);
 	font: 400 var(--paragraph) var(--main-font);
 	text-align: center;
 	border-radius: 4px;
 	animation: fade-in 400ms ease-in-out forwards;
+
+	@media screen and (min-width: 37.5rem) {
+		padding: 1.875rem 2.5rem;
+	}
 }
 
 .Overlay {

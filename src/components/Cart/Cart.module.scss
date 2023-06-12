@@ -1,25 +1,6 @@
 @import '@styles//mixins/hover';
 
 .Cart {
-	position: fixed;
-	top: 3rem;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: space-between;
-	gap: 1rem;
-	width: min(90vw, 50rem);
-	max-height: min(70vh, 37.5rem);
-	margin: auto;
-	padding: 1.875rem 1.25rem;
-	background-color: var(--white);
-	opacity: 0;
-	transform: translateY(3.25rem);
-	transition: 400ms opacity, 400ms transform;
-	border-radius: 4px;
-
 	@media screen and (min-width: 37.5rem) {
 		gap: 1.5rem;
 	}
@@ -36,6 +17,8 @@
 		display: flex;
 		flex-flow: column nowrap;
 		gap: 1.875rem;
+		flex: 1;
+		max-height: 40vh;
 		padding: 0 1rem;
 		overflow-y: auto;
 	}
@@ -78,7 +61,6 @@
 		}
 
 		span {
-			// margin-left: 10px;
 			font: 400 var(--sub) var(--main-font);
 		}
 	}
@@ -159,20 +141,5 @@
 	&--fade-in {
 		opacity: 1;
 		transform: translateY(0);
-	}
-}
-
-.Overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.5);
-	transition: 300ms opacity;
-	opacity: 0;
-
-	&--fade-in {
-		opacity: 1;
 	}
 }
