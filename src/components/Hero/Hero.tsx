@@ -1,12 +1,12 @@
 import { DecorationDot } from '@common/DecorationDot/DecorationDot';
-import backgroundMobileAvif from '@assets/ui/hero_mobile.avif';
-import backgroundMobileWebp from '@assets/ui/hero_mobile.webp';
-import backgroundTabletAvif from '@assets/ui/hero_tablet.avif';
-import backgroundTabletWebp from '@assets/ui/hero_tablet.webp';
-import backgroundDesktopAvif from '@assets/ui/hero_desktop.avif';
-import backgroundDesktopWebp from '@assets/ui/hero_desktop.webp';
-import imagotypeAvif from '@assets/brand/veranalia_imagotype.avif';
-import imagotypeWebp from '@assets/brand/veranalia_imagotype.webp';
+import backgroundMobileAvif from '@images/ui/hero_mobile.avif';
+import backgroundMobileWebp from '@images/ui/hero_mobile.webp';
+import backgroundTabletAvif from '@images/ui/hero_tablet.avif';
+import backgroundTabletWebp from '@images/ui/hero_tablet.webp';
+import backgroundDesktopAvif from '@images/ui/hero_desktop.avif';
+import backgroundDesktopWebp from '@images/ui/hero_desktop.webp';
+import imagotypeAvif from '@images/brand/veranalia_imagotype.avif';
+import imagotypeWebp from '@images/brand/veranalia_imagotype.webp';
 import styles from './Hero.module.scss';
 
 export const Hero = () => {

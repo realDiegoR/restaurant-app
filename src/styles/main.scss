@@ -1,6 +1,6 @@
-@use './utilities/reset/reset';
-@import './utilities/mixins/hover';
-@import './utilities/mixins/wrapper';
+@use './reset/reset';
+@import './mixins/hover';
+@import './mixins/wrapper';
 
 :root {
 	/* Colors */

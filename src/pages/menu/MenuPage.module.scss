@@ -1,4 +1,4 @@
-@import '@styles/utilities/mixins/wrapper';
+@import '@styles//mixins/wrapper';
 
 .MenuPage {
 	padding-top: 3.85rem;
@@ -17,7 +17,7 @@
 		text-align: end;
 		text-transform: uppercase;
 	}
-	
+
 	&-imagotype {
 		width: 70%;
 		max-width: 40rem;

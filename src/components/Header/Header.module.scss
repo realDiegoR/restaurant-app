@@ -1,4 +1,4 @@
-@import "@styles/utilities/mixins/wrapper";
+@import '@styles//mixins/wrapper';
 
 .Header {
 	position: fixed;
@@ -70,7 +70,7 @@
 
 		::after {
 			position: absolute;
-			content: "";
+			content: '';
 			width: 90%;
 			left: 0;
 			right: 0;

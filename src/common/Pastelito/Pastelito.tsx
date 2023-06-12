@@ -1,5 +1,5 @@
-import pastelitoAvif from '@assets/ui/pastelito.avif';
-import pastelitoWebp from '@assets/ui/pastelito.webp';
+import pastelitoAvif from '@images/ui/pastelito.avif';
+import pastelitoWebp from '@images/ui/pastelito.webp';
 import styles from './Pastelito.module.scss';
 
 type IProps = {

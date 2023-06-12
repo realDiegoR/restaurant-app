@@ -6,8 +6,8 @@ import { MealItem } from '@components/MealItem/MealItem';
 import { Cart } from '@components/Cart/Cart';
 import { CartButton } from '@components/CartButton/CartButton';
 import { AddItemPreview } from '@components/AddItemPreview/AddItemPreview';
-import imagotypeAvif from '@assets/brand/veranalia_imagotype.avif';
-import imagotypeWebp from '@assets/brand/veranalia_imagotype.webp';
+import imagotypeAvif from '@images/brand/veranalia_imagotype.avif';
+import imagotypeWebp from '@images/brand/veranalia_imagotype.webp';
 import styles from './MenuPage.module.scss';
 import Head from 'next/head';
 

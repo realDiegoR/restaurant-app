@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import pataconAvif from '@assets/ui/patacon.avif';
-import pataconWebp from '@assets/ui/patacon.webp';
+import pataconAvif from '@images/ui/patacon.avif';
+import pataconWebp from '@images/ui/patacon.webp';
 
 const localesData = {
 	es: {
@@ -266,9 +266,9 @@ const localesData = {
 				{
 					id: uuidv4(),
 					meals: [
-            {
-              id: uuidv4(),
-              title: 'Empanadas',
+						{
+							id: uuidv4(),
+							title: 'Empanadas',
 							text: 'Elaboradas con harina de maíz rellenos: carne, molida, jamón y queso, solo queso o pollo',
 							price: 2.99,
 						},
@@ -278,9 +278,9 @@ const localesData = {
 					id: uuidv4(),
 					orientation: 'left' as const,
 					meals: [
-            {
-              id: uuidv4(),
-              title: 'tequeños',
+						{
+							id: uuidv4(),
+							title: 'tequeños',
 							text: 'Elaborados con harina de trigo, rellenos de queso',
 							price: 2.5,
 						},
@@ -289,9 +289,9 @@ const localesData = {
 				{
 					id: uuidv4(),
 					meals: [
-            {
-              id: uuidv4(),
-              title: 'Pastelitos',
+						{
+							id: uuidv4(),
+							title: 'Pastelitos',
 							text: 'Elaborados con harina de trigo. Rellenos: carne molida, jamón y queso, solo queso, pollo o pizza',
 							price: 2.99,
 						},
@@ -302,8 +302,8 @@ const localesData = {
 					color: 'yellow',
 					orientation: 'left' as const,
 					meals: [
-            {
-              title: 'mandocas',
+						{
+							title: 'mandocas',
 							id: uuidv4(),
 							text: 'Elaboradas con harina de maíz, plátano, queso y panela',
 							price: 2.5,
@@ -314,8 +314,8 @@ const localesData = {
 					id: uuidv4(),
 					orientation: 'left' as const,
 					meals: [
-            {
-              title: 'tequeyoyo',
+						{
+							title: 'tequeyoyo',
 							id: uuidv4(),
 							text: 'Hecho con harina de trigo, relleno de plátano, queso y jamón',
 							price: 3.5,
@@ -325,9 +325,9 @@ const localesData = {
 				{
 					id: uuidv4(),
 					meals: [
-            {
-              id: uuidv4(),
-              title: 'papitas de yuca',
+						{
+							id: uuidv4(),
+							title: 'papitas de yuca',
 							text: 'Una bola hecha de yuca rellena con queso',
 							price: 2.5,
 						},
@@ -337,9 +337,9 @@ const localesData = {
 					id: uuidv4(),
 					color: 'red',
 					meals: [
-            {
-              title: 'Arepa',
-              id: uuidv4(),
+						{
+							title: 'Arepa',
+							id: uuidv4(),
 							text: 'Hecha con harina de maíz. Rellenos: Carne mechada, pollo esmechado, jamón y queso, solo queso, pollo o huevos',
 							price: 9.99,
 						},
@@ -350,9 +350,9 @@ const localesData = {
 					color: 'red',
 					orientation: 'left' as const,
 					meals: [
-            {
-              id: uuidv4(),
-              title: 'desayuno criollo',
+						{
+							id: uuidv4(),
+							title: 'desayuno criollo',
 							text: 'Hecha con harina de maíz. Rellenos: Carne mechada, pollo esmechado, jamón y queso, solo queso, pollo o huevos',
 							price: 2.99,
 						},

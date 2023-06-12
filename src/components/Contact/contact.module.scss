@@ -1,31 +1,31 @@
-@import '@styles/utilities/mixins/wrapper';
-@import '@styles/utilities/mixins/hover';
+@import '@styles/mixins/wrapper';
+@import '@styles/mixins/hover';
 
 .Contact {
-    @include wrapper;
-    
-    &-p {
-        padding: 1.5rem 0;
-        font-size: var(--paragraph);
-        border-bottom: 1px solid var(--white);
-    }
-    
-    &-form {
-        display: flex;
-        flex-flow: column nowrap;
-        width: 100%;
-        align-items: center;
-        gap: 1rem;
-        margin: 1.5rem 0;
-    }
-    
-     &-send {
-        padding: .75rem 1.5rem;
-        background-color: var(--black);
-        color: var(--white);
-        border-radius: .5rem;
-        font: 500 var(--paragraph) var(--main-font);
-        cursor: pointer;
-        @include hover;
-    }
+	@include wrapper;
+
+	&-p {
+		padding: 1.5rem 0;
+		font-size: var(--paragraph);
+		border-bottom: 1px solid var(--white);
+	}
+
+	&-form {
+		display: flex;
+		flex-flow: column nowrap;
+		width: 100%;
+		align-items: center;
+		gap: 1rem;
+		margin: 1.5rem 0;
+	}
+
+	&-send {
+		padding: 0.75rem 1.5rem;
+		background-color: var(--black);
+		color: var(--white);
+		border-radius: 0.5rem;
+		font: 500 var(--paragraph) var(--main-font);
+		cursor: pointer;
+		@include hover;
+	}
 }

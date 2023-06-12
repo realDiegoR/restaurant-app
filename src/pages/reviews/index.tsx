@@ -3,7 +3,7 @@ import { LandingLayout } from '@layouts/landing/LandingLayout';
 import { Title } from '@common/Title/Title';
 import { LinkButton } from '@common/LinkButton/LinkButton';
 import { Review } from '@components/Review/Review';
-import fakeImg from '@assets/brand/veranalia_imagotype.webp';
+import fakeImg from '@images/brand/veranalia_imagotype.webp';
 import style from './reviews.module.scss';
 
 const ReviewsPage = () => {
