@@ -3,11 +3,8 @@ import { useLocaleContext } from '@context/Locale';
 import { useCart } from '@hooks/useCart';
 import Head from 'next/head';
 import Image from 'next/image';
-import { Cart } from '@components/Cart/Cart';
-import { CartButton } from '@components/CartButton/CartButton';
-import { AddItemPreview } from '@components/AddItemPreview/AddItemPreview';
-import { MealSingle } from '@components/meal-single';
-import { MealList } from '@components/meal-list';
+import { Cart, AddItemPreview } from '@features/purchase';
+import { MealSingle, MealList, CartButton } from '@features/menu';
 import imagotype from '@images/brand/veranalia_imagotype.webp';
 import styles from './menu.module.scss';
 

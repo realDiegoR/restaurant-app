@@ -1,7 +1,7 @@
 import { useLocaleContext } from '@context/Locale';
 import { Modal } from '@common/modal';
 import { Icon } from '@common/Icon/Icon';
-import styles from './Cart.module.scss';
+import styles from './cart.module.scss';
 
 interface CartProps {
 	cartItems: ICartItem[];

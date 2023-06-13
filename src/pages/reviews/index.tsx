@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { LandingLayout } from '@layouts/landing/LandingLayout';
 import { Title } from '@common/Title/Title';
 import { LinkButton } from '@common/LinkButton/LinkButton';
-import { Review } from '@components/Review/Review';
+import { Review } from '@features/review/review';
 import fakeImg from '@images/brand/veranalia_imagotype.webp';
 import style from './reviews.module.scss';
 

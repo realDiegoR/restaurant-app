@@ -1,12 +1,6 @@
 {
-    "editor.codeActionsOnSave": { "source.fixAll": true },
-    "editor.formatOnSave": true,
-    "cSpell.language": "en,es-ES",
-    "cSpell.words": [
-      "Arepa",
-      "imagotype",
-      "Imagotype",
-      "keyname",
-      "Webp"
-    ]
-  }
+	"editor.codeActionsOnSave": { "source.fixAll": true },
+	"editor.formatOnSave": true,
+	"cSpell.language": "en,es-ES",
+	"cSpell.words": ["Arepa", "imagotype", "Imagotype", "keyname", "veranalia", "webp", "Webp"]
+}

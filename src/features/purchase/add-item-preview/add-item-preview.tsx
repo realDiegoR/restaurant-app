@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLocaleContext } from '@context/Locale';
 import { Modal } from '@common/modal';
-import styles from './AddItemPreview.module.scss';
+import styles from './add-item-preview.module.scss';
 
 interface AddItemPreviewProps {
 	item: ICartItem;

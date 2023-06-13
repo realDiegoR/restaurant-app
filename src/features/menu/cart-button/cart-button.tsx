@@ -1,5 +1,5 @@
 import { Icon } from '@common/Icon/Icon';
-import styles from './CartButton.module.scss';
+import styles from './cart-button.module.scss';
 
 interface CartButtonProps {
 	text: string;
