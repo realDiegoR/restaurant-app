@@ -1,29 +1,28 @@
 .Input {
-    width: 100%;
+	width: 100%;
 
-    &-label {
-        display: flex;
-        flex-flow: column nowrap;
-        gap: .5rem;
-        font-size: var(--paragraph);
-        text-transform: capitalize;
-    }
+	&-label {
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 0.5rem;
+		font-size: var(--paragraph);
+		text-transform: capitalize;
+	}
 
-    &-text {
-        background-color: var(--white);
-        padding: .5rem .75rem;
-        border-radius: .375rem;
-        font: 400 var(--sub) var(--main-font);
+	&-text {
+		background-color: var(--white);
+		padding: 0.5rem 0.75rem;
+		border-radius: 0.375rem;
+		font: 400 var(--sub) var(--main-font);
 
-        &area {
-          @extend .Input-text;
-          resize: vertical;
-        }
+		&area {
+			@extend .Input-text;
+			resize: vertical;
+		}
 
-        @media screen and (min-width: 37.5rem) {
-          font: 400 var(--paragraph) var(--main-font);
-          padding: .75rem 1rem;
-        }
-    }
-
+		@media screen and (min-width: 37.5rem) {
+			font: 400 var(--paragraph) var(--main-font);
+			padding: 0.75rem 1rem;
+		}
+	}
 }

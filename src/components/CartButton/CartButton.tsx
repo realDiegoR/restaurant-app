@@ -2,9 +2,9 @@ import { Icon } from '@common/Icon/Icon';
 import styles from './CartButton.module.scss';
 
 interface CartButtonProps {
-  text: string;
-  openModal: () => void;
-  itemCount: number;
+	text: string;
+	openModal: () => void;
+	itemCount: number;
 }
 
 export const CartButton = ({ text, openModal, itemCount }: CartButtonProps) => {

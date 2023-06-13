@@ -1,0 +1,109 @@
+.MealSingle {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 0.9375rem;
+	border-radius: 4px;
+	padding: 1.3rem 2.6rem;
+
+	&-title {
+		font: 700 var(--heading-02) var(--strong-font);
+		text-transform: uppercase;
+	}
+
+	&-text {
+		font: 500 var(--paragraph) var(--main-font);
+		text-align: end;
+	}
+
+	&-heavyInfo {
+		display: flex;
+		align-items: center;
+		gap: 0.625rem;
+		font: 600 var(--paragraph) var(--main-font);
+	}
+
+	&-price {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-width: 4.375rem;
+		max-width: 4.6875rem;
+		padding: 0.3125rem 0.625rem;
+		background-color: var(--brand-red);
+		border-radius: 4px;
+	}
+
+	&-button {
+		height: 2.0625rem;
+		padding: 4px;
+		aspect-ratio: 1 / 1;
+		border: 2px solid var(--black);
+		background-color: var(--brand-yellow);
+		color: var(--black);
+		font: 700 var(--heading-02) var(--main-font);
+		border-radius: 4px;
+		cursor: pointer;
+		transition: 300ms color, 300ms background-color;
+		&:hover {
+			background-color: var(--brand-red);
+			color: var(--white);
+		}
+	}
+
+	&--yellow {
+		padding: 2.6rem;
+		background-color: var(--brand-yellow);
+		color: var(--black);
+
+		.MealSingle-price {
+			background-color: var(--black);
+			color: var(--white);
+		}
+
+		.MealSingle-button {
+			border-color: var(--black);
+			background-color: var(--brand-red);
+			color: var(--white);
+			&:hover {
+				background-color: var(--black);
+				color: var(--white);
+			}
+		}
+	}
+
+	&--red {
+		padding: 2.6rem;
+		background-color: var(--brand-red);
+		color: var(--white);
+
+		.MealSingle-price {
+			background-color: var(--black);
+			color: var(--white);
+		}
+
+		.MealSingle-button {
+			border-color: var(--black);
+			background-color: var(--white);
+			color: var(--black);
+			&:hover {
+				background-color: var(--black);
+				color: var(--white);
+			}
+		}
+	}
+
+	&--left {
+		justify-content: flex-start;
+		text-align: start;
+
+		.MealSingle-text {
+			text-align: start;
+		}
+
+		.MealSingle-boxes {
+			flex-flow: row-reverse nowrap;
+		}
+	}
+}

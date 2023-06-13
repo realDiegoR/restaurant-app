@@ -163,6 +163,10 @@ const localesData = {
 				{
 					id: uuidv4(),
 					title: 'Entradas',
+					style: {
+						orientation: 'end' as const,
+						colorSet: 1 as const,
+					},
 					meals: [
 						{
 							id: uuidv4(),
@@ -189,7 +193,10 @@ const localesData = {
 				{
 					id: uuidv4(),
 					title: 'menú infantil',
-					color: 'yellow',
+					style: {
+						orientation: 'end' as const,
+						colorSet: 2 as const,
+					},
 					meals: [
 						{
 							id: uuidv4(),
@@ -206,6 +213,10 @@ const localesData = {
 				{
 					id: uuidv4(),
 					title: 'Extras',
+					style: {
+						orientation: 'end' as const,
+						colorSet: 1 as const,
+					},
 					meals: [
 						{
 							id: uuidv4(),
@@ -242,7 +253,10 @@ const localesData = {
 				{
 					id: uuidv4(),
 					title: 'Bebidas',
-					orientation: 'left' as const,
+					style: {
+						orientation: 'start' as const,
+						colorSet: 1 as const,
+					},
 					meals: [
 						{
 							id: uuidv4(),
@@ -265,98 +279,83 @@ const localesData = {
 			breakfast: [
 				{
 					id: uuidv4(),
-					meals: [
-						{
-							id: uuidv4(),
-							title: 'Empanadas',
-							text: 'Elaboradas con harina de maíz rellenos: carne, molida, jamón y queso, solo queso o pollo',
-							price: 2.99,
-						},
-					],
+					title: 'Empanadas',
+					style: {
+						orientation: 'end' as const,
+						colorSet: 1 as const,
+					},
+					text: 'Elaboradas con harina de maíz rellenos: carne, molida, jamón y queso, solo queso o pollo',
+					price: 2.99,
 				},
 				{
 					id: uuidv4(),
-					orientation: 'left' as const,
-					meals: [
-						{
-							id: uuidv4(),
-							title: 'tequeños',
-							text: 'Elaborados con harina de trigo, rellenos de queso',
-							price: 2.5,
-						},
-					],
+					title: 'tequeños',
+					style: {
+						orientation: 'start' as const,
+						colorSet: 1 as const,
+					},
+					text: 'Elaborados con harina de trigo, rellenos de queso',
+					price: 2.5,
 				},
 				{
 					id: uuidv4(),
-					meals: [
-						{
-							id: uuidv4(),
-							title: 'Pastelitos',
-							text: 'Elaborados con harina de trigo. Rellenos: carne molida, jamón y queso, solo queso, pollo o pizza',
-							price: 2.99,
-						},
-					],
+					title: 'Pastelitos',
+					style: {
+						orientation: 'end' as const,
+						colorSet: 1 as const,
+					},
+					text: 'Elaborados con harina de trigo. Rellenos: carne molida, jamón y queso, solo queso, pollo o pizza',
+					price: 2.99,
+				},
+				{
+					title: 'mandocas',
+					id: uuidv4(),
+					text: 'Elaboradas con harina de maíz, plátano, queso y panela',
+					price: 2.5,
+					style: {
+						orientation: 'start' as const,
+						colorSet: 2 as const,
+					},
+				},
+				{
+					title: 'tequeyoyo',
+					id: uuidv4(),
+					text: 'Hecho con harina de trigo, relleno de plátano, queso y jamón',
+					price: 3.5,
+					style: {
+						orientation: 'start' as const,
+						colorSet: 1 as const,
+					},
 				},
 				{
 					id: uuidv4(),
-					color: 'yellow',
-					orientation: 'left' as const,
-					meals: [
-						{
-							title: 'mandocas',
-							id: uuidv4(),
-							text: 'Elaboradas con harina de maíz, plátano, queso y panela',
-							price: 2.5,
-						},
-					],
+					title: 'papitas de yuca',
+					text: 'Una bola hecha de yuca rellena con queso',
+					price: 2.5,
+					style: {
+						orientation: 'end' as const,
+						colorSet: 1 as const,
+					},
+				},
+				{
+					title: 'Arepa',
+					id: uuidv4(),
+					text: 'Hecha con harina de maíz. Rellenos: Carne mechada, pollo esmechado, jamón y queso, solo queso, pollo o huevos',
+					price: 9.99,
+					style: {
+						orientation: 'end' as const,
+						colorSet: 3 as const,
+					},
 				},
 				{
 					id: uuidv4(),
-					orientation: 'left' as const,
-					meals: [
-						{
-							title: 'tequeyoyo',
-							id: uuidv4(),
-							text: 'Hecho con harina de trigo, relleno de plátano, queso y jamón',
-							price: 3.5,
-						},
-					],
-				},
-				{
-					id: uuidv4(),
-					meals: [
-						{
-							id: uuidv4(),
-							title: 'papitas de yuca',
-							text: 'Una bola hecha de yuca rellena con queso',
-							price: 2.5,
-						},
-					],
-				},
-				{
-					id: uuidv4(),
-					color: 'red',
-					meals: [
-						{
-							title: 'Arepa',
-							id: uuidv4(),
-							text: 'Hecha con harina de maíz. Rellenos: Carne mechada, pollo esmechado, jamón y queso, solo queso, pollo o huevos',
-							price: 9.99,
-						},
-					],
-				},
-				{
-					id: uuidv4(),
-					color: 'red',
-					orientation: 'left' as const,
-					meals: [
-						{
-							id: uuidv4(),
-							title: 'desayuno criollo',
-							text: 'Hecha con harina de maíz. Rellenos: Carne mechada, pollo esmechado, jamón y queso, solo queso, pollo o huevos',
-							price: 2.99,
-						},
-					],
+					title: 'desayuno criollo',
+					text: 'Hecha con harina de maíz. Rellenos: Carne mechada, pollo esmechado, jamón y queso, solo queso, pollo o huevos',
+					price: 2.99,
+					style: {
+						orientation: 'start' as const,
+						colorSet: 3 as const,
+					},
 				},
 			],
 			cartButtonText: 'Ver Carrito',
@@ -375,7 +374,7 @@ const localesData = {
 	},
 };
 
-export const LocaleContext = createContext(localesData);
+const LocaleContext = createContext(localesData);
 
 export const Locale = ({ children }: { children: ReactNode }) => {
 	return <LocaleContext.Provider value={localesData}>{children}</LocaleContext.Provider>;

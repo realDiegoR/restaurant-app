@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { useLocaleContext } from '@context/Locale';
 import { useCart } from '@hooks/useCart';
-import { MealCategory } from '@components/MealCategory/MealCategory';
-import { MealItem } from '@components/MealItem/MealItem';
+import Head from 'next/head';
+import Image from 'next/image';
 import { Cart } from '@components/Cart/Cart';
 import { CartButton } from '@components/CartButton/CartButton';
 import { AddItemPreview } from '@components/AddItemPreview/AddItemPreview';
-import imagotypeAvif from '@images/brand/veranalia_imagotype.avif';
-import imagotypeWebp from '@images/brand/veranalia_imagotype.webp';
-import styles from './MenuPage.module.scss';
-import Head from 'next/head';
+import { MealSingle } from '@components/meal-single';
+import { MealList } from '@components/meal-list';
+import imagotype from '@images/brand/veranalia_imagotype.webp';
+import styles from './menu.module.scss';
 
 type Modal = 'itemPreview' | 'cart' | null;
 
@@ -42,12 +42,12 @@ const MenuPage = () => {
 			</Head>
 			<main className={styles['MenuPage']}>
 				<div className={styles['Wrapper']}>
-					<picture
+					<figure
 						className={`${styles['MenuPage-imagotype']} ${styles['MenuPage-imagotype--mobile']}`}
 					>
-						<source srcSet={imagotypeAvif.src} type="image/avif" />
-						<img src={imagotypeWebp.src} alt="Veranalia Imagotype" />
-					</picture>
+						<Image src={imagotype.src} alt="Veranalia Imagotype" width={250} height={150} />
+					</figure>
+
 					<nav className={styles['MenuPage-nav']}>
 						<ul className={styles['MenuPage-navList']}>
 							{foodMenu.mobileSectionButtons.map(({ id, name, keyname }) => (
@@ -64,32 +64,32 @@ const MenuPage = () => {
 							))}
 						</ul>
 					</nav>
+
 					<div className={styles['MenuPage-sectionDivider']}>
 						<section
 							className={`${styles['MenuPage-foodSection']} ${
 								currentSection === 'main' ? styles['MenuPage-foodSection--visible'] : ''
 							}`}
 						>
-							<picture
+							<figure
 								className={`${styles['MenuPage-imagotype']} ${styles['MenuPage-imagotype--desktop']}`}
 							>
-								<source srcSet={imagotypeAvif.src} type="image/avif" />
-								<img src={imagotypeWebp.src} alt="Veranalia Imagotype" />
-							</picture>
-							{foodMenu.main.map((foodCategory) => (
-								<MealCategory key={foodCategory.id} type="normal" {...foodCategory}>
-									{(key, mealData: IMealItem) => (
-										<MealItem
-											key={key}
+								<Image src={imagotype.src} alt="Veranalia Imagotype" fill />
+							</figure>
+							{foodMenu.main.map((category) => (
+								<MealList key={category.id} {...category}>
+									{(mealData: ShortenedMeal) => (
+										<MealList.Item
+											key={mealData.id}
 											{...mealData}
-											color={foodCategory.color}
-											orientation={foodCategory.orientation}
+											style={category.style}
 											openModal={(item: ICartItem) => openItemPreviewModal(item)}
 										/>
 									)}
-								</MealCategory>
+								</MealList>
 							))}
 						</section>
+
 						<section
 							className={`${styles['MenuPage-foodSection']} ${
 								currentSection === 'breakfast' ? styles['MenuPage-foodSection--visible'] : ''
@@ -98,37 +98,34 @@ const MenuPage = () => {
 							<h2 className={`${styles['MenuPage-title']} ${styles['Wrapper']}`}>
 								{foodMenu.breakfastTitle}
 							</h2>
-							{foodMenu.breakfast.map((foodCategory) => (
-								<MealCategory key={foodCategory.id} {...foodCategory} type="expanded">
-									{(key, mealData) => (
-										<MealItem
-											key={key}
-											{...mealData}
-											color={foodCategory.color}
-											orientation={foodCategory.orientation}
-											openModal={(item: ICartItem) => openItemPreviewModal(item)}
-										/>
-									)}
-								</MealCategory>
+							{foodMenu.breakfast.map((meal) => (
+								<MealSingle
+									key={meal.id}
+									{...meal}
+									openModal={(item: ICartItem) => openItemPreviewModal(item)}
+								/>
 							))}
 						</section>
 					</div>
+
 					<CartButton
 						itemCount={itemCount}
 						openModal={() => setModal('cart')}
 						text={foodMenu.cartButtonText}
 					/>
+
 					{modal === 'cart' && (
 						<Cart
 							itemCount={itemCount}
 							cartItems={cartItems}
 							totalPrice={totalPrice}
 							deleteItem={deleteItem}
-							onClose={() => closeModal()}
+							onClose={closeModal}
 						/>
 					)}
+
 					{modal === 'itemPreview' && itemPreview && (
-						<AddItemPreview item={itemPreview} addItem={addItem} onClose={() => closeModal()} />
+						<AddItemPreview item={itemPreview} addItem={addItem} onClose={closeModal} />
 					)}
 				</div>
 			</main>

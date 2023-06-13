@@ -1,3 +1,45 @@
+@import '@styles/mixins/wrapper';
+
+.MealList {
+	padding: 0.9375rem 0;
+	border-radius: 4px;
+	text-align: end;
+
+	.Wrapper {
+		@include wrapper;
+	}
+
+	&-title {
+		margin-bottom: 0.875rem;
+		font: 700 var(--heading-01) var(--strong-font);
+		text-transform: uppercase;
+	}
+
+	&-ul {
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 1.5625rem;
+
+		&--big {
+			gap: 4.6875rem;
+		}
+	}
+
+	&--yellow {
+		background-color: var(--brand-yellow);
+		color: var(--black);
+	}
+
+	&--red {
+		background-color: var(--brand-red);
+		color: var(--white);
+	}
+
+	&--left {
+		text-align: start;
+	}
+}
+
 .MealItem {
 	display: flex;
 	justify-content: flex-end;
@@ -50,17 +92,6 @@
 		}
 	}
 
-	&--yellow,
-	&--red {
-		.MealItem-text {
-			font-weight: 600;
-		}
-
-		&.MealItem--big {
-			padding: 1.5625rem 0.9375rem;
-		}
-	}
-
 	&--yellow {
 		.MealItem-price {
 			background-color: var(--black);
@@ -75,11 +106,6 @@
 				background-color: var(--black);
 				color: var(--white);
 			}
-		}
-
-		&.MealItem--big {
-			background-color: var(--brand-yellow);
-			color: var(--black);
 		}
 	}
 
@@ -98,35 +124,13 @@
 				color: var(--white);
 			}
 		}
-
-		&.MealItem--big {
-			background-color: var(--brand-red);
-			color: var(--white);
-		}
 	}
 
 	&--left {
 		flex-flow: row-reverse nowrap;
 
-		.MealItem-text {
-			text-align: start;
-		}
-
 		.MealItem-boxes {
 			flex-flow: row-reverse nowrap;
-		}
-
-		&.MealItem--big {
-			justify-content: flex-start;
-			text-align: start;
-		}
-	}
-
-	&--big {
-		flex-flow: row wrap;
-
-		.MealItem-heavyInfo {
-			gap: 0.625rem;
 		}
 	}
 }

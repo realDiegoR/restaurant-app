@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import type { JSX } from 'react';
 
 interface IIcons {
 	[key: string]: JSX.Element;
