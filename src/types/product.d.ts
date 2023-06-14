@@ -6,24 +6,12 @@ declare interface IMealItem {
 		colorSet: 1 | 2 | 3;
 		orientation: 'start' | 'end';
 	};
-	openModal?: (item: ICartItem) => void;
-}
-
-declare type ShortenedMeal = Pick<IMealItem, 'id' | 'text' | 'price'>;
-
-declare interface IMealCategory {
-	title?: string;
-	meals: ShortenedMeal[];
-	children: (data: ShortenedMeal) => import('react').ReactNode;
-	style: {
-		colorSet: 1 | 2 | 3;
-		orientation: 'start' | 'end';
-	};
+	openModal: (item: ICartItem) => void;
 }
 
 declare interface ICartItem {
 	readonly title: string;
-	price: number;
+	readonly price: number;
 	units: number;
 	totalUnitsPrice?: number;
 }

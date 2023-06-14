@@ -75,14 +75,14 @@ const MenuPage = () => {
 							</figure>
 							{foodMenu.main.map((category) => (
 								<MealList key={category.id} {...category}>
-									{(mealData: ShortenedMeal) => (
+									{category.meals.map((meal) => (
 										<MealList.Item
-											key={mealData.id}
-											{...mealData}
+											key={meal.id}
+											{...meal}
 											style={category.style}
 											openModal={(item: ICartItem) => openItemPreviewModal(item)}
 										/>
-									)}
+									))}
 								</MealList>
 							))}
 						</section>

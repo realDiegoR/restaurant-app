@@ -1,27 +1,21 @@
 import { Icon } from '@common/Icon/Icon';
 import classNames from 'classnames';
+import { getMealStyle } from '../utils/get-meal-styles';
 import styles from './meal-single.module.scss';
 
 interface MealSingleProps extends IMealItem {
 	title: string;
 }
 
-const colorSet = {
-	1: '',
-	2: styles['MealSingle--yellow'],
-	3: styles['MealSingle--red'],
-};
-
-const orientationSet = {
-	end: '',
-	start: styles['MealSingle--left'],
-};
-
 export const MealSingle = ({ price, title, text, style, openModal }: MealSingleProps) => {
-	const mealStyles = [colorSet[style.colorSet], orientationSet[style.orientation]];
+	const mealStyles = getMealStyle({
+		css: styles,
+		mealStyle: style,
+		compName: 'MealSingle',
+	});
 
 	const openPreviewModal = () => {
-		openModal && openModal({ price, title, units: 0 });
+		openModal({ price, title, units: 0 });
 	};
 
 	return (
