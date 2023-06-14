@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { LandingLayout } from '@layouts/landing/LandingLayout';
+import { LandingLayout } from '@layouts/landing';
 import { Contact } from '@components/Contact/Contact';
 
 const contact = () => {

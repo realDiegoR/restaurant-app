@@ -2,6 +2,7 @@ import { Icon } from '@common/Icon/Icon';
 import classNames from 'classnames';
 import { getMealStyle } from '../utils/get-meal-styles';
 import styles from './meal-single.module.scss';
+import { IMealItem } from '../meal-list';
 
 interface MealSingleProps extends IMealItem {
 	title: string;

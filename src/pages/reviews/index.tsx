@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { LandingLayout } from '@layouts/landing/LandingLayout';
+import { LandingLayout } from '@layouts/landing';
 import { Title } from '@common/Title/Title';
 import { LinkButton } from '@common/LinkButton/LinkButton';
 import { Review } from '@features/review/review';

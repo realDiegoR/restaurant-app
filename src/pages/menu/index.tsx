@@ -14,7 +14,7 @@ const MenuPage = () => {
 	const {
 		es: { foodMenu },
 	} = useLocaleContext();
-	const { cartItems, itemCount, totalPrice, addItem, deleteItem, itemPreview, addPreviewItem } =
+	const { cartItems, itemCount, totalPrice, itemPreview, addItem, deleteItem, addPreviewItem } =
 		useCart();
 	const [currentSection, setCurrentSection] = useState('main');
 	const [modal, setModal] = useState<Modal>(null);

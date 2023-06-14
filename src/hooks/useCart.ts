@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 class CartItem implements ICartItem {
 	readonly title: string;
-	price: number;
+	readonly price: number;
 	units: number;
 	totalUnitsPrice: number;
 
@@ -48,20 +48,17 @@ export const useCart = () => {
 	};
 
 	const addItem = (newItem: ICartItem, units: number) => {
-		const itemsFromStorage = [...cartItems];
-		const newCart = assignPrototype(itemsFromStorage);
+		const newCart = getCart();
 		const isItemInCart = newCart.find((item) => item.title === newItem.title);
 
 		if (isItemInCart) isItemInCart.add(newItem.units);
 		else newCart.push(new CartItem(newItem.title, newItem.price, units));
 
-		console.log(newItem, newCart, units);
 		saveCart(newCart);
 	};
 
 	const deleteItem = (item: ICartItem) => {
-		const itemsFromStorage = [...cartItems];
-		const newCart = assignPrototype(itemsFromStorage);
+		const newCart = getCart();
 
 		const itemIndex = newCart.findIndex((cartItem) => cartItem.title === item.title);
 		newCart[itemIndex].delete();
@@ -76,6 +73,12 @@ export const useCart = () => {
 		setCartItems(newCart);
 	};
 
+	const getCart = () => {
+		const itemsFromStorage = [...cartItems];
+		const modifiedCart = assignPrototype(itemsFromStorage);
+		return modifiedCart;
+	};
+
 	const assignPrototype = (cart: CartItem[]): CartItem[] => {
 		return cart.map((item) => Object.setPrototypeOf(item, CartItem.prototype));
 	};
@@ -84,9 +87,9 @@ export const useCart = () => {
 		cartItems,
 		itemCount,
 		totalPrice,
+		itemPreview,
 		addItem,
 		deleteItem,
-		itemPreview,
 		addPreviewItem,
 	};
 };

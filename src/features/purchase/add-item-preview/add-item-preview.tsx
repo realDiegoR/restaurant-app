@@ -21,7 +21,7 @@ export const AddItemPreview = ({ item, addItem, onClose }: AddItemPreviewProps) 
 		setItemCount((prev) => prev + 1);
 	};
 
-	const substractItem = () => {
+	const subtractItem = () => {
 		if (itemCount === 1) return;
 		setItemCount((prev) => prev - 1);
 	};
@@ -46,7 +46,7 @@ export const AddItemPreview = ({ item, addItem, onClose }: AddItemPreviewProps) 
 					</button>
 					<button
 						className={styles['AddItemPreview-button']}
-						onClick={substractItem}
+						onClick={subtractItem}
 						disabled={hasAdded}
 					>
 						-
