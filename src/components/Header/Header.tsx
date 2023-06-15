@@ -46,7 +46,7 @@ export const Header = () => {
 						</DropdownButton>
 					) : (
 						<span className={styles['Header-seeMenu']}>
-							<LinkButton href="/menu">Iniciar sesion</LinkButton>
+							<LinkButton href="/login">Iniciar sesión</LinkButton>
 						</span>
 					)}
 				</div>
