@@ -12,6 +12,7 @@
 			"@hooks/*": ["./src/hooks/*"],
 			"@styles/*": ["./src/styles/*"]
 		},
+		"target": "ES6",
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,

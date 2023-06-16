@@ -3,5 +3,6 @@
 	grid-template-rows: 1fr max-content;
 	min-height: 100vh;
 	padding-top: min(10vw, 3rem);
+	gap: min(10vw, 3rem);
 	background-color: var(--brand-yellow);
 }

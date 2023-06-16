@@ -1,4 +1,4 @@
-import { Input } from '@common/Input/Input';
+import { Form } from '@common/form';
 import { Title } from '@common/Title/Title';
 import styles from './contact.module.scss';
 
@@ -10,20 +10,21 @@ export const Contact = () => {
 				No dudes en llegar hacia nosotros. Ya sea una duda, una idea o una propuesta, háznosla
 				saber!
 			</p>
-			<form className={styles['Contact-form']}>
-				<Input label="Ingresa tu nombre">
-					<Input.Text name="full-name" placeholder="Diego Cabrera" minLength={3} />
-				</Input>
-				<Input label="Ingresa tu email">
-					<Input.Email name="full-name" placeholder="email@example.com" />
-				</Input>
-				<Input label="Mensaje">
-					<Input.TextArea name="full-name" placeholder="Hey!" minLength={10} />
-				</Input>
-				<button type="submit" className={styles['Contact-send']}>
-					Enviar
-				</button>
-			</form>
+			<Form>
+				<Form.Label>
+					Tu nombre
+					<Form.Text name="full-name" placeholder="Diego Cabrera" minLength={3} />
+				</Form.Label>
+				<Form.Label>
+					Tu email
+					<Form.Email name="email" placeholder="email@example.com" />
+				</Form.Label>
+				<Form.Label>
+					Mensaje
+					<Form.TextArea name="message" placeholder="Hey!" minLength={10} />
+				</Form.Label>
+				<Form.Submit>Enviar</Form.Submit>
+			</Form>
 		</div>
 	);
 };
