@@ -7,6 +7,7 @@ import { Cart, AddItemPreview } from '@features/purchase';
 import { MealSingle, MealList, CartButton } from '@features/menu';
 import imagotype from '@images/brand/veranalia_imagotype.webp';
 import styles from './menu.module.scss';
+import { Wrapper } from '@common/wrapper';
 
 type Modal = 'itemPreview' | 'cart' | null;
 
@@ -38,7 +39,7 @@ const MenuPage = () => {
 				<title>Menu | Veranalia</title>
 			</Head>
 			<main className={styles['MenuPage']}>
-				<div className={styles['Wrapper']}>
+				<Wrapper className={styles['Wrapper']}>
 					<figure
 						className={`${styles['MenuPage-imagotype']} ${styles['MenuPage-imagotype--mobile']}`}
 					>
@@ -124,7 +125,7 @@ const MenuPage = () => {
 					{modal === 'itemPreview' && itemPreview && (
 						<AddItemPreview item={itemPreview} addItem={addItem} onClose={closeModal} />
 					)}
-				</div>
+				</Wrapper>
 			</main>
 		</>
 	);

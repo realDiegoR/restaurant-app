@@ -1,9 +1,7 @@
-@import '@styles/mixins/wrapper';
 @import '@styles/mixins/hover';
 
 .User {
 	font: 400 var(--paragraph) var(--main-font);
-	@include wrapper;
 
 	&_userInfo {
 		display: flex;

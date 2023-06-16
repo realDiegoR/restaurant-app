@@ -1,13 +1,7 @@
-@import '@styles/mixins/wrapper';
-
 .MealList {
 	padding: 0.9375rem 0;
 	border-radius: 4px;
 	text-align: end;
-
-	.Wrapper {
-		@include wrapper;
-	}
 
 	&-title {
 		margin-bottom: 0.875rem;

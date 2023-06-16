@@ -10,6 +10,8 @@ import styles from './form.module.scss';
 
 interface FormProps {
 	children: ReactNode;
+	method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
+	endpoint?: string;
 }
 
 interface ReqBody {
@@ -20,7 +22,7 @@ type InputNative = InputHTMLAttributes<HTMLInputElement>;
 type TextAreaNative = TextareaHTMLAttributes<HTMLTextAreaElement>;
 type ButtonNative = ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Form = ({ children }: FormProps) => {
+const Form = ({ children, method = 'GET', endpoint = '' }: FormProps) => {
 	const formRef = useRef<HTMLFormElement>(null);
 
 	const handleSubmit: FormEventHandler<HTMLFormElement> = (ev) => {

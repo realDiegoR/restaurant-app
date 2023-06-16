@@ -9,6 +9,7 @@ import { useDropdownMenu } from '@hooks/useDropdownMenu';
 import { DropdownButton } from '@components/DropdownMenu/DropdownButton/DropdownButton';
 import { Icon } from '@common/Icon/Icon';
 import styles from './Header.module.scss';
+import { Wrapper } from '@common/wrapper';
 
 export const Header = () => {
 	const {
@@ -19,7 +20,7 @@ export const Header = () => {
 
 	return (
 		<header className={styles['Header']}>
-			<div className={styles['Wrapper']}>
+			<Wrapper className={styles['Wrapper']}>
 				<Link href="/">
 					<picture className={styles['Header-logo']}>
 						<source srcSet={logotypeAvif.src} type="image/avif" />
@@ -50,7 +51,7 @@ export const Header = () => {
 						</span>
 					)}
 				</div>
-			</div>
+			</Wrapper>
 			{dropdownMenu.shouldMount && (
 				<DropdownMenu toggle={dropdownMenu.toggle} isOpen={dropdownMenu.isOpen} />
 			)}

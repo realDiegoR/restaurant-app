@@ -4,6 +4,7 @@ import { Icon } from '@common/Icon/Icon';
 import { DecorationDot } from '@common/DecorationDot/DecorationDot';
 import { Pastelito } from '@common/Pastelito/Pastelito';
 import styles from './WhoAreWe.module.scss';
+import { Wrapper } from '@common/wrapper';
 
 export const WhoAreWe = () => {
 	const {
@@ -12,7 +13,7 @@ export const WhoAreWe = () => {
 
 	return (
 		<section className={styles['WhoAreWe']}>
-			<div className={styles['Wrapper']}>
+			<Wrapper className={styles['Wrapper']}>
 				<h2 className={styles['WhoAreWe-title']}>{whoAreWe.title}</h2>
 				<div className={styles['WhoAreWe-pitch']}>
 					{whoAreWe.salesPitchSentences.map(({ id, text }) => (
@@ -25,7 +26,7 @@ export const WhoAreWe = () => {
 					<Icon name="orderMenu" />
 					{whoAreWe.callToAction}
 				</LinkButton>
-			</div>
+			</Wrapper>
 
 			<DecorationDot bottom="55vw" right="7vw" size=".85rem" />
 			<DecorationDot bottom="5.5vw" left="8vw" size=".55rem" />
