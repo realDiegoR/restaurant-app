@@ -2,7 +2,7 @@ import { LandingLayout } from '@layouts/landing';
 import Head from 'next/head';
 import { Title } from '@common/Title/Title';
 import { Form } from '@common/form';
-import { Wrapper } from '@common/wrapper/wrappper';
+import { Wrapper } from '@common/wrapper';
 
 const Login = () => {
 	return (
@@ -12,7 +12,7 @@ const Login = () => {
 			</Head>
 			<Wrapper>
 				<Title>Iniciar Sesión</Title>
-				<Form>
+				<Form method="POST" endpoint="../api/user/login">
 					<Form.Label>
 						Nombre de Usuario
 						<Form.Text name="username" />

@@ -1,6 +1,6 @@
 import { Form } from '@common/form';
 import { Title } from '@common/Title/Title';
-import { Wrapper } from '@common/wrapper/wrappper';
+import { Wrapper } from '@common/wrapper';
 import styles from './contact.module.scss';
 
 export const Contact = () => {

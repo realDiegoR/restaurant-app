@@ -35,7 +35,13 @@ const Form = ({ children, method = 'GET', endpoint = '' }: FormProps) => {
 			requestBody[pair[0]] = pair[1];
 		}
 
-		alert(JSON.stringify(requestBody));
+		fetch(endpoint, {
+			method,
+			body: JSON.stringify(requestBody),
+		})
+			.then((res) => res.json())
+			.then((data) => console.log(data))
+			.catch((err) => console.warn(err));
 	};
 
 	return (
