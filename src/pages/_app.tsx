@@ -4,6 +4,7 @@ import { Quicksand, Sintony } from 'next/font/google';
 import { Header } from '@components/Header/Header';
 import { Locale } from '@context/Locale';
 import '@styles/main.scss';
+import { UserProvider } from '@context/UserContext';
 
 const quicksand = Quicksand({
 	subsets: ['latin'],
@@ -25,11 +26,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 			</Head>
-			<Locale>
-				<Header />
-				<Component {...pageProps} />
-				<div id="modal"></div>
-			</Locale>
+			<UserProvider>
+				<Locale>
+					<Header />
+					<Component {...pageProps} />
+					<div id="modal"></div>
+				</Locale>
+			</UserProvider>
 		</div>
 	);
 }
