@@ -3,10 +3,11 @@ import {
 	type InputHTMLAttributes,
 	type TextareaHTMLAttributes,
 	type ButtonHTMLAttributes,
+	type FormEventHandler,
 	useRef,
-	FormEventHandler,
 	useState,
 } from 'react';
+import { AxiosResponse, type AxiosError } from 'axios';
 import styles from './form.module.scss';
 
 interface FormProps {
@@ -14,22 +15,18 @@ interface FormProps {
 	callback: (requestBody: any) => void;
 }
 
-interface ReqBody {
-	[key: string]: unknown;
-}
-
 type InputNative = InputHTMLAttributes<HTMLInputElement>;
 type TextAreaNative = TextareaHTMLAttributes<HTMLTextAreaElement>;
 type ButtonNative = ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Form = ({ children, callback }: FormProps) => {
-	const [error, setError] = useState<number | null>(null);
+	const [error, setError] = useState<string | null>(null);
 	const formRef = useRef<HTMLFormElement>(null);
 
 	const handleSubmit: FormEventHandler<HTMLFormElement> = async (ev) => {
 		ev.preventDefault();
 		const formData = new FormData(formRef.current ?? undefined);
-		const requestBody: ReqBody = {};
+		const requestBody: any = {};
 
 		for (const pair of formData.entries()) {
 			requestBody[pair[0]] = pair[1];
@@ -38,14 +35,14 @@ const Form = ({ children, callback }: FormProps) => {
 		try {
 			await callback(requestBody);
 		} catch (err) {
-			const error = err as number;
+			const error = err as string;
 			setError(error);
 		}
 	};
-	console.log(error);
 
 	return (
 		<form ref={formRef} className={styles.Form} onSubmit={handleSubmit}>
+			{error ? <p className={styles.Form_error}>{error}</p> : null}
 			{children}
 		</form>
 	);

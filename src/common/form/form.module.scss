@@ -8,6 +8,15 @@
 	gap: 1.5rem;
 	margin: 1.5rem 0;
 
+	&_error {
+		width: 100%;
+		padding: 0.5rem;
+		background-color: #ca0020ab;
+		color: var(--gray-02);
+		border-radius: 0.25rem;
+		font: 500 var(--sub) var(--main-font);
+	}
+
 	&_label {
 		width: 100%;
 		font-size: var(--paragraph);

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { type AxiosError } from 'axios';
+import { type AxiosResponse } from 'axios';
 import { LandingLayout } from '@layouts/landing';
 import { Title } from '@common/Title/Title';
 import { Form } from '@common/form';
@@ -22,8 +22,9 @@ const Login = () => {
 				push(`/user/${response.data.username}`);
 			}
 		} catch (err) {
-			const error = err as AxiosError;
-			throw error.status;
+			const error = err as AxiosResponse;
+			if (error.status === 401)
+				throw 'El usuario y la contraseña no coinciden. Vuelva a intentarlo.';
 		}
 	};
 
