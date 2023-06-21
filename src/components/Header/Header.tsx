@@ -8,13 +8,15 @@ import logotypeWebp from '@images/brand/veranalia_logotype.webp';
 import { useDropdownMenu } from '@hooks/useDropdownMenu';
 import { DropdownButton } from '@components/DropdownMenu/DropdownButton/DropdownButton';
 import { Icon } from '@common/Icon/Icon';
-import styles from './Header.module.scss';
 import { Wrapper } from '@common/wrapper';
+import styles from './Header.module.scss';
+import { useUserContext } from '@context/UserContext';
 
 export const Header = () => {
 	const {
 		es: { navBar },
 	} = useLocaleContext();
+	const { isLogged, user } = useUserContext();
 	const dropdownMenu = useDropdownMenu();
 	const { pathname } = useRouter();
 
@@ -46,9 +48,17 @@ export const Header = () => {
 							<Icon name="hamburger" />
 						</DropdownButton>
 					) : (
-						<span className={styles['Header-seeMenu']}>
-							<LinkButton href="/login">Iniciar sesión</LinkButton>
-						</span>
+						<>
+							{isLogged ? (
+								<span className={styles['Header-seeMenu']}>
+									<LinkButton href={`/user/${user?.username}`}>Mi Perfil</LinkButton>
+								</span>
+							) : (
+								<span className={styles['Header-seeMenu']}>
+									<LinkButton href="/login">Iniciar sesión</LinkButton>
+								</span>
+							)}
+						</>
 					)}
 				</div>
 			</Wrapper>

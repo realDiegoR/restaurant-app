@@ -4,10 +4,32 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import image from 'public/images/brand/veranalia_imagotype.webp';
-import styles from './user.module.scss';
 import { Wrapper } from '@common/wrapper';
+import { logout } from 'src/services/user/logout';
+import { useUserContext } from '@context/UserContext';
+import styles from './user.module.scss';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 const UserPage = () => {
+	const { push } = useRouter();
+	const { isLogged, updateUserStatus } = useUserContext();
+	const logoutCallback = async () => {
+		try {
+			await logout();
+			updateUserStatus(null);
+			push('/');
+		} catch (err) {
+			console.error(err);
+		}
+	};
+
+	useEffect(() => {
+		if (!isLogged) {
+			push('/');
+		}
+	}, []);
+
 	return (
 		<LandingLayout>
 			<Head>
@@ -15,7 +37,7 @@ const UserPage = () => {
 			</Head>
 			<main className={styles.User}>
 				<Wrapper>
-					<Title>Tu Perfil</Title>
+					<Title>Mi Perfil</Title>
 					<section className={styles.User_userInfo}>
 						<Image
 							className={styles.User_image}
@@ -63,7 +85,7 @@ const UserPage = () => {
 								<Link href="/">Ajustes de Cuenta</Link>
 							</li>
 							<li className={styles.User_settings_item}>
-								<Link href="/">Cerrar Sesión</Link>
+								<button onClick={logoutCallback}>Cerrar Sesión</button>
 							</li>
 						</ul>
 					</section>

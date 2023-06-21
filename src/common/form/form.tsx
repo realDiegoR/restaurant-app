@@ -5,44 +5,44 @@ import {
 	type ButtonHTMLAttributes,
 	useRef,
 	FormEventHandler,
+	useState,
 } from 'react';
 import styles from './form.module.scss';
 
 interface FormProps {
 	children: ReactNode;
-	method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
-	endpoint?: string;
+	callback: (requestBody: any) => void;
 }
 
 interface ReqBody {
-	[key: string]: FormDataEntryValue;
+	[key: string]: unknown;
 }
 
 type InputNative = InputHTMLAttributes<HTMLInputElement>;
 type TextAreaNative = TextareaHTMLAttributes<HTMLTextAreaElement>;
 type ButtonNative = ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Form = ({ children, method = 'GET', endpoint = '' }: FormProps) => {
+const Form = ({ children, callback }: FormProps) => {
+	const [error, setError] = useState<number | null>(null);
 	const formRef = useRef<HTMLFormElement>(null);
 
-	const handleSubmit: FormEventHandler<HTMLFormElement> = (ev) => {
+	const handleSubmit: FormEventHandler<HTMLFormElement> = async (ev) => {
 		ev.preventDefault();
 		const formData = new FormData(formRef.current ?? undefined);
-		const entries = formData.entries();
-
 		const requestBody: ReqBody = {};
-		for (const pair of entries) {
+
+		for (const pair of formData.entries()) {
 			requestBody[pair[0]] = pair[1];
 		}
 
-		fetch(endpoint, {
-			method,
-			body: JSON.stringify(requestBody),
-		})
-			.then((res) => res.json())
-			.then((data) => console.log(data))
-			.catch((err) => console.warn(err));
+		try {
+			await callback(requestBody);
+		} catch (err) {
+			const error = err as number;
+			setError(error);
+		}
 	};
+	console.log(error);
 
 	return (
 		<form ref={formRef} className={styles.Form} onSubmit={handleSubmit}>

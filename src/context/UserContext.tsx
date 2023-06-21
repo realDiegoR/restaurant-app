@@ -3,8 +3,7 @@ import { useState, createContext, ReactNode, useContext } from 'react';
 interface UserContext {
 	isLogged: boolean;
 	user: User | null;
-	logIn: () => void;
-	logOut: () => void;
+	updateUserStatus: (user: User | null) => void;
 }
 
 enum USER_ROLES {
@@ -14,6 +13,7 @@ enum USER_ROLES {
 
 interface User {
 	id: string;
+	fullName: string;
 	username: string;
 	role: USER_ROLES;
 	cart: ICartItem[];
@@ -22,8 +22,7 @@ interface User {
 const initialState: UserContext = {
 	isLogged: false,
 	user: null,
-	logIn: () => undefined,
-	logOut: () => undefined,
+	updateUserStatus: () => void 0,
 };
 
 const UserContext = createContext<UserContext>(initialState);
@@ -37,21 +36,15 @@ const useInternalUser = () => {
 	const [user, setUser] = useState<User | null>(null);
 	const [isLogged, setIsLogged] = useState<boolean>(false);
 
-	const logIn = async () => {
-		// setUser()
-		setIsLogged(true);
-	};
-
-	const logOut = async () => {
-		setUser(null);
-		setIsLogged(false);
+	const updateUserStatus = (user: User | null) => {
+		setUser(user);
+		setIsLogged(Boolean(user));
 	};
 
 	return {
 		user,
 		isLogged,
-		logIn,
-		logOut,
+		updateUserStatus,
 	};
 };
 
