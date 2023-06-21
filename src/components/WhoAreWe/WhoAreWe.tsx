@@ -1,5 +1,5 @@
 import { useLocaleContext } from '@context/Locale';
-import { LinkButton } from '@common/LinkButton/LinkButton';
+import { LinkButton } from '@common/link-button';
 import { Icon } from '@common/Icon/Icon';
 import { DecorationDot } from '@common/DecorationDot/DecorationDot';
 import { Pastelito } from '@common/Pastelito/Pastelito';

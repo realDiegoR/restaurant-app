@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useLocaleContext } from '@context/Locale';
 import { DropdownMenu } from '@components/DropdownMenu/DropdownMenu';
-import { LinkButton } from '@common/LinkButton/LinkButton';
+import { LinkButton } from '@common/link-button';
 import logotypeAvif from '@images/brand/veranalia_logotype.avif';
 import logotypeWebp from '@images/brand/veranalia_logotype.webp';
 import { useDropdownMenu } from '@hooks/useDropdownMenu';

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { LandingLayout } from '@layouts/landing';
 import { Title } from '@common/Title/Title';
-import { LinkButton } from '@common/LinkButton/LinkButton';
+import { LinkButton } from '@common/link-button/';
 import { Review } from '@features/review/review';
 import fakeImg from '@images/brand/veranalia_imagotype.webp';
 import style from './reviews.module.scss';
