@@ -31,15 +31,6 @@
 		font: 400 var(--paragraph) var(--main-font);
 	}
 
-	&_editbutton {
-		padding: 0.625rem 1.25rem;
-		background-color: var(--white);
-		border: 2px solid var(--black);
-		border-radius: 0.25rem;
-		cursor: pointer;
-		@include hover;
-	}
-
 	&_title {
 		color: var(--white);
 		font: 700 var(--heading-02) var(--strong-font);
@@ -47,6 +38,7 @@
 
 	&_overview {
 		padding: 1.875rem 0;
+		text-align: start;
 
 		&_ul {
 			margin-top: 1.25rem;

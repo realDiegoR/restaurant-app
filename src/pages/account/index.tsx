@@ -7,9 +7,11 @@ import image from 'public/images/brand/veranalia_imagotype.webp';
 import { Wrapper } from '@common/wrapper';
 import { logout } from 'src/services/user/logout';
 import { useUserContext } from '@context/UserContext';
-import styles from './user.module.scss';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { LinkButton } from '@common/link-button';
+import styles from './account.module.scss';
+import { Section } from '@features/account/section';
 
 const UserPage = () => {
 	const { push } = useRouter();
@@ -49,9 +51,11 @@ const UserPage = () => {
 						<h2 className={styles.User_username}>Dave</h2>
 						<p className={styles.User_role}>Administrator</p>
 						<p className={styles.User_timestamp}>Cliente desde Junio 2023</p>
-						<button className={styles.User_editbutton}>Editar Profile</button>
+						<LinkButton href="/" type="light">
+							Editar Perfil
+						</LinkButton>
 					</section>
-					<section className={styles.User_overview}>
+					<Section>
 						<h3 className={styles.User_title}>Resumen</h3>
 						<ul className={styles.User_overview_ul}>
 							<li className={styles.User_overview_item}>
@@ -71,8 +75,8 @@ const UserPage = () => {
 								<span>0</span>
 							</li>
 						</ul>
-					</section>
-					<section className={styles.User_settings}>
+					</Section>
+					<Section>
 						<h3 className={styles.User_title}>Opciones</h3>
 						<ul className={styles.User_settings_ul}>
 							<li className={styles.User_settings_item}>
@@ -88,7 +92,7 @@ const UserPage = () => {
 								<button onClick={logoutCallback}>Cerrar Sesión</button>
 							</li>
 						</ul>
-					</section>
+					</Section>
 				</Wrapper>
 			</main>
 		</LandingLayout>

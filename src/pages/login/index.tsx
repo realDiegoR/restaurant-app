@@ -10,16 +10,15 @@ import { ExpectedBody, login } from 'src/services/user/login';
 
 const Login = () => {
 	const { push } = useRouter();
-	const { user, updateUserStatus } = useUserContext();
+	const { updateUserStatus } = useUserContext();
 
 	const loginCallback = async (requestBody: ExpectedBody) => {
 		try {
 			const response = await login(requestBody);
-			console.log(response);
 
 			if (response.statusText === 'OK') {
 				updateUserStatus(response.data);
-				push(`/user/${response.data.username}`);
+				push('/account/');
 			}
 		} catch (err) {
 			const error = err as AxiosResponse;

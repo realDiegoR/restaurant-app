@@ -1,0 +1,8 @@
+.Section {
+	padding: 1.875rem 0;
+	text-align: start;
+
+	~ .Section {
+		border-top: 1px solid var(--white);
+	}
+}
