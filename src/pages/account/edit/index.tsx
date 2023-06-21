@@ -1,4 +1,4 @@
-import { Title } from '@common/Title/Title';
+import { Title } from '@common/title';
 import { LandingLayout } from '@layouts/landing';
 import { Wrapper } from '@common/wrapper';
 import { Form } from '@common/form';

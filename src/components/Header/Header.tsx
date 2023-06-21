@@ -16,7 +16,7 @@ export const Header = () => {
 	const {
 		es: { navBar },
 	} = useLocaleContext();
-	const { isLogged, user } = useUserContext();
+	const { isLogged } = useUserContext();
 	const dropdownMenu = useDropdownMenu();
 	const { pathname } = useRouter();
 
@@ -51,7 +51,7 @@ export const Header = () => {
 						<>
 							{isLogged ? (
 								<span className={styles['Header-seeMenu']}>
-									<LinkButton href={`/user/${user?.username}`}>Mi Perfil</LinkButton>
+									<LinkButton href={`/account`}>Mi Perfil</LinkButton>
 								</span>
 							) : (
 								<span className={styles['Header-seeMenu']}>

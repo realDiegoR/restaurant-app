@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { type AxiosResponse } from 'axios';
 import { LandingLayout } from '@layouts/landing';
-import { Title } from '@common/Title/Title';
+import { Title } from '@common/title';
 import { Form } from '@common/form';
 import { Wrapper } from '@common/wrapper';
 import { useUserContext } from '@context/UserContext';

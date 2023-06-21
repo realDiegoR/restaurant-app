@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { LandingLayout } from '@layouts/landing';
-import { Title } from '@common/Title/Title';
+import { Title } from '@common/title';
 import { LinkButton } from '@common/link-button/';
 import { Review } from '@features/review/review';
 import fakeImg from '@images/brand/veranalia_imagotype.webp';

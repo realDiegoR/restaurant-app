@@ -1,9 +1,10 @@
 import { LandingLayout } from '@layouts/landing';
-import { Title } from '@common/Title/Title';
+import { Title } from '@common/title';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import image from 'public/images/brand/veranalia_imagotype.webp';
+import { Section } from '@features/account/section';
 import { Wrapper } from '@common/wrapper';
 import { logout } from 'src/services/user/logout';
 import { useUserContext } from '@context/UserContext';
@@ -11,7 +12,8 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { LinkButton } from '@common/link-button';
 import styles from './account.module.scss';
-import { Section } from '@features/account/section';
+import { Settings } from '@features/account/settings';
+import { Overview } from '@features/account/overview';
 
 const UserPage = () => {
 	const { push } = useRouter();
@@ -48,50 +50,44 @@ const UserPage = () => {
 							width={300}
 							height={300}
 						/>
-						<h2 className={styles.User_username}>Dave</h2>
+						<p className={styles.User_username}>Dave</p>
 						<p className={styles.User_role}>Administrator</p>
 						<p className={styles.User_timestamp}>Cliente desde Junio 2023</p>
-						<LinkButton href="/" type="light">
+						<LinkButton href="/account/edit" type="light">
 							Editar Perfil
 						</LinkButton>
 					</section>
 					<Section>
-						<h3 className={styles.User_title}>Resumen</h3>
-						<ul className={styles.User_overview_ul}>
-							<li className={styles.User_overview_item}>
+						<Title type="h2">Resumen</Title>
+						<Overview>
+							<Overview.Item>
 								<span>Última Compra</span>
 								<span>17 de abril</span>
-							</li>
-							<li className={styles.User_overview_item}>
+							</Overview.Item>
+							<Overview.Item>
 								<span>Compras Totales</span>
 								<span>0</span>
-							</li>
-							<li className={styles.User_overview_item}>
+							</Overview.Item>
+							<Overview.Item>
 								<span>Plato Favorito</span>
 								<span>Mandoca</span>
-							</li>
-							<li className={styles.User_overview_item}>
+							</Overview.Item>
+							<Overview.Item>
 								<span>Reseñas Totales</span>
 								<span>0</span>
-							</li>
-						</ul>
+							</Overview.Item>
+						</Overview>
 					</Section>
 					<Section>
-						<h3 className={styles.User_title}>Opciones</h3>
-						<ul className={styles.User_settings_ul}>
-							<li className={styles.User_settings_item}>
-								<Link href="/">Historial de Compras</Link>
-							</li>
-							<li className={styles.User_settings_item}>
-								<Link href="/">Mis Reseñas</Link>
-							</li>
-							<li className={styles.User_settings_item}>
-								<Link href="/">Ajustes de Cuenta</Link>
-							</li>
-							<li className={styles.User_settings_item}>
+						<Title type="h2">Opciones</Title>
+						<Settings>
+							<Settings.Item href="/">Historial de Compras</Settings.Item>
+							<Settings.Item href="/">Mis Reseñas</Settings.Item>
+							<Settings.Item href="/">Ajustes de Cuenta</Settings.Item>
+							<Settings.Item href="/">
 								<button onClick={logoutCallback}>Cerrar Sesión</button>
-							</li>
-						</ul>
+							</Settings.Item>
+						</Settings>
 					</Section>
 				</Wrapper>
 			</main>
