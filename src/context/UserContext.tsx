@@ -1,26 +1,14 @@
+import type { User } from '@interfaces/user';
 import { useState, createContext, ReactNode, useContext } from 'react';
 
 interface UserContext {
-	isLogged: boolean;
+	isLoggedIn: boolean;
 	user: User | null;
 	updateUserStatus: (user: User | null) => void;
 }
 
-enum USER_ROLES {
-	admin = 'admin',
-	customer = 'customer',
-}
-
-interface User {
-	id: string;
-	fullName: string;
-	username: string;
-	role: USER_ROLES;
-	cart: ICartItem[];
-}
-
 const initialState: UserContext = {
-	isLogged: false,
+	isLoggedIn: false,
 	user: null,
 	updateUserStatus: () => void 0,
 };
@@ -34,7 +22,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
 const useInternalUser = () => {
 	const [user, setUser] = useState<User | null>(null);
-	const [isLogged, setIsLogged] = useState<boolean>(false);
+	const [isLoggedIn, setIsLogged] = useState<boolean>(false);
 
 	const updateUserStatus = (user: User | null) => {
 		setUser(user);
@@ -43,7 +31,7 @@ const useInternalUser = () => {
 
 	return {
 		user,
-		isLogged,
+		isLoggedIn,
 		updateUserStatus,
 	};
 };

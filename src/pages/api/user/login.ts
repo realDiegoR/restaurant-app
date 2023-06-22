@@ -1,30 +1,24 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-
-const users = [
-	{
-		id: 'abcd',
-		fullName: 'Diego Reyes Cabrera',
-		username: 'realdiegor',
-		password: 'admin123',
-	},
-	{
-		id: 'dcba',
-		fullName: 'Daniel Andres Pirela',
-		username: 'danielp',
-		password: 'admin456',
-	},
-];
+import users from 'src/database/users';
 
 const login = async (req: NextApiRequest, res: NextApiResponse) => {
 	const { body } = req;
 	const user = users.find((user) => user.username === body.username);
 	const hasPermissions = user?.password === body.password;
-	if (hasPermissions) {
-		res.status(200).json(user);
+	if (user && hasPermissions) {
+		const { id, fullName, username, role, cart } = user;
+		const clientUser = {
+			id,
+			fullName,
+			username,
+			role,
+			cart,
+		};
+		res.status(200).json(clientUser);
 	} else {
 		res.status(401).json({
-			statusCode: 401,
-			message: 'user does not exist',
+			status: 401,
+			message: 'Unauthorized access.',
 		});
 	}
 };

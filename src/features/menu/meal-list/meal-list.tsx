@@ -1,3 +1,4 @@
+import type { ICartItem } from '@interfaces/cart';
 import { Icon } from '@common/Icon/Icon';
 import classNames from 'classnames';
 import { getMealStyle } from '../utils/get-meal-styles';

@@ -10,7 +10,9 @@
 			"@layouts/*": ["./src/layouts/*"],
 			"@context/*": ["./src/context/*"],
 			"@hooks/*": ["./src/hooks/*"],
-			"@styles/*": ["./src/styles/*"]
+			"@styles/*": ["./src/styles/*"],
+			"@services/*": ["src/services/*"],
+			"@interfaces/*": ["src/interfaces/*"]
 		},
 		"target": "ES6",
 		"esModuleInterop": true,

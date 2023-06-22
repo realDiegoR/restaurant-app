@@ -1,4 +1,4 @@
-declare interface ICartItem {
+export interface ICartItem {
 	readonly title: string;
 	readonly price: number;
 	units: number;

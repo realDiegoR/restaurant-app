@@ -2,7 +2,6 @@ import { LandingLayout } from '@layouts/landing';
 import { Title } from '@common/title';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 import image from 'public/images/brand/veranalia_imagotype.webp';
 import { Section } from '@features/account/section';
 import { Wrapper } from '@common/wrapper';
@@ -17,22 +16,22 @@ import { Overview } from '@features/account/overview';
 
 const UserPage = () => {
 	const { push } = useRouter();
-	const { isLogged, updateUserStatus } = useUserContext();
-	const logoutCallback = async () => {
-		try {
-			await logout();
-			updateUserStatus(null);
-			push('/');
-		} catch (err) {
-			console.error(err);
-		}
-	};
+	const { isLoggedIn, user } = useUserContext();
+	// const logoutCallback = async () => {
+	// 	try {
+	// 		await logout();
+	// 		updateUserStatus(null);
+	// 		push('/');
+	// 	} catch (err) {
+	// 		console.error(err);
+	// 	}
+	// };
 
 	useEffect(() => {
-		if (!isLogged) {
+		if (!isLoggedIn) {
 			push('/');
 		}
-	}, []);
+	}, [isLoggedIn, push]);
 
 	return (
 		<LandingLayout>
@@ -50,8 +49,8 @@ const UserPage = () => {
 							width={300}
 							height={300}
 						/>
-						<p className={styles.User_username}>Dave</p>
-						<p className={styles.User_role}>Administrator</p>
+						<p className={styles.User_username}>{user?.fullName}</p>
+						<p className={styles.User_role}>{user?.role}</p>
 						<p className={styles.User_timestamp}>Cliente desde Junio 2023</p>
 						<LinkButton href="/account/edit" type="light">
 							Editar Perfil
@@ -84,9 +83,7 @@ const UserPage = () => {
 							<Settings.Item href="/">Historial de Compras</Settings.Item>
 							<Settings.Item href="/">Mis Reseñas</Settings.Item>
 							<Settings.Item href="/">Ajustes de Cuenta</Settings.Item>
-							<Settings.Item href="/">
-								<button onClick={logoutCallback}>Cerrar Sesión</button>
-							</Settings.Item>
+							<Settings.Item href="/logout">Cerrar Sesión</Settings.Item>
 						</Settings>
 					</Section>
 				</Wrapper>

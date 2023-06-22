@@ -1,3 +1,4 @@
+import type { ICartItem } from '@interfaces/cart';
 import { useState } from 'react';
 import { useLocaleContext } from '@context/Locale';
 import { Modal } from '@common/modal';
