@@ -1,6 +1,5 @@
 .Title {
 	text-transform: capitalize;
-	color: var(--white);
 }
 
 .h1 {
@@ -9,4 +8,11 @@
 
 .h2 {
 	font: 700 var(--heading-02) var(--strong-font);
+}
+
+.yellow {
+	color: var(--brand-yellow);
+}
+.white {
+	color: var(--white);
 }

@@ -4,5 +4,12 @@
 	min-height: 100vh;
 	padding-top: min(10vw, 3rem);
 	gap: min(10vw, 3rem);
+}
+
+.yellow {
 	background-color: var(--brand-yellow);
+}
+
+.black {
+	background-color: var(--black);
 }

@@ -1,8 +1,9 @@
 @import '@styles/mixins/hover';
 
-.PopularMealItem {
+.PromoItem {
 	width: 100%;
 	background-color: var(--white);
+	color: var(--black);
 	border-radius: 0.25rem;
 	overflow: hidden;
 

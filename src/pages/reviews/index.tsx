@@ -17,7 +17,7 @@ const ReviewsPage = () => {
 				<Wrapper className={style.main}>
 					<Title>Reseñas</Title>
 					<p className={style.text}>
-						Te gustó nuestro servicio Agradecemos tu reseña sobre nosotros. Cuéntanos, qué te gustó
+						Te gustó nuestro servicio? Agradecemos tu reseña sobre nosotros. Cuéntanos, qué te gustó
 						más?
 					</p>
 					<LinkButton href="/reviews/post">Escribir reseña</LinkButton>
