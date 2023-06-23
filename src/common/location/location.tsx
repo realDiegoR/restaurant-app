@@ -1,5 +1,6 @@
 import { Icon } from '@common/Icon/Icon';
-import styles from './Location.module.scss';
+import styles from './location.module.scss';
+import { Title } from '@common/title';
 
 type IProps = {
 	name: string;
@@ -10,20 +11,22 @@ type IProps = {
 export const Location = ({ name, place, phoneNumber }: IProps) => {
 	const MAPS_API_KEY = process.env.MAPS_API_KEY;
 	return (
-		<section className={styles['Location']}>
-			<h3 className={styles['Location-name']}>{name}</h3>
-			<div className={styles['Location-infoContainer']}>
-				<div className={styles['Location-contactInfo']}>
+		<section className={styles.Location}>
+			<Title type="h2" color="yellow">
+				{name}
+			</Title>
+			<div className={styles.data_list}>
+				<div className={styles.data}>
 					<Icon name="flag" />
 					<p>{place}</p>
 				</div>
-				<div className={styles['Location-contactInfo']}>
+				<div className={styles.data}>
 					<Icon name="phone" />
 					<p>{phoneNumber}</p>
 				</div>
 			</div>
 			<iframe
-				className={styles['Location-map']}
+				className={styles.map}
 				title="Google Maps Location"
 				loading="lazy"
 				allowFullScreen

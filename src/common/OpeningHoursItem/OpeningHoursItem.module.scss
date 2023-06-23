@@ -3,6 +3,15 @@
 	justify-content: center;
 	gap: 2.5rem;
 	font: 500 var(--paragraph) var(--main-font);
+	margin: 1.5rem 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 
 	&--today {
 		color: var(--brand-red);

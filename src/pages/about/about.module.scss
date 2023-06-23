@@ -1,0 +1,25 @@
+.wrapper {
+	position: relative;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+	gap: 1em;
+	z-index: 1;
+}
+
+.text {
+	max-width: 55ch;
+	position: relative;
+	margin: 0.875rem 0;
+	font-size: var(--paragraph);
+	font-weight: 400;
+	z-index: 1;
+}
+
+.list {
+	margin-top: 1.5625rem;
+}
+
+.locations {
+	margin-top: 1.5rem;
+}

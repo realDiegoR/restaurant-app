@@ -1,0 +1,30 @@
+.data_list {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 0.75rem;
+	width: 100%;
+	margin: 1.25rem 0;
+}
+
+.data {
+	font-size: var(--paragraph);
+
+	:not(:first-child) {
+		margin-left: 1.5rem;
+	}
+
+	svg {
+		display: inline;
+		color: var(--brand-red);
+		vertical-align: middle;
+	}
+
+	p {
+		display: inline;
+	}
+}
+
+.map {
+	aspect-ratio: 16 / 9;
+	border-radius: 0.25rem;
+}
