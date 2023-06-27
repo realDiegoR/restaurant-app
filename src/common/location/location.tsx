@@ -12,7 +12,7 @@ export const Location = ({ name, place, phoneNumber }: IProps) => {
 	const MAPS_API_KEY = process.env.MAPS_API_KEY;
 	return (
 		<section className={styles.Location}>
-			<Title type="h2" color="yellow">
+			<Title type="h3" color="yellow">
 				{name}
 			</Title>
 			<div className={styles.data_list}>

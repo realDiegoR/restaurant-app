@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import styles from './title.module.scss';
 
 interface TitleProps {
-	type?: 'h1' | 'h2';
+	type?: 'h1' | 'h2' | 'h3';
 	children: ReactNode;
 	color?: 'yellow' | 'white';
 }
