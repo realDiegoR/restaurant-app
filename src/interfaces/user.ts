@@ -1,3 +1,5 @@
+import { ICartItem } from './cart';
+
 export enum USER_ROLES {
 	admin = 'administrator',
 	customer = 'customer',

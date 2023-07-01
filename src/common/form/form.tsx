@@ -7,7 +7,6 @@ import {
 	useRef,
 	useState,
 } from 'react';
-import { AxiosResponse, type AxiosError } from 'axios';
 import styles from './form.module.scss';
 
 interface FormProps {
