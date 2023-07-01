@@ -1,3 +1,4 @@
+import { ICartItem } from '@interfaces/cart';
 import { useEffect, useState } from 'react';
 
 class CartItem implements ICartItem {

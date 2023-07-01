@@ -1,3 +1,4 @@
+import { ICartItem } from '@interfaces/cart';
 import { useState } from 'react';
 import { useLocaleContext } from '@context/Locale';
 import { useCart } from '@hooks/useCart';
