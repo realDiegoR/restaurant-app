@@ -1,0 +1,15 @@
+.LandingLayout {
+	display: grid;
+	grid-template-rows: 1fr max-content;
+	min-height: 100vh;
+	gap: min(10vw, 3rem);
+	padding-top: 2rem;
+}
+
+.yellow {
+	background-color: var(--brand-yellow);
+}
+
+.black {
+	background-color: var(--black);
+}

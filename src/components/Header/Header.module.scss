@@ -1,7 +1,5 @@
-@import '@styles/mixins/wrapper';
-
 .Header {
-	position: fixed;
+	position: sticky;
 	top: 0;
 	padding: 1em 0;
 	width: 100%;
@@ -12,7 +10,6 @@
 	z-index: 5;
 
 	.Wrapper {
-		@include wrapper;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;

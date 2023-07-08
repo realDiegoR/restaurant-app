@@ -3,6 +3,8 @@ import { useLocaleContext } from '@context/Locale';
 import { Icon } from '@common/Icon/Icon';
 import { DropdownButton } from '@components/DropdownMenu/DropdownButton/DropdownButton';
 import styles from './DropdownMenu.module.scss';
+import { LinkButton } from '@common/link-button';
+import { useUserContext } from '@context/UserContext';
 
 type IProps = {
 	toggle: () => void;
@@ -15,6 +17,7 @@ export const DropdownMenu = ({ toggle, isOpen }: IProps) => {
 			navBar: { navLinks },
 		},
 	} = useLocaleContext();
+	const { isLoggedIn } = useUserContext();
 
 	return (
 		<nav className={`${styles.DropdownMenu} ${isOpen ? styles['DropdownMenu--open'] : ''}`}>
@@ -30,6 +33,20 @@ export const DropdownMenu = ({ toggle, isOpen }: IProps) => {
 					</li>
 				))}
 			</ul>
+			{isLoggedIn ? (
+				<LinkButton type="light" href="/account">
+					Ver Perfil
+				</LinkButton>
+			) : (
+				<>
+					<LinkButton type="light" href="/login">
+						Iniciar Sesión
+					</LinkButton>
+					<LinkButton type="light" href="/signup">
+						Crear cuenta
+					</LinkButton>
+				</>
+			)}
 			<ul className={styles['DropdownMenu-socialMedia']}>
 				<li className={styles['DropdownMenu-icon']}>
 					<Icon name="facebook" />

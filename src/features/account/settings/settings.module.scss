@@ -1,0 +1,29 @@
+.Settings {
+	margin-top: 1.25rem;
+	border: 2px solid var(--black);
+	border-radius: 0.375rem;
+	overflow: hidden;
+}
+
+.Item {
+	background-color: var(--white);
+	cursor: pointer;
+
+	&:not(:last-child) {
+		border-bottom: 2px solid var(--black);
+	}
+
+	&:hover :where(a, button) {
+		transform: translateX(1rem);
+	}
+
+	:where(a, button) {
+		display: block;
+		width: 100%;
+		height: 100%;
+		padding: 0.625rem;
+		transition: transform 300ms;
+		cursor: inherit;
+		text-align: start;
+	}
+}

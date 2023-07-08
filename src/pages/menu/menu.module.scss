@@ -1,5 +1,3 @@
-@import '@styles/mixins/wrapper';
-
 .MenuPage {
 	padding-top: 3.85rem;
 	margin: 0 auto;
@@ -8,7 +6,6 @@
 
 	.Wrapper {
 		position: relative;
-		@include wrapper;
 	}
 
 	&-title {

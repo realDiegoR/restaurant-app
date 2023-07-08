@@ -1,0 +1,32 @@
+.User {
+	font: 400 var(--paragraph) var(--main-font);
+
+	&_userInfo {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 1.875rem 0;
+	}
+
+	&_image {
+		width: 10rem;
+		height: 10rem;
+		border: 0.25rem solid white;
+		border-radius: 6.1875rem;
+		object-fit: cover;
+		background-color: gray;
+	}
+
+	&_username {
+		font: 700 var(--heading-02) var(--main-font);
+	}
+
+	&_role {
+		font: 600 var(--paragraph) var(--main-font);
+	}
+
+	&_timestamp {
+		font: 400 var(--paragraph) var(--main-font);
+	}
+}

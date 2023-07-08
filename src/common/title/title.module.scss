@@ -1,0 +1,22 @@
+.Title {
+	text-transform: capitalize;
+}
+
+.h1 {
+	font: 700 var(--heading-01) var(--strong-font);
+}
+
+.h2 {
+	font: 700 var(--heading-02) var(--strong-font);
+}
+
+.h3 {
+	font: 700 var(--heading-03) var(--strong-font);
+}
+
+.yellow {
+	color: var(--brand-yellow);
+}
+.white {
+	color: var(--white);
+}

@@ -1,0 +1,16 @@
+.Section {
+	position: relative;
+	padding: var(--sectionPadding);
+	overflow: hidden;
+}
+
+.yellow {
+	background-color: var(--brand-yellow);
+}
+.black {
+	background-color: var(--black);
+	color: var(--white);
+}
+.transparent {
+	background-color: transparent;
+}

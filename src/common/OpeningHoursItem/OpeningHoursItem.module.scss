@@ -1,0 +1,30 @@
+.OpeningHoursItem {
+	display: flex;
+	justify-content: center;
+	gap: 2.5rem;
+	font: 500 var(--paragraph) var(--main-font);
+	margin: 1.5rem 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&--today {
+		color: var(--brand-red);
+		font-weight: 700;
+	}
+
+	&-day {
+		width: 9ch;
+		text-align: end;
+		text-transform: capitalize;
+	}
+	&-openingHours {
+		width: 16ch;
+		text-align: start;
+	}
+}

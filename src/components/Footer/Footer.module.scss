@@ -1,12 +1,9 @@
-@import '@styles/mixins/wrapper';
-
 .Footer {
 	padding: var(--sectionPadding) 1.5rem;
 	background-color: var(--black);
 	color: var(--white);
 
 	.Wrapper {
-		@include wrapper;
 		display: flex;
 		flex-flow: column nowrap;
 		align-items: center;

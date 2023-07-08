@@ -1,0 +1,22 @@
+.Overview {
+	margin-top: 1.25rem;
+	display: grid;
+	grid-template: 1fr 1fr / 1fr 1fr;
+	gap: 1rem;
+}
+
+.Item {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.75rem;
+	border: 2px solid var(--black);
+	background-color: var(--white);
+	text-align: center;
+	border-radius: 0.375rem;
+
+	span:first-child {
+		font-weight: 500;
+	}
+}

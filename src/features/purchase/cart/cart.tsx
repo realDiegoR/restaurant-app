@@ -1,3 +1,4 @@
+import type { ICartItem } from '@interfaces/cart';
 import { useLocaleContext } from '@context/Locale';
 import { Modal } from '@common/modal';
 import { Icon } from '@common/Icon/Icon';

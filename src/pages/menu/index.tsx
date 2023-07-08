@@ -1,3 +1,4 @@
+import { ICartItem } from '@interfaces/cart';
 import { useState } from 'react';
 import { useLocaleContext } from '@context/Locale';
 import { useCart } from '@hooks/useCart';
@@ -7,6 +8,7 @@ import { Cart, AddItemPreview } from '@features/purchase';
 import { MealSingle, MealList, CartButton } from '@features/menu';
 import imagotype from '@images/brand/veranalia_imagotype.webp';
 import styles from './menu.module.scss';
+import { Wrapper } from '@common/wrapper';
 
 type Modal = 'itemPreview' | 'cart' | null;
 
@@ -14,7 +16,7 @@ const MenuPage = () => {
 	const {
 		es: { foodMenu },
 	} = useLocaleContext();
-	const { cartItems, itemCount, totalPrice, addItem, deleteItem, itemPreview, addPreviewItem } =
+	const { cartItems, itemCount, totalPrice, itemPreview, addItem, deleteItem, addPreviewItem } =
 		useCart();
 	const [currentSection, setCurrentSection] = useState('main');
 	const [modal, setModal] = useState<Modal>(null);
@@ -38,7 +40,7 @@ const MenuPage = () => {
 				<title>Menu | Veranalia</title>
 			</Head>
 			<main className={styles['MenuPage']}>
-				<div className={styles['Wrapper']}>
+				<Wrapper className={styles['Wrapper']}>
 					<figure
 						className={`${styles['MenuPage-imagotype']} ${styles['MenuPage-imagotype--mobile']}`}
 					>
@@ -124,7 +126,7 @@ const MenuPage = () => {
 					{modal === 'itemPreview' && itemPreview && (
 						<AddItemPreview item={itemPreview} addItem={addItem} onClose={closeModal} />
 					)}
-				</div>
+				</Wrapper>
 			</main>
 		</>
 	);

@@ -1,8 +1,19 @@
+import type { ICartItem } from '@interfaces/cart';
 import { Icon } from '@common/Icon/Icon';
 import classNames from 'classnames';
 import { getMealStyle } from '../utils/get-meal-styles';
 import styles from './meal-list.module.scss';
-
+import { Wrapper } from '@common/wrapper';
+export interface IMealItem {
+	id: string;
+	price: number;
+	text: string;
+	style: {
+		colorSet: 1 | 2 | 3;
+		orientation: 'start' | 'end';
+	};
+	openModal: (item: ICartItem) => void;
+}
 interface MealListProps {
 	title?: string;
 	children: import('react').ReactNode;
@@ -21,10 +32,10 @@ export const MealList = ({ title, style, children }: MealListProps) => {
 
 	return (
 		<section className={classNames(styles['MealList'], mealStyles)}>
-			<div className={styles['Wrapper']}>
+			<Wrapper>
 				<h2 className={styles['MealList-title']}>{title}</h2>
 				<ul className={styles['MealList-ul']}>{children}</ul>
-			</div>
+			</Wrapper>
 		</section>
 	);
 };
