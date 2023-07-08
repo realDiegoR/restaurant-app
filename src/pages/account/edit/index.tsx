@@ -8,7 +8,7 @@ const EditAccount = () => {
 		<LandingLayout>
 			<Wrapper>
 				<Title>Editar Perfil</Title>
-				<Form callback={() => undefined}>
+				<Form callback={() => new Promise(() => undefined)}>
 					<Form.Label>
 						Tu nombre completo
 						<Form.Text />

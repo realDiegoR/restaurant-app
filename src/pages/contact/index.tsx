@@ -5,11 +5,13 @@ import { Title } from '@common/title';
 import { Wrapper } from '@common/wrapper';
 import styles from './contact.module.scss';
 
-const Contact = () => {
-	const callback = (data: any) => {
-		console.log(data);
-	};
+type Body = {
+	fullName: string;
+	email: string;
+	password: string;
+};
 
+const Contact = () => {
 	return (
 		<LandingLayout>
 			<Head>
@@ -22,7 +24,7 @@ const Contact = () => {
 						No dudes en llegar hacia nosotros. Ya sea una duda, una idea o una propuesta, háznosla
 						saber!
 					</p>
-					<Form callback={callback}>
+					<Form callback={() => new Promise(() => undefined)}>
 						<Form.Label>
 							Tu nombre
 							<Form.Text name="full-name" placeholder="Diego Cabrera" minLength={3} />

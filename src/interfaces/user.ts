@@ -7,8 +7,8 @@ export enum USER_ROLES {
 
 export interface User {
 	id: string;
-	fullName: string;
-	username: string;
+	name: string;
+	email: string;
 	role: USER_ROLES;
 	cart: ICartItem[];
 }

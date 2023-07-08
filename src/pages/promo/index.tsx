@@ -1,4 +1,3 @@
-import { Section } from '@common/section';
 import { Title } from '@common/title';
 import { LandingLayout } from '@layouts/landing';
 import Head from 'next/head';
@@ -17,16 +16,14 @@ const PromosPage = () => {
 			<Head>
 				<title>Promo | Veranalia</title>
 			</Head>
-			<Section>
-				<Wrapper className={styles.Wrapper}>
-					<Title color="yellow">Promociones</Title>
-					<ul>
-						{mostPopular.items.map((promo) => (
-							<PromoItem key={promo.id} promotionText={mostPopular.promotionText} {...promo} />
-						))}
-					</ul>
-				</Wrapper>
-			</Section>
+			<Wrapper className={styles.Wrapper}>
+				<Title color="yellow">Promociones</Title>
+				<ul>
+					{mostPopular.items.map((promo) => (
+						<PromoItem key={promo.id} promotionText={mostPopular.promotionText} {...promo} />
+					))}
+				</ul>
+			</Wrapper>
 		</LandingLayout>
 	);
 };

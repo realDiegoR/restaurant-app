@@ -2,16 +2,15 @@ import { LandingLayout } from '@layouts/landing';
 import { Title } from '@common/title';
 import Head from 'next/head';
 import Image from 'next/image';
-import image from 'public/images/brand/veranalia_imagotype.webp';
 import { Section } from '@features/account/section';
 import { Wrapper } from '@common/wrapper';
 import { useUserContext } from '@context/UserContext';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { LinkButton } from '@common/link-button';
-import styles from './account.module.scss';
 import { Settings } from '@features/account/settings';
 import { Overview } from '@features/account/overview';
+import styles from './account.module.scss';
 
 const UserPage = () => {
 	const { push } = useRouter();
@@ -37,14 +36,8 @@ const UserPage = () => {
 				<Wrapper>
 					<Title>Mi Perfil</Title>
 					<section className={styles.User_userInfo}>
-						<Image
-							className={styles.User_image}
-							src={image.src}
-							alt="Profile image"
-							width={300}
-							height={300}
-						/>
-						<p className={styles.User_username}>{user?.fullName}</p>
+						<div className={styles.User_image}></div>
+						<p className={styles.User_username}>{user?.name}</p>
 						<p className={styles.User_role}>{user?.role}</p>
 						<p className={styles.User_timestamp}>Cliente desde Junio 2023</p>
 						<LinkButton href="/account/edit" type="light">
