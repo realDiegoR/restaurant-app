@@ -11,7 +11,7 @@ import styles from './form.module.scss';
 
 interface FormProps {
 	children: ReactNode;
-	callback: (requestBody: any) => void;
+	callback: (requestBody: Record<string, string>) => Promise<void>;
 }
 
 type InputNative = InputHTMLAttributes<HTMLInputElement>;
@@ -25,10 +25,10 @@ const Form = ({ children, callback }: FormProps) => {
 	const handleSubmit: FormEventHandler<HTMLFormElement> = async (ev) => {
 		ev.preventDefault();
 		const formData = new FormData(formRef.current ?? undefined);
-		const requestBody: any = {};
+		const requestBody: Record<string, string> = {};
 
-		for (const pair of formData.entries()) {
-			requestBody[pair[0]] = pair[1];
+		for (const [key, value] of formData.entries()) {
+			requestBody[key] = value as string;
 		}
 
 		try {

@@ -34,6 +34,9 @@ export const DropdownMenu = ({ toggle, isOpen }: IProps) => {
 			<LinkButton type="light" href="/login">
 				Iniciar Sesión
 			</LinkButton>
+			<LinkButton type="light" href="/signup">
+				Crear cuenta
+			</LinkButton>
 			<ul className={styles['DropdownMenu-socialMedia']}>
 				<li className={styles['DropdownMenu-icon']}>
 					<Icon name="facebook" />
