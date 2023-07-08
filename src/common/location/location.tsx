@@ -9,7 +9,7 @@ type IProps = {
 };
 
 export const Location = ({ name, place, phoneNumber }: IProps) => {
-	const MAPS_API_KEY = process.env.MAPS_API_KEY;
+	const MAPS_API_KEY = process.env.NEXT_PUBLIC_MAPS_API_KEY;
 	return (
 		<section className={styles.Location}>
 			<Title type="h3" color="yellow">
