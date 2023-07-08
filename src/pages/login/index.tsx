@@ -6,7 +6,7 @@ import { Form } from '@common/form';
 import { Wrapper } from '@common/wrapper';
 import { useUserContext } from '@context/UserContext';
 import { useRouter } from 'next/router';
-import { ExpectedBody, login } from 'src/services/user/login';
+import { ExpectedBody, login } from 'src/services/api/user/login';
 
 const Login = () => {
 	const { push } = useRouter();
@@ -16,13 +16,13 @@ const Login = () => {
 		try {
 			const response = await login(requestBody);
 
-			if (response.statusText === 'OK') {
+			if (response.status === 200) {
 				updateUserStatus(response.data);
 				push('/account/');
 			}
 		} catch (err) {
 			const error = err as AxiosResponse;
-			if (error.status === 401)
+			if (error.status === 403)
 				throw 'El usuario y la contraseña no coinciden. Vuelva a intentarlo.';
 		}
 	};
@@ -37,7 +37,7 @@ const Login = () => {
 				<Form callback={loginCallback}>
 					<Form.Label>
 						Nombre de Usuario
-						<Form.Text name="username" />
+						<Form.Text name="email" />
 					</Form.Label>
 					<Form.Label>
 						Contraseña

@@ -3,6 +3,7 @@ import { useLocaleContext } from '@context/Locale';
 import { Icon } from '@common/Icon/Icon';
 import { DropdownButton } from '@components/DropdownMenu/DropdownButton/DropdownButton';
 import styles from './DropdownMenu.module.scss';
+import { LinkButton } from '@common/link-button';
 
 type IProps = {
 	toggle: () => void;
@@ -30,6 +31,9 @@ export const DropdownMenu = ({ toggle, isOpen }: IProps) => {
 					</li>
 				))}
 			</ul>
+			<LinkButton type="light" href="/login">
+				Iniciar Sesión
+			</LinkButton>
 			<ul className={styles['DropdownMenu-socialMedia']}>
 				<li className={styles['DropdownMenu-icon']}>
 					<Icon name="facebook" />

@@ -5,7 +5,6 @@ import Image from 'next/image';
 import image from 'public/images/brand/veranalia_imagotype.webp';
 import { Section } from '@features/account/section';
 import { Wrapper } from '@common/wrapper';
-import { logout } from 'src/services/user/logout';
 import { useUserContext } from '@context/UserContext';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
@@ -16,16 +15,12 @@ import { Overview } from '@features/account/overview';
 
 const UserPage = () => {
 	const { push } = useRouter();
-	const { isLoggedIn, user } = useUserContext();
-	// const logoutCallback = async () => {
-	// 	try {
-	// 		await logout();
-	// 		updateUserStatus(null);
-	// 		push('/');
-	// 	} catch (err) {
-	// 		console.error(err);
-	// 	}
-	// };
+	const { isLoggedIn, user, updateUserStatus } = useUserContext();
+
+	const logout = async () => {
+		await push('/');
+		updateUserStatus(null);
+	};
 
 	useEffect(() => {
 		if (!isLoggedIn) {
@@ -80,10 +75,18 @@ const UserPage = () => {
 					<Section>
 						<Title type="h2">Opciones</Title>
 						<Settings>
-							<Settings.Item href="/">Historial de Compras</Settings.Item>
-							<Settings.Item href="/">Mis Reseñas</Settings.Item>
-							<Settings.Item href="/">Ajustes de Cuenta</Settings.Item>
-							<Settings.Item href="/logout">Cerrar Sesión</Settings.Item>
+							<Settings.Item>
+								<button>Historial de Compras</button>
+							</Settings.Item>
+							<Settings.Item>
+								<button>Mis Reseñas</button>
+							</Settings.Item>
+							<Settings.Item>
+								<button>Ajustes de Cuenta</button>
+							</Settings.Item>
+							<Settings.Item>
+								<button onClick={logout}>Cerrar Sesión</button>
+							</Settings.Item>
 						</Settings>
 					</Section>
 				</Wrapper>

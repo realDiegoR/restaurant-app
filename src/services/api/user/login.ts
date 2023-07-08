@@ -1,5 +1,5 @@
 import axios, { type AxiosError, type AxiosResponse } from 'axios';
-import endPoints from '../api';
+import endPoints from '../endpoints';
 
 export interface ExpectedBody {
 	username: string;
