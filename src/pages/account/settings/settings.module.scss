@@ -1,0 +1,40 @@
+@import '@styles/mixins/hover';
+
+.wrapper {
+	font: 400 var(--paragraph) var(--main-font);
+}
+
+.Button {
+	cursor: pointer;
+}
+
+.Modal {
+	&_head {
+		font: 500 var(--heading-03) var(--main-font);
+	}
+	&_caution {
+		color: var(--brand-red);
+	}
+	&_buttons {
+		display: flex;
+		justify-content: center;
+		gap: 1.5rem;
+
+		:first-child {
+			font: 400 var(--sub) var(--main-font);
+			background-color: rgba(255, 0, 0, 0.1);
+			padding: 0.5rem;
+			border: var(--brand-red) dashed 2px;
+			border-radius: 0.375rem;
+			cursor: pointer;
+			@include hover;
+		}
+
+		:last-child {
+			text-decoration: underline;
+			text-underline-offset: 4px;
+			cursor: pointer;
+			@include hover;
+		}
+	}
+}

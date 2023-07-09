@@ -1,7 +1,6 @@
 import { LandingLayout } from '@layouts/landing';
 import { Title } from '@common/title';
 import Head from 'next/head';
-import Image from 'next/image';
 import { Section } from '@features/account/section';
 import { Wrapper } from '@common/wrapper';
 import { useUserContext } from '@context/UserContext';
@@ -11,6 +10,7 @@ import { LinkButton } from '@common/link-button';
 import { Settings } from '@features/account/settings';
 import { Overview } from '@features/account/overview';
 import styles from './account.module.scss';
+import Link from 'next/link';
 
 const UserPage = () => {
 	const { push } = useRouter();
@@ -75,7 +75,7 @@ const UserPage = () => {
 								<button>Mis Reseñas</button>
 							</Settings.Item>
 							<Settings.Item>
-								<button>Ajustes de Cuenta</button>
+								<Link href="/account/settings">Ajustes de Cuenta</Link>
 							</Settings.Item>
 							<Settings.Item>
 								<button onClick={logout}>Cerrar Sesión</button>

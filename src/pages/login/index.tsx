@@ -7,6 +7,7 @@ import { Wrapper } from '@common/wrapper';
 import { useUserContext } from '@context/UserContext';
 import { useRouter } from 'next/router';
 import { ExpectedBody, login } from 'src/services/api/user/login';
+import { USER_ROLES, User } from '@interfaces/user';
 
 const Login = () => {
 	const { push } = useRouter();
@@ -17,7 +18,9 @@ const Login = () => {
 			const response = await login(requestBody);
 
 			if (response.status === 200) {
-				updateUserStatus(response.data);
+				const { name, email, uuid: id } = response.data;
+				const user: User = { name, email, id, role: USER_ROLES.admin, cart: [] };
+				updateUserStatus(user);
 				push('/account/');
 			}
 		} catch (err) {
@@ -36,7 +39,7 @@ const Login = () => {
 				<Title>Iniciar Sesión</Title>
 				<Form callback={loginCallback}>
 					<Form.Label>
-						Nombre de Usuario
+						Email
 						<Form.Text name="email" />
 					</Form.Label>
 					<Form.Label>

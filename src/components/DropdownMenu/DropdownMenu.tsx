@@ -5,6 +5,8 @@ import { DropdownButton } from '@components/DropdownMenu/DropdownButton/Dropdown
 import styles from './DropdownMenu.module.scss';
 import { LinkButton } from '@common/link-button';
 import { useUserContext } from '@context/UserContext';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 type IProps = {
 	toggle: () => void;
@@ -18,6 +20,11 @@ export const DropdownMenu = ({ toggle, isOpen }: IProps) => {
 		},
 	} = useLocaleContext();
 	const { isLoggedIn } = useUserContext();
+	const { asPath } = useRouter();
+
+	useEffect(() => {
+		isOpen && toggle();
+	}, [asPath]);
 
 	return (
 		<nav className={`${styles.DropdownMenu} ${isOpen ? styles['DropdownMenu--open'] : ''}`}>
