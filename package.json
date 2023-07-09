@@ -6,6 +6,7 @@
 	"scripts": {
 		"build": "next build",
 		"start": "next start",
+		"build:start": "npm run build && npm run start",
 		"dev": "next dev",
 		"ts-lint": "tsc --noEmit --incremental",
 		"lint": "next lint",
