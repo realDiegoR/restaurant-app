@@ -1,0 +1,20 @@
+@import '@styles/mixins/hover';
+
+.button {
+	margin-top: 1.25rem;
+	padding: 0.75rem 1.5rem;
+	border-radius: 0.375rem;
+	font: 500 var(--paragraph) var(--main-font);
+	cursor: pointer;
+	@include hover;
+}
+
+.white {
+	background-color: var(--white);
+	border: 2px solid var(--black);
+}
+
+.black {
+	background-color: var(--black);
+	color: var(--white);
+}

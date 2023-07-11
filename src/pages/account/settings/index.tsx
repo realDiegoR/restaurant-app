@@ -11,6 +11,7 @@ import { useRouter } from 'next/router';
 import { LoadingSpinner } from '@common/loading-spinner';
 import styles from './settings.module.scss';
 import { UserId } from '@interfaces/user';
+import GoBack from '@common/go-back/go-back';
 
 type RequestStatus = 'error' | 'loading' | 'idle' | 'success';
 
@@ -54,6 +55,7 @@ const SettingsPage = () => {
 						</Overview.Item>
 					</button>
 				</Overview>
+				<GoBack />
 			</Wrapper>
 			{isModalOpen && (
 				<Modal close={toggleModal}>

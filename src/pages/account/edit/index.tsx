@@ -8,6 +8,7 @@ import { USER_ROLES, User, UserId } from '@interfaces/user';
 import { AxiosResponse } from 'axios';
 import { useUserContext } from '@context/UserContext';
 import { useRouter } from 'next/router';
+import GoBack from '@common/go-back/go-back';
 
 type Body = Pick<User, 'name' | 'email'>;
 
@@ -54,6 +55,7 @@ const EditAccount = () => {
 					</Form.Label>
 					<Form.Submit>Realizar Cambios</Form.Submit>
 				</Form>
+				<GoBack />
 			</Wrapper>
 		</LandingLayout>
 	);

@@ -1,7 +1,7 @@
 .Overview {
 	margin-top: 1.25rem;
 	display: grid;
-	grid-template: 1fr 1fr / 1fr 1fr;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 	gap: 1rem;
 }
 
