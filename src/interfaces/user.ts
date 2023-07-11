@@ -13,4 +13,4 @@ export interface User {
 	cart: ICartItem[];
 }
 
-export type UserId = Pick<User, 'id'>;
+export type UserId = User['id'];

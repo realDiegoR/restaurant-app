@@ -10,6 +10,7 @@ import { useUserContext } from '@context/UserContext';
 import { useRouter } from 'next/router';
 import { LoadingSpinner } from '@common/loading-spinner';
 import styles from './settings.module.scss';
+import { UserId } from '@interfaces/user';
 
 type RequestStatus = 'error' | 'loading' | 'idle' | 'success';
 
@@ -26,7 +27,7 @@ const SettingsPage = () => {
 	const deleteUserRequest = async () => {
 		try {
 			setStatus('loading');
-			const status = await deleteUser(user?.id as string);
+			const status = await deleteUser(user?.id as UserId);
 			if (status >= 200 && status < 300) {
 				setStatus('success');
 				updateUserStatus(null);
