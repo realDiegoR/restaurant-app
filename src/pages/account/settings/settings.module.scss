@@ -28,6 +28,10 @@
 			border-radius: 0.375rem;
 			cursor: pointer;
 			@include hover;
+
+			&:disabled {
+				opacity: 0.7;
+			}
 		}
 
 		:last-child {

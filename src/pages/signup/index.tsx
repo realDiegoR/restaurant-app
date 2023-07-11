@@ -7,6 +7,7 @@ import { signup, Body } from '@services/api/user';
 import { useUserContext } from '@context/UserContext';
 import { useRouter } from 'next/router';
 import { AxiosResponse } from 'axios';
+import { USER_ROLES, type User } from '@interfaces/user';
 
 const SignUpPage = () => {
 	const { updateUserStatus } = useUserContext();
@@ -17,7 +18,9 @@ const SignUpPage = () => {
 			const response = await signup(body);
 
 			if (response.status === 200) {
-				updateUserStatus(response.data);
+				const { name, email, uuid: id } = response.data;
+				const user: User = { name, email, id, role: USER_ROLES.admin, cart: [] };
+				updateUserStatus(user);
 				push('/account/');
 			}
 		} catch (err) {

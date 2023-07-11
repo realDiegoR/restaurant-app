@@ -8,13 +8,16 @@ import { Modal } from '@common/modal';
 import { deleteUser } from '@services/api/user/delete';
 import { useUserContext } from '@context/UserContext';
 import { useRouter } from 'next/router';
+import { LoadingSpinner } from '@common/loading-spinner';
 import styles from './settings.module.scss';
+
+type RequestStatus = 'error' | 'loading' | 'idle' | 'success';
 
 const SettingsPage = () => {
 	const { user, updateUserStatus } = useUserContext();
 	const { push } = useRouter();
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-	const [hasDeleted, setHasDeleted] = useState<boolean>(false);
+	const [status, setStatus] = useState<RequestStatus>('idle');
 
 	const toggleModal = () => {
 		setIsModalOpen((prev) => !prev);
@@ -22,13 +25,15 @@ const SettingsPage = () => {
 
 	const deleteUserRequest = async () => {
 		try {
+			setStatus('loading');
 			const status = await deleteUser(user?.id as string);
 			if (status >= 200 && status < 300) {
-				setHasDeleted(true);
+				setStatus('success');
 				updateUserStatus(null);
 				setTimeout(() => push('/'), 2000);
 			}
 		} catch (err) {
+			setStatus('error');
 			console.error(err);
 		}
 	};
@@ -53,13 +58,19 @@ const SettingsPage = () => {
 				<Modal close={toggleModal}>
 					<p className={styles.Modal_head}>Estás seguro de que quieres eliminar tu cuenta?</p>
 					<p className={styles.Modal_caution}>Todos tus datos se perderán permanentemente</p>
-					{hasDeleted ? (
+					{status === 'success' ? (
 						<span>La cuenta ha sido eliminada satisfactoriamente.</span>
 					) : (
 						<div className={styles.Modal_buttons}>
-							<button onClick={deleteUserRequest}>Sí, quiero eliminar</button>
+							<button onClick={deleteUserRequest} disabled={status === 'loading'}>
+								Sí, quiero eliminar
+							</button>
 							<button onClick={toggleModal}>No, quiero volver</button>
 						</div>
+					)}
+					{status === 'loading' && <LoadingSpinner />}
+					{status === 'error' && (
+						<p>Hubo un error. Por favor, inténtelo de nuevo o vuelva más tarde.</p>
 					)}
 				</Modal>
 			)}

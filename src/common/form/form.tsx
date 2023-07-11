@@ -7,6 +7,7 @@ import {
 	useRef,
 	useState,
 } from 'react';
+import { LoadingSpinner } from '@common/loading-spinner/';
 import styles from './form.module.scss';
 
 interface FormProps {
@@ -20,6 +21,7 @@ type ButtonNative = ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Form = ({ children, callback }: FormProps) => {
 	const [error, setError] = useState<string | null>(null);
+	const [loading, setLoading] = useState<boolean>(false);
 	const formRef = useRef<HTMLFormElement>(null);
 
 	const handleSubmit: FormEventHandler<HTMLFormElement> = async (ev) => {
@@ -32,17 +34,22 @@ const Form = ({ children, callback }: FormProps) => {
 		}
 
 		try {
+			setError(null);
+			setLoading(true);
 			await callback(requestBody);
 		} catch (err) {
 			const error = err as string;
 			setError(error);
+		} finally {
+			setLoading(false);
 		}
 	};
 
 	return (
 		<form ref={formRef} className={styles.Form} onSubmit={handleSubmit}>
-			{error ? <p className={styles.Form_error}>{error}</p> : null}
 			{children}
+			{error ? <p className={styles.Form_error}>{error}</p> : null}
+			{loading ? <LoadingSpinner /> : null}
 		</form>
 	);
 };
